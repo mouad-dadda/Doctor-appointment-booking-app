@@ -1,0 +1,68 @@
+
+/* START STYLE ASIDE */
+
+.height_aside {
+  height: 323px;
+}
+
+.aside_bg {
+  height: 243px;
+  background-color: #0d63f3;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  padding: 51px;
+  border-radius: 26px;
+  position: relative;
+}
+
+.aside_bg h1 {
+  font-weight: 500;
+  font-size: 33px;
+  color: white;
+  width: 63%;
+  text-transform: capitalize;
+  margin-bottom: 41px;
+}
+
+.btn_bg_white {
+  background-color: white;
+  color: #0d63f3;
+}
+
+.circle_bg,
+.circle_border,
+.circle_bottom_border {
+  position: absolute;
+}
+
+.circle_bg,
+.circle_border {
+  width: 222px;
+  height: 222px;
+  border-radius: 100%;
+}
+
+.circle_bg {
+  background-color: rgba(255, 255, 255, 0.18);
+  right: -58px;
+  top: -46px;
+}
+
+.circle_border {
+  border: 2px solid rgba(255, 255, 255, 0.23);
+  right: -17px;
+  top: -67px;
+}
+
+.circle_bottom_border {
+  width: 149px;
+  height: 149px;
+  border-radius: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.23);
+  top: 188px;
+  left: -68px;
+}
+
+/* AND  STYLE ASIDE */

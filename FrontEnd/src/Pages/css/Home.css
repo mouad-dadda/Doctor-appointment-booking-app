@@ -23,3 +23,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* END  DESIGN  SCROLLBAR */
+
+a {
+  text-decoration: none;
+  color: white;
+}

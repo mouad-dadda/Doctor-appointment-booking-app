@@ -1,0 +1,28 @@
+
+.footer_height {
+  height: 97px;
+}
+
+.lgine {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(140, 141, 150, 0.26);
+}
+
+footer img {
+  width: 14%;
+}
+
+.content_footer {
+  display: flex;
+  margin-top: 25px;
+}
+
+.content_footer p {
+  margin: 0;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #8c8d96;
+  margin-left: 479px;
+}

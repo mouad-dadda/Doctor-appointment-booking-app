@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../Css/ArticleOne.css'
+import '../Css/HomeCss/ArticleOne.css'
 
 const ArticleOne = () => {
   return (

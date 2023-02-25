@@ -5,10 +5,10 @@ import Card from "./Card";
 const ArticleTwo = () => {
   return (
     <>
-      <article class="card_container height_article_2">
-        <div class="cards_info">
-          <h1 class="article_title">Réservez notre médecin</h1>
-          <div class="cards_">
+      <article className="card_container height_article_2">
+        <div className="cards_info">
+          <h1 className="article_title">Réservez notre médecin</h1>
+          <div className="cards_">
             <Card />
             <Card />
             <Card />

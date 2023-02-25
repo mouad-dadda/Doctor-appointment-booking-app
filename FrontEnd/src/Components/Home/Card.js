@@ -13,10 +13,12 @@ const Card = () => {
           MBBS, MD - Dermatologie, vénéréologie et lèpre Réservez notre médecin
         </p>
         <div className="card_btn">
-          <button className="btn_card btn_bg_primary ">
+          <button className="btn_card mr_ri btn_bg_primary ">
             <a href="/test">Reserve</a>
           </button>
-          <button className="btn_card btn_border_primary">View Profile </button>
+          <button className="btn_card mr_lf btn_border_primary">
+            View Profile
+          </button>
         </div>
       </div>
     </>

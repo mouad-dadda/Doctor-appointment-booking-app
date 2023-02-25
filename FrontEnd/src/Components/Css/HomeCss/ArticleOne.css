@@ -1,7 +1,7 @@
 /* START ARTICLE 1 */
 
 .height_article_1 {
-  height: 638px;
+  height: 540px;
 }
 
 .text_center {
@@ -13,6 +13,7 @@
   height: 291px;
   margin-left: 20px;
   margin-right: 20px;
+  transition: transform 0.5s ease;
 }
 
 .article_info {
@@ -36,4 +37,3 @@
 }
 
 /* END ARTICLE 1  */
-

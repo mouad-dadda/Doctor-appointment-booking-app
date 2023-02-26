@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NotificationMess from "../NotificationMess";
+import NotificationMess from './NotificationMess.js';
 
 const Header = () => {
 

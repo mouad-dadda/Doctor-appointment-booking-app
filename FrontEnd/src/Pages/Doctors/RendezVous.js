@@ -1,27 +1,19 @@
 import React from "react";
-import {  MenuDoctors, HeaderDoctors } from "../../Components";
+import { MenuDoctors, HeaderDoctors } from "../../Components";
 import "../../Components/Css/Doctors/Dashboard.css";
-import PopupDelete from '../../Components/Doctors/Dashboard/PopupDelete'
-import {data} from '../../Data/User'
+import "../../Components/Css/Doctors/RendezVous.css";
+import PopupDelete from "../../Components/Doctors/Dashboard/PopupDelete";
+import { data } from "../../Data/User";
 
-const Dashboard = () => {
+const RendezVous = () => {
   return (
     <div className=" row">
       <MenuDoctors />
       <div className="col-10">
         <HeaderDoctors />
         <div className="w_100  ">
-          <div className="messg_welcom ds_flex">
-            <div className="text_mesg">
-              <h2> Bienvenue Docteur Ahmed dans Doctolib </h2>
-              <p>
-                Vous avez 5 rendez-vous aujourd'hui !
-                <i className="fa-light fa-face-grin-beam"></i>
-              </p>
-            </div>
-            <div className="img_pg">
-              <img src="./img/sammy-line-doctors-consultation.png" alt="" />
-            </div>
+          <div className="text_pg">
+            <p> Rendez-Vous </p>
           </div>
         </div>
         <div className="tabl_apoin w_100 ">
@@ -32,6 +24,7 @@ const Dashboard = () => {
                 <tr className="table-light">
                   <th scope="col">#</th>
                   <th scope="col">Nom&Prenom</th>
+                  <th scope="col">Cin</th>
                   <th scope="col">Numéros De Téléphone</th>
                   <th scope="col">Age</th>
                   <th scope="col">Date</th>
@@ -44,7 +37,6 @@ const Dashboard = () => {
                     <tr key={el.id}>
                       <th scope="row"> {idx} </th>
                       <td>
-                        {" "}
                         {el.nom} {el.prenom}
                       </td>
                       <td> {el.tel} </td>
@@ -76,4 +68,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default RendezVous;

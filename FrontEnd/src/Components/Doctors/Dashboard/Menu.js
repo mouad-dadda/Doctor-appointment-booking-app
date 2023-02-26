@@ -1,13 +1,16 @@
 import React from "react";
 
-
 const Menu = () => {
   return (
     <>
       <div className="col-2">
         <header className="nav_bar border ">
           <div className="nav_logo">
-            <img src="./img/logo.png" className="_img_dashboard" alt="DOCTOLIb" />
+            <img
+              src="./img/logo.png"
+              className="_img_dashboard"
+              alt="DOCTOLIb"
+            />
           </div>
           <nav>
             <ul className="nav_items_dashboard  ">
@@ -39,7 +42,10 @@ const Menu = () => {
                 </a>
               </li>
               <li className="nav_li">
-                <a href="/Doctors/Settings.html" className="nav_item_dashboard nav_hover">
+                <a
+                  href="/Doctors/Settings.html"
+                  className="nav_item_dashboard nav_hover"
+                >
                   <i className="fa-solid fa-gear"></i>
                   <span className="nav_text">Settings</span>
                 </a>

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import NotificationMess from "../NotificationMess";
 
 const Header = () => {
+
+  const [ToogleNotification ,setToogleNotification]=useState(false)
+
   return (
     <>
       <div className=" w_100 header_top border-bottom ">
@@ -14,28 +18,11 @@ const Header = () => {
           </span>
         </div>
         <div>
-          <span className="notif_btn" id="notif_btn">
+          <span className="notif_btn" id="notif_btn" onClick={()=>{setToogleNotification(!ToogleNotification)}} >
             <i className="fa-regular fa-bell"></i>
           </span>
           <div>
-            <div className="notif_messg border " id="notif_messg">
-              <div className="mssg_text border-bottom">
-                <h1>You have A new Appointment</h1>
-                <span> mouad dadda ,12-06-2022 </span>
-              </div>
-              <div className="mssg_text border-bottom">
-                <h1>You have A new Appointment</h1>
-                <span> mouad dadda ,12-06-2022 </span>
-              </div>
-              <div className="mssg_text border-bottom">
-                <h1>You have A new Appointment</h1>
-                <span> mouad dadda ,12-06-2022 </span>
-              </div>
-              <div className="mssg_text border-bottom">
-                <h1>You have A new Appointment</h1>
-                <span> mouad dadda ,12-06-2022 </span>
-              </div>
-            </div>
+            { ToogleNotification ?<NotificationMess/>:'' }
           </div>
         </div>
       </div>

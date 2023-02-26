@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/js/dist/modal.js";
 import "../../Css/Doctors/Module.css";
 import { data } from "../../../Data/User";
-import PopupDelete from "../../Css/PopupDelete";
+import PopupDelete from "../PopupDelete.js";
 
 const Dashboard = () => {
   return (

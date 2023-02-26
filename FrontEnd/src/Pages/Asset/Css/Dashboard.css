@@ -186,10 +186,27 @@ ul {
   background-color: #ffffff !important;
   /* top: -443%; */
   /* transition-duration: 0.2s; */
-  display: none !important;
+  /* display: none !important; */
+  animation: showPopup 0.3s ease;
   top: 74% !important;
   padding: 0px 10px 0 21px !important;
 }
+
+
+@keyframes showPopup {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
 .notif_messg::before {
   content: "";
 }

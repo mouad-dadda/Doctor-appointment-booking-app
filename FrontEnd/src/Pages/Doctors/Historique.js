@@ -1,26 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MenuDoctors, HeaderDoctors } from "../../Components";
 import "../../Components/Css/Doctors/Dashboard.css";
-import PopupDelete from "../../Components/Doctors/Dashboard/PopupDelete";
-import { data } from "../../Data/User";
+import axios from "axios";
 
 const Historique = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/v1/patient")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  });
+
   return (
-    <div className=" row">
+    <div className="row">
       <MenuDoctors />
       <div className="col-10">
         <HeaderDoctors />
-        <div class="w_100  ">
-          <div class="text_pg">
+        <div className="w_100  ">
+          <div className="text_pg">
             <p> Historique</p>
           </div>
         </div>
-        <div class="tabl_apoin w_100 ">
-          <div class="tabl_st border">
+        <div className="tabl_apoin w_100 ">
+          <div className="tabl_st border">
             <h2> Rendez-vous aujourd'hui </h2>
-            <table class="table  table-hover  ">
+            <table className="table  table-hover  ">
               <thead>
-                <tr class="table-light">
+                <tr className="table-light">
                   <th scope="col">#</th>
                   <th scope="col">Nom&Prenom</th>
                   <th scope="col">Cin</th>
@@ -38,7 +46,7 @@ const Historique = () => {
                       <td>
                         {el.nom} {el.prenom}
                       </td>
-                      <td> {el.CIN} </td>
+                      <td> {el.cin} </td>
                       <td> {el.tel} </td>
                       <td>{el.date}</td>
                       <td> {el.age} </td>

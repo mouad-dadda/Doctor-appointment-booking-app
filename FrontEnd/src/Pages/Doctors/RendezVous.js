@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState , useEffect} from "react";
 import { MenuDoctors, HeaderDoctors } from "../../Components";
 import "../../Components/Css/Doctors/Dashboard.css";
 import "../../Components/Css/Doctors/RendezVous.css";
 import PopupDelete from "../../Components/Doctors/Dashboard/PopupDelete";
-import { data } from "../../Data/User";
+import axios from "axios";
 
 const RendezVous = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/v1/patient")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  });
+
+
   return (
     <div className=" row">
       <MenuDoctors />
@@ -39,7 +49,7 @@ const RendezVous = () => {
                       <td>
                         {el.nom} {el.prenom}
                       </td>
-                      <td> {el.CIN} </td>
+                      <td> {el.cin} </td>
                       <td> {el.tel} </td>
                       <td>{el.date}</td>
                       <td> {el.age} </td>

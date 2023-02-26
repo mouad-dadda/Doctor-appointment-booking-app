@@ -1,27 +1,26 @@
 import React from "react";
 import { MenuDoctors, HeaderDoctors } from "../../Components";
 import "../../Components/Css/Doctors/Dashboard.css";
-import "../../Components/Css/Doctors/RendezVous.css";
 import PopupDelete from "../../Components/Doctors/Dashboard/PopupDelete";
 import { data } from "../../Data/User";
 
-const RendezVous = () => {
+const Historique = () => {
   return (
     <div className=" row">
       <MenuDoctors />
       <div className="col-10">
         <HeaderDoctors />
-        <div className="w_100  ">
-          <div className="text_pg">
-            <p> Rendez-Vous </p>
+        <div class="w_100  ">
+          <div class="text_pg">
+            <p> Historique</p>
           </div>
         </div>
-        <div className="tabl_apoin w_100 ">
-          <div className="tabl_st border">
+        <div class="tabl_apoin w_100 ">
+          <div class="tabl_st border">
             <h2> Rendez-vous aujourd'hui </h2>
-            <table className="table  table-hover  ">
+            <table class="table  table-hover  ">
               <thead>
-                <tr className="table-light">
+                <tr class="table-light">
                   <th scope="col">#</th>
                   <th scope="col">Nom&Prenom</th>
                   <th scope="col">Cin</th>
@@ -47,15 +46,6 @@ const RendezVous = () => {
                         <button className="btn_tabl btn_bg_succes ml_">
                           Terminer
                         </button>
-                        <PopupDelete id={el.id} />
-                        <button
-                          className="btn_tabl btn_bg_danger"
-                          type="button"
-                          data-bs-toggle="modal"
-                          data-bs-target={`#DeleteUser${el.id}`}
-                        >
-                          Annuler
-                        </button>
                       </td>
                     </tr>
                   );
@@ -69,4 +59,4 @@ const RendezVous = () => {
   );
 };
 
-export default RendezVous;
+export default Historique;

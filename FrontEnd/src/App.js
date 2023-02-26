@@ -1,14 +1,15 @@
 import React from 'react'
 
-import { Dashboard, Home, RendezVous } from './Pages'
+import { Dashboard, Historique, Home, RendezVous } from './Pages'
 
 
 const App = () => {
   return (
     <>
-    <Home/>
+    {/* <Home/> */}
     {/* <Dashboard/> */}
     {/* <RendezVous/> */}
+    <Historique/>
     </>
   )
 }

@@ -8,6 +8,7 @@ export const data = [
     tel: "06933472927",
     age: 34,
     date: "12/01/2020",
+    CIN:'KD30974'
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const data = [
     tel: "06933472927",
     age: 34,
     date: "12/01/2020",
+    CIN:'KD30974'
   },
   {
     id: 3,
@@ -23,7 +25,7 @@ export const data = [
     prenom: "alami",
     tel: "06933472927",
     age: 34,
-    date: "12/01/2020",
+    date: "12/01/2020",CIN:'KD30974'
   },
   {
     id: 4,
@@ -31,7 +33,7 @@ export const data = [
     prenom: "alami",
     tel: "06933472927",
     age: 34,
-    date: "12/01/2020",
+    date: "12/01/2020",CIN:'KD30974'
   },
   {
     id: 5,
@@ -39,7 +41,7 @@ export const data = [
     prenom: "alami",
     tel: "06933472927",
     age: 34,
-    date: "12/01/2020",
+    date: "12/01/2020",CIN:'KD30974'
   },
   {
     id: 6,
@@ -47,7 +49,7 @@ export const data = [
     prenom: "alami",
     tel: "06933472927",
     age: 34,
-    date: "12/01/2020",
+    date: "12/01/2020",CIN:'KD30974'
   },
 ];
 

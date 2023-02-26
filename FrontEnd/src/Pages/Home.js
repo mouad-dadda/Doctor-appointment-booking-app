@@ -1,21 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import { ArticleOne, ArticleTwo, Aside, Footer, Header, Section } from '../Components'
+import { Footer, Header, Section } from "../Components";
 
-
-import './css/Home.css'
+import "./Asset/Css/Home.css";
 
 export const Home = () => {
   return (
     <>
-    <Header/>
-    <Section/>
-    <ArticleOne/>
-    <ArticleTwo/>
-    <Aside/>
-    <Footer/>
+      <Header />
+      <Section />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

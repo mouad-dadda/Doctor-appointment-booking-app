@@ -1,13 +1,13 @@
-
-
 import React from 'react'
 
-import { Home } from './Pages'
+import { Dashboard, Home } from './Pages'
+
 
 const App = () => {
   return (
     <>
-    <Home/>
+    {/* <Home/> */}
+    <Dashboard/>
     </>
   )
 }

@@ -6,11 +6,11 @@ import { Dashboard, Historique, Home, RendezVous, SearchDoctors } from './Pages'
 const App = () => {
   return (
     <>
-    {/* <Home/> */}
+    <Home/>
     {/* <Dashboard/> */}
     {/* <RendezVous/> */}
     {/* <Historique/> */}
-    <SearchDoctors/>
+    {/* <SearchDoctors/> */}
     </>
   )
 }

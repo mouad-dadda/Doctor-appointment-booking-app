@@ -11,7 +11,7 @@ const Historique = () => {
       .get("http://127.0.0.1:8000/api/v1/patient")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  });
+  },[]);
 
   return (
     <div className="row">

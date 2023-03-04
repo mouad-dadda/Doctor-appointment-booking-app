@@ -12,7 +12,7 @@ const Dashboard = () => {
       .get("http://127.0.0.1:8000/api/v1/patient")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  });
+  },[]);
 
   return (
     <div className=" row">
@@ -52,10 +52,7 @@ const Dashboard = () => {
                   return (
                     <tr key={el.id}>
                       <th scope="row"> {idx} </th>
-                      <td>
-                        {" "}
-                        {el.nom} {el.prenom}
-                      </td>
+                      <td> {el.nom} {el.prenom}</td>
                       <td> {el.tel} </td>
                       <td>{el.date}</td>
                       <td> {el.age} </td>

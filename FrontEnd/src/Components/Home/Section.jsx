@@ -60,10 +60,10 @@ const Section = () => {
         <div className="cards_info">
           <h1 className="article_title">Réservez notre médecin</h1>
           <div className="cards_">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card img="./img/Rectangle 3.png" />
+            <Card img="./img/Rectangle 3.png" />
+            <Card img="./img/Rectangle 2.jpg" />
+            <Card img="./img/Rectangle 8.jpg" />
           </div>
         </div>
       </article>

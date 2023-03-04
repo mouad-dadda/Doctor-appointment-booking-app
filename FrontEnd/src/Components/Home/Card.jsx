@@ -1,12 +1,12 @@
 import React from "react";
 import "../Css/HomeCss/Card.css";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <>
       <div className="card_body">
         <div>
-          <img src="./img/Rectangle 3.png" alt="" />
+          <img src={props.img} alt="" />
         </div>
         <h1>Paul Richard</h1>
         <p>

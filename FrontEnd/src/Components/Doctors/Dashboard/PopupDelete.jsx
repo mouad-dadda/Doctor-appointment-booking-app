@@ -1,5 +1,5 @@
 import React from "react";
-import "bootstrap/js/dist/modal.js";
+// import "bootstrap/js/dist/modal.js";
 import '../../Css/Doctors/Module.css';
 
 const PopupDelete = (props) => {

@@ -54,3 +54,18 @@
 .mr_ri {
   margin-right: 5px;
 }
+
+@media screen and (max-width: 576px) {
+  .cards_ {
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 27px;
+  }
+
+  .card_body {
+    width: 87%;
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,3 +1,20 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+
 /* START HEADER */
 
 .header {
@@ -112,12 +129,10 @@ a.nav_link {
     margin-right: 0px;
   }
   ._container {
+    /* width:90%; */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-  }
-  .posit_rela {
-    position: relative;
   }
   .menu {
     display: block;

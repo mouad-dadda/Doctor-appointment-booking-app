@@ -67,7 +67,7 @@ const Section = () => {
           </div>
         </div>
       </article>
-
+{/* 
       <aside className="_container height_aside">
         <div className="aside_bg">
           <span className="circle_bg"></span>
@@ -76,7 +76,7 @@ const Section = () => {
           <button className="_btn btn_bg_white "> Prenez rendez-vous </button>
           <span className=" circle_bottom_border "></span>
         </div>
-      </aside>
+      </aside> */}
     </>
   );
 };

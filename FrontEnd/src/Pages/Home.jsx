@@ -9,7 +9,7 @@ export const Home = () => {
     <>
       <Header />
       <Section />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

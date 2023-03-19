@@ -1,0 +1,16 @@
+.show-notif-Setting{
+  position: absolute !important;
+  top: 78.5px !important;
+  left: 1273.87px !important;
+}
+
+
+.show-notif{
+  position: absolute !important;
+  top: 63.5px !important;
+  left: 988.87px !important;
+}
+
+.h-w-f{
+  height: -webkit-fill-available;
+}

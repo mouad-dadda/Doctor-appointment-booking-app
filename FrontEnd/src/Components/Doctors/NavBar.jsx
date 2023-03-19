@@ -1,5 +1,6 @@
 import { Dropdown, Tooltip } from "flowbite-react";
-import "../Css/Doctors/Dashboard";
+import "../Css/Doctors/Dashboard.css";
+import Notification from './Notification'
 
 import React from "react";
 
@@ -99,7 +100,7 @@ const NavBar = () => {
                     </div>
                   </div>
                 }
-                className="show-notif-Setting h-[14.5rem] "
+                className="show-notif-Setting h-[12.4rem] "
               >
                 {/* <!-- Dropdown menu --> */}
                 <div className="z-50 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">

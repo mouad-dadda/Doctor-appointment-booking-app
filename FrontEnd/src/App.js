@@ -1,13 +1,13 @@
 import React from 'react'
 
 import { Dashboard, Historique, Home, RendezVous, SearchDoctors } from './Pages'
-
+import './index.css'
 
 const App = () => {
   return (
     <>
-    <Home/>
-    {/* <Dashboard/> */}
+    {/* <Home/> */}
+    <Dashboard/>
     {/* <RendezVous/> */}
     {/* <Historique/> */}
     {/* <SearchDoctors/> */}

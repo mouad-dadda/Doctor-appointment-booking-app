@@ -52,7 +52,6 @@ const Notification = () => {
           </div>
         </div>
         <div
-          href="#"
           className="block py-2 text-base font-normal text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:hover:underline"
         >
           <div className="inline-flex items-center ">

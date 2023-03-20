@@ -11,7 +11,7 @@ const NavBar = () => {
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
-              <a href="" className="flex ml-2 md:mr-24">
+              <a href="/" className="flex ml-2 md:mr-24">
                 <span className="self-center  text-[#0D63F3]  text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
                   Doctolib
                 </span>
@@ -94,8 +94,7 @@ const NavBar = () => {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="w-8 h-8 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                        alt="user photo"
+                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt=""
                       />
                     </div>
                   </div>
@@ -121,6 +120,7 @@ const NavBar = () => {
                   <ul className="py-1" role="none">
                     <li>
                       <a
+                      href="/dashboard"
                         className="block px-4 py-2 cursor-pointer text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"
                       >
@@ -129,6 +129,7 @@ const NavBar = () => {
                     </li>
                     <li>
                       <a
+                      href="/settings"
                         className="block px-4 py-2 text-sm cursor-pointer text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"
                       >
@@ -137,12 +138,12 @@ const NavBar = () => {
                     </li>
                     <Dropdown.Divider />
                     <li>
-                      <a
+                      <div
                         className="block px-4 py-2 text-sm cursor-pointer text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"
                       >
                         Sign out
-                      </a>
+                      </div>
                     </li>
                   </ul>
                 </div>

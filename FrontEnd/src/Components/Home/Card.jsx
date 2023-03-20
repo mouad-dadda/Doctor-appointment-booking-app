@@ -6,7 +6,7 @@ const Card = (props) => {
     <>
       <div className="card_body">
         <div>
-          <img src={props.img} alt="" />
+          <img src={props.img} alt=""  style={{display:"initial"}} />
         </div>
         <h1>Paul Richard</h1>
         <p>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavBarDoctors, SidebarDoctors } from '../../Components'
 
-const Appointment = () => {
+const RendezVous = () => {
   return (
     <>
         <NavBarDoctors/>
@@ -20,4 +20,4 @@ const Appointment = () => {
   )
 }
 
-export default Appointment
+export default RendezVous

@@ -6,8 +6,8 @@ import './index.css'
 const App = () => {
   return (
     <>
-    {/* <Home/> */}
-    <Dashboard/>
+    <Home/>
+    {/* <Dashboard/> */}
     {/* <RendezVous/> */}
     {/* <Historique/> */}
     {/* <SearchDoctors/> */}

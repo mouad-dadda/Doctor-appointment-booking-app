@@ -21,7 +21,7 @@ const Section = () => {
           </div>
           <div className="Section_img">
             <span className="circle"></span>
-            <img src="./img/doctor-2.png" className="_img" alt="" />
+            <img src="./img/doctor-2.png" className="_img" alt=""  style={{display:"initial"}} />
             <span className="_heart_icon circle_1">
               <span className="circle_2">
                 <i className="fa-solid fa-heart-pulse"></i>
@@ -49,9 +49,9 @@ const Section = () => {
             Le site compte de nombreux medecins dans differentes specialites
           </p>
           <div className="article_img">
-            <img src="./img/Rectangle 4.jpg" alt="" />
-            <img src="./img/Rectangle 5.jpg" alt="" />
-            <img src="./img/Rectangle 6.jpg" alt="" />
+            <img src="./img/Rectangle 4.jpg" alt="" style={{display:"initial"}} />
+            <img src="./img/Rectangle 5.jpg" alt="" style={{display:"initial"}} />
+            <img src="./img/Rectangle 6.jpg" alt=""  style={{display:"initial"}} />
           </div>
         </div>
       </article>

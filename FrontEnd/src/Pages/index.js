@@ -8,3 +8,4 @@ export { default as SearchDoctors } from './SearchDoctors'
 
 export {default as Dashboard } from './Doctors/Dashboard.jsx'
 export {default as RendezVous } from './Doctors/RendezVous.jsx'
+export {default as Historique} from './Doctors/Historique.jsx'

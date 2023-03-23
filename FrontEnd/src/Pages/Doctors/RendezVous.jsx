@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavBarDoctors, SidebarDoctors } from '../../Components'
+import ListOfAppointment from '../../Components/Doctors/RendezVous/ListOfAppointment'
 
 const RendezVous = () => {
   return (
@@ -12,7 +13,7 @@ const RendezVous = () => {
           className="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900"
         >
           <main>
-            
+            <ListOfAppointment/>
           </main>
         </div>
       </div>

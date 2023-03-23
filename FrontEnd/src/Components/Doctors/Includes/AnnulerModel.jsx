@@ -1,17 +1,17 @@
 import { Modal } from "flowbite-react";
 import React from "react";
 
-const AnnulerModel = ({ show, setShow, AnnulerAppointment, idAppointment }) => {
+const AnnulerModel = ({ showAnnuler, setShowAnnuler, AnnulerAppointment, idAppointment }) => {
   return (
     <>
-      <Modal show={show} size="md" popup={true} onClose={() => setShow(!show)}>
+      <Modal show={showAnnuler} size="md" popup={true} onClose={() => setShowAnnuler(!showAnnuler)}>
         {/* <!-- Modal content --> */}
-        <div className="relative bg-white rounded-lg shadow dark:bg-gray-800">
+        <div    data-te-animation-init  data-te-animation="[fade-in_1s_ease-in-out]"  className="relative  bg-white rounded-lg shadow dark:bg-gray-800">
           {/* <!-- Modal header --> */}
           <div className="flex justify-end p-2">
             <button
               type="button"
-              onClick={() => setShow(!show)}
+              onClick={() => setShowAnnuler(!showAnnuler)}
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-700 dark:hover:text-white"
             >
               <svg
@@ -54,7 +54,7 @@ const AnnulerModel = ({ show, setShow, AnnulerAppointment, idAppointment }) => {
               Yes, I'm sure
             </button>
             <button
-              onClick={() => setShow(!show)}
+              onClick={() => setShowAnnuler(!showAnnuler)}
               className="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2.5 text-center dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
             >
               No, cancel

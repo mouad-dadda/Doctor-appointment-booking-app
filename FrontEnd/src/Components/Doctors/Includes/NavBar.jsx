@@ -1,6 +1,6 @@
 import { Dropdown, Tooltip } from "flowbite-react";
-import "../Css/Doctors/Dashboard.css";
-import Notification from './Notification'
+import '../../Css/Doctors/Dashboard.css'
+import Notification from "./Notification";
 
 import React from "react";
 
@@ -65,8 +65,6 @@ const NavBar = () => {
                 {/* Component Notification  */}
 
                 <Notification />
-
-
               </Dropdown>
               <div
                 type="button"
@@ -94,7 +92,8 @@ const NavBar = () => {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="w-8 h-8 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt=""
+                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        alt=""
                       />
                     </div>
                   </div>
@@ -120,7 +119,7 @@ const NavBar = () => {
                   <ul className="py-1" role="none">
                     <li>
                       <a
-                      href="/dashboard"
+                        href="/dashboard"
                         className="block px-4 py-2 cursor-pointer text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"
                       >
@@ -129,7 +128,7 @@ const NavBar = () => {
                     </li>
                     <li>
                       <a
-                      href="/settings"
+                        href="/settings"
                         className="block px-4 py-2 text-sm cursor-pointer text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"
                       >

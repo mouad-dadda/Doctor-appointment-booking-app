@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
-import AnnulerModel from "./AnnulerModel";
-import data from "./users.json";
+import AnnulerModel from "../Includes/AnnulerModel";
+import data from "../users.json";
 
 const TableDashboard = () => {
-
-  const [show, setShow] = useState(false);
+  const [showAnnuler , setShowAnnuler]=useState(false)
 
   const [idAppointment, setIdAppointment] = useState(null);
 
   const AnnulerAppointment = (idAppointment) => {
     console.log(idAppointment);
-    setShow(!show);
+    setShowAnnuler(!showAnnuler);
     setIdAppointment(null);
   };
 
@@ -123,7 +122,7 @@ const TableDashboard = () => {
                               className="inline-flex items-center px-2 py-1.5 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
                               onClick={() => {
                                 setIdAppointment(el.id);
-                                setShow(!show);
+                                setShowAnnuler(!showAnnuler);
                               }}
                             >
                               <XCircleIcon className="w-4 h-4 mr-2 " />
@@ -144,8 +143,8 @@ const TableDashboard = () => {
 
       {/* Annuler Apointment Model */}
       <AnnulerModel
-        show={show}
-        setShow={setShow}
+        showAnnuler={showAnnuler}
+        setShowAnnuler={setShowAnnuler}
         AnnulerAppointment={AnnulerAppointment}
         idAppointment={idAppointment}
       />

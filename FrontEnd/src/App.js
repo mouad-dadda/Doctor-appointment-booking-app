@@ -6,9 +6,9 @@ import './index.css'
 const App = () => {
   return (
     <>
-    <Home/>
+    {/* <Home/> */}
     {/* <Dashboard/> */}
-    {/* <RendezVous/> */}
+    <RendezVous/>
     {/* <Historique/> */}
     {/* <SearchDoctors/> */}
     </>

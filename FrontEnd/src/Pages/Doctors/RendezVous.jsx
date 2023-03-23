@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavBarDoctors, SidebarDoctors } from '../../Components'
-import ListOfAppointment from '../../Components/Doctors/RendezVous/ListOfAppointment'
+import { ListOfAppointment, NavBarDoctors, SidebarDoctors } from '../../Components'
+
 
 const RendezVous = () => {
   return (

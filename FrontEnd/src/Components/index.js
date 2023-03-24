@@ -10,7 +10,5 @@ export { default as InputSearch } from "./Home/InputSearch";
 export { default as NavBarDoctors } from "./Doctors/Includes/NavBar.jsx";
 export { default as SidebarDoctors } from "./Doctors/Includes/Sidebar.jsx";
 export { default as TableDashboard } from "./Doctors/Dashboard/TableData.jsx";
-
 export {default as ListOfAppointment} from './Doctors/RendezVous/ListOfAppointment'
-
-export{default as ListOfHistorique} from './Doctors/Historique/ListOfHistorique.jsx' 
+export {default as ListOfHistorique} from './Doctors/Historique/ListOfHistorique.jsx' 

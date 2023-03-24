@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Dashboard, Historique, Home, RendezVous, SearchDoctors } from './Pages'
+import { Dashboard, Historique, Home, RendezVous, SearchDoctors, Settings } from './Pages'
 import './index.css'
 
 const App = () => {
@@ -9,7 +9,8 @@ const App = () => {
     {/* <Home/> */}
     {/* <Dashboard/> */}
     {/* <RendezVous/> */}
-    <Historique/>
+    {/* <Historique/> */}
+    <Settings/>
     {/* <SearchDoctors/> */}
     </>
   )

@@ -146,6 +146,7 @@ a.nav_link {
     border-top: 1px solid white;
     transition: all 0.3s ease-in-out;
     height: fit-content;
+    z-index: 10;
   }
   .nav_items {
     flex-direction: column;

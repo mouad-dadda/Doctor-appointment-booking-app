@@ -83,14 +83,14 @@ const Setttings = () => {
         <ProfileUploadImg />
 
         <div className="col-span-2">
-          <Tabs.Group aria-label="Tabs with underline" style="underline">
-            <Tabs.Item active={true} title="Personal Information">
+          <Tabs.Group aria-label="Default tabs" style="default">
+            <Tabs.Item active={true} className="border-none" title="Personal Information">
               <PersonalInformation />
             </Tabs.Item>
-            <Tabs.Item title="Chronometrage Travail">
+            <Tabs.Item  title="Chronometrage Travail">
               <TamingWork />
             </Tabs.Item>
-            <Tabs.Item title="Change Password">
+            <Tabs.Item   title="Change Password">
               <ChangePassword />
             </Tabs.Item>
           </Tabs.Group>

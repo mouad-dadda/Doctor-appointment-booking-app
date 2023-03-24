@@ -46,6 +46,11 @@
   cursor: pointer;
 }
 
+.search_input input[type="text"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .search_bar i {
   margin-left: 10px;
   color: #8c8d96;
@@ -61,4 +66,9 @@
   padding: 4px 9px;
   border-radius: 5px;
   margin-right: 13px;
+}
+
+.border_card {
+  border: 2px solid rgba(140, 141, 150, 0.21);
+  border-radius: 10px;
 }

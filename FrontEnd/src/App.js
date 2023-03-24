@@ -10,8 +10,8 @@ const App = () => {
     {/* <Dashboard/> */}
     {/* <RendezVous/> */}
     {/* <Historique/> */}
-    <Settings/>
-    {/* <SearchDoctors/> */}
+    {/* <Settings/> */}
+    <SearchDoctors/>
     </>
   )
 }

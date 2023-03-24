@@ -1,6 +1,5 @@
 import React from "react";
-import Setttings from "../../Components/Doctors/Settings/Setttings";
-import { NavBarDoctors, SidebarDoctors } from "../../Components";
+import { NavBarDoctors, SidebarDoctors ,Setttings } from "../../Components";
 
 const Settings = () => {
   return (

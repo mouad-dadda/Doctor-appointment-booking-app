@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Footer, Header, InputSearch, Section } from "../Components";
+import { Footer, Header, InputSearch, Section  , AlertToRegistre} from "../Components";
 import "../Components/Css/HomeCss/SearchDoctors.css";
 import { MapPinIcon, ClockIcon } from "@heroicons/react/20/solid";
 
+
 const SearchDoctors = () => {
+  const [showAlertToRegistre , setSowAlertToRegistre]=useState(true)
   return (
     <>
       <Header />
@@ -24,8 +26,8 @@ const SearchDoctors = () => {
       <main className=" _container mt-4 mb-4 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 ">
           {/* Card  For  Resulta  Doctor */}
-          
-          <div className="border_card p-4 w-[372px] text-center  capitalize">
+
+          <div className="border_card mx-auto p-4 w-[372px] text-center  capitalize">
             <div>
               <img
                 src="img/Rectangle 5.jpg"
@@ -55,7 +57,7 @@ const SearchDoctors = () => {
             </div>
           </div>
 
-          <div className="border_card p-4 w-[372px] text-center  capitalize">
+          <div className="border_card mx-auto p-4 w-[372px] text-center  capitalize">
             <div>
               <img
                 src="img/Rectangle 5.jpg"
@@ -85,7 +87,7 @@ const SearchDoctors = () => {
             </div>
           </div>
 
-          <div className="border_card p-4 w-[372px] text-center  capitalize">
+          <div className="border_card mx-auto p-4 w-[372px] text-center  capitalize">
             <div>
               <img
                 src="img/Rectangle 5.jpg"
@@ -115,7 +117,7 @@ const SearchDoctors = () => {
             </div>
           </div>
 
-          <div className="border_card p-4 w-[372px] text-center  capitalize">
+          <div className="border_card mx-auto p-4 w-[372px] text-center  capitalize">
             <div>
               <img
                 src="img/Rectangle 5.jpg"
@@ -145,7 +147,7 @@ const SearchDoctors = () => {
             </div>
           </div>
 
-          <div className="border_card p-4 w-[372px] text-center  capitalize">
+          <div className="border_card mx-auto p-4 w-[372px] text-center  capitalize">
             <div>
               <img
                 src="img/Rectangle 5.jpg"
@@ -174,10 +176,10 @@ const SearchDoctors = () => {
               </button>
             </div>
           </div>
-
         </div>
       </main>
       <Footer />
+      <AlertToRegistre showAlertToRegistre={showAlertToRegistre} setSowAlertToRegistre={setSowAlertToRegistre}/>
     </>
   );
 };

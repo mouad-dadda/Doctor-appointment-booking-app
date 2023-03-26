@@ -10,13 +10,13 @@ const RendezVous = () => {
     <>
       <NavBarDoctors />
       <div className="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
-        <SidebarDoctors />
+        <SidebarDoctors/>
         <div
           id="main-content"
           className="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900"
         >
           <main>
-            <ListOfAppointment />
+            <ListOfAppointment/>
           </main>
         </div>
       </div>
@@ -24,4 +24,4 @@ const RendezVous = () => {
   );
 };
 
-export default RendezVous;
+export default RendezVous ;

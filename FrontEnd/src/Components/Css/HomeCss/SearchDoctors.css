@@ -63,9 +63,10 @@
 
 .btn_search {
   border: none;
-  padding: 4px 9px;
+  padding: 7px 15px;
   border-radius: 5px;
   margin-right: 13px;
+  font-size: 16px;
 }
 
 .border_card {

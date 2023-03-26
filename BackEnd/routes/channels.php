@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\auth\AuthController;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Broadcast;
 
 /*

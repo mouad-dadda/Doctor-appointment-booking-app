@@ -8,6 +8,8 @@ import {
   SearchDoctors,
   Settings,
 } from "./Pages";
+
+
 import "./index.css";
 
 const App = () => {

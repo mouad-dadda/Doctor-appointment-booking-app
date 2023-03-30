@@ -6,7 +6,7 @@ import { MapPinIcon, ClockIcon } from "@heroicons/react/20/solid";
 
 
 const SearchDoctors = () => {
-  const [showAlertToRegistre , setSowAlertToRegistre]=useState(true)
+  const [showAlertToRegistre , setSowAlertToRegistre]=useState(false)
   return (
     <>
       <Header />

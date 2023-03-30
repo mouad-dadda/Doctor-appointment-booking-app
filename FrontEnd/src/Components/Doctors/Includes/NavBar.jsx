@@ -1,8 +1,9 @@
 import { Dropdown, Tooltip } from "flowbite-react";
-import '../../../Assets/Css/Doctors/Dashboard.css'
+import "../../../Assets/Css/Doctors/Dashboard.css";
 import Notification from "./Notification";
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -11,11 +12,11 @@ const NavBar = () => {
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
-              <a href="/" className="flex ml-2 md:mr-24">
+              <Link to={"/"} className=" flex ml-2 md:mr-24">
                 <span className="self-center  text-[#0D63F3]  text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
                   Doctolib
                 </span>
-              </a>
+              </Link>
             </div>
             <div className="flex items-center gap-3">
               <Tooltip content="View Statctic" placement="left">
@@ -118,22 +119,21 @@ const NavBar = () => {
                   </div>
                   <ul className="py-1" role="none">
                     <li>
-                      <a
-                        href="/dashboard"
+                      <Link
+                        to={"/doctor/dashboard"}
                         className="block px-4 py-2 cursor-pointer text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                        role="menuitem"
                       >
                         Dashboard
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/settings"
+                      <a href="/settings" role="menuitem"></a>
+                      <Link
+                        to={"/doctor/settings"}
                         className="block px-4 py-2 text-sm cursor-pointer text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                        role="menuitem"
                       >
                         Settings
-                      </a>
+                      </Link>
                     </li>
                     <Dropdown.Divider />
                     <li>

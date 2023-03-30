@@ -30,7 +30,7 @@ const Dashboard = () => {
                 </p>
               </div>
               <img
-                src="./img/sammy-doctors-consultation.png"
+                src="/img/sammy-doctors-consultation.png"
                 className=" ml-[22rem] "
                 alt=""
               />

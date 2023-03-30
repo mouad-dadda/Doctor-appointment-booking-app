@@ -1,5 +1,6 @@
 import React from "react";
-import '../../Assets/Css/HomeCss/Footer.css'
+import { Link } from "react-router-dom";
+import "../../Assets/Css/HomeCss/Footer.css";
 const Footer = () => {
   return (
     <footer className="footer_height">

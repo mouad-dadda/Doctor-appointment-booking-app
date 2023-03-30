@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import '../../Assets/Css/HomeCss/header.css'
+import { Link } from "react-router-dom";
+import "../../Assets/Css/HomeCss/header.css";
 
 const Header = () => {
   const [Toggle, setToggle] = useState(false);
@@ -7,7 +8,9 @@ const Header = () => {
     <header className="header posit_rela">
       <div className="Header_container _container">
         <div className="logo_siz d_flex">
-          <img src="./img/logo.png" className="logo_nav" alt="" />
+          <Link to={"/"}>
+            <img src="./img/logo.png" className="logo_nav" alt="" />
+          </Link>
           <div className="menu_mobile">
             {Toggle ? (
               <button className="btn_menu" onClick={() => setToggle(!Toggle)}>
@@ -23,30 +26,32 @@ const Header = () => {
         <div className={Toggle ? "shaw menu" : "menu"}>
           <ul className="nav_items">
             <li className="nav_item">
-              <a href="/test" className="nav_link">
-                Home
-              </a>
+              <Link to={"/"} className="nav_link">
+                Accueil
+              </Link>
             </li>
             <li className="nav_item">
-              <a href="/test" className="nav_link">
+              <Link to={"/recherche"} className={"nav_link"}>
                 Recherche Medecin
-              </a>
+              </Link>
             </li>
             <li className="nav_item">
-              <a href="/test" className="nav_link">
+              <Link to={"/about"} className="nav_link">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav_item">
-              <a href="/test" className="nav_link">
+              <Link to={"/contact"} className={"nav_link"}>
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="mr_left">
-            <button className="_btn btn_bg_white ">Connexion</button>
+            <button className="_btn btn_bg_white "> 
+            <Link to={'/Connexion'} > Connexion </Link>
+            </button>
             <button className="_btn btn_bg_primary btn_mrl">
-              S'identifier
+              <Link to={'/identifier'} >S'identifier</Link>
             </button>
           </div>
         </div>

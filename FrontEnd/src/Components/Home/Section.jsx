@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../../Assets/Css/HomeCss/Section.css'
 import Card from "./Card";
 
@@ -16,7 +17,7 @@ const Section = () => {
               et suivre tous vos rendez-vous.
             </p>
             <button className="_btn btn_bg_primary _btn_Section mr_top">
-              Prenez rendez-vous
+              <Link to={'/recherche'} >Prenez rendez-vous</Link>
             </button>
           </div>
           <div className="Section_img">

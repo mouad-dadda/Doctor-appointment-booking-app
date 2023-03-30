@@ -7,6 +7,7 @@ import {
   Cog6ToothIcon,
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -17,43 +18,46 @@ const Sidebar = () => {
             <div className="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
               <ul className="pb-2 space-y-2">
                 <li>
-                  <a
-                    href="/dashboard"
+                  <Link
+                    to={"/doctor/dashboard"}
                     className="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
                   >
+                    {" "}
                     <Square2StackIcon className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3">Dashboard</span>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="/appointment"
+                  {" "}
+                  <Link
+                    to={"/docotr/rendezvous"}
                     className="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
                   >
                     <CalendarDaysIcon className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3">Appointment</span>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="/historique"
+                  <Link
+                    to={"/doctor/historique"}
                     className="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
                   >
                     <DocumentDuplicateIcon className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3">Historique</span>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="/settings"
+                  <Link
+                    to={"/doctor/settings"}
                     className="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
                   >
+                    {" "}
                     <Cog6ToothIcon className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3">Settings</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="pt-2 space-y-2 " style={{ marginTop: "14rem" }}>

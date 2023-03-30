@@ -17,13 +17,13 @@ import Signup from "./Pages/Signup";
 const App = () => {
   return (
     <>
-      {/* <Home/> */}
+      <Home/>
       {/* <Dashboard/> */}
       {/* <RendezVous/> */}
       {/* <Historique/> */}
       {/* <Settings/> */}
       {/* <SearchDoctors/> */}
-      <Login/>
+      {/* <Login/> */}
       {/* <Signup/> */}
     </>
   );

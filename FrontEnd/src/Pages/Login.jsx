@@ -27,38 +27,6 @@ const Login = () => {
                 </div>
               </div>
               <form className="  p-5 pl-8 pr-8 ">
-                <div className="grid gap-6 mb-[20px] md:grid-cols-2">
-                  <div>
-                    <label
-                      htmlFor="FirstName"
-                      className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
-                    >
-                      Nom
-                    </label>
-                    <input
-                      type="text"
-                      id="FirstName"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="John"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="LastName"
-                      className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
-                    >
-                      Prenom
-                    </label>
-                    <input
-                      type="text"
-                      id="LastName"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="John"
-                      required
-                    />
-                  </div>
-                </div>
                 <div className="mb-[20px]">
                   <label
                     htmlFor="email"
@@ -75,48 +43,20 @@ const Login = () => {
                   />
                 </div>
 
-                <div className="grid gap-6 mb-[15px] md:grid-cols-2">
-                  <div>
-                    <label
-                      htmlFor="Password"
-                      className="block mb-1 text-[12px]  font-medium text-red-700 dark:text-white"
-                    >
-                      Password
-                    </label>
-                    <input
-                      type="text"
-                      id="Password"
-                      className="bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="•••••••••"
-                      required
-                    />
-                    <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
-                      {" "}
-                      Some error message.
-                    </p>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="PasswordConfirmation"
-                      className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
-                    >
-                      Password Confirmation
-                    </label>
-                    <input
-                      type="text"
-                      id="PasswordConfirmation"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="•••••••••"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className=" mb-2">
-                  <a href="/tets" className="  flex  flex-row-reverse ">
-                    <span className="text-medium tracking-wide text-[13px] text-blue-600">
-                      Forgot password ?
-                    </span>
-                  </a>
+                <div className="mb-[20px]">
+                  <label
+                    htmlFor="Password"
+                    className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
+                  >
+                    Password
+                  </label>
+                  <input
+                    type="text"
+                    id="Password"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="•••••••••"
+                    required
+                  />
                 </div>
                 <div className="flex justify-center items-center w-full ">
                   <button
@@ -129,10 +69,10 @@ const Login = () => {
               </form>
               <div className="  flex justify-center items-center mb-4 ">
                 <p className="mt-4 text-[14px] text-gray-500 sm:mt-0">
-                  Already have an account?
+                  Don't have an account?
                   <a href="#" className="text-gray-700 underline">
                     {" "}
-                    Log in
+                    Sign Up
                   </a>
                   .
                 </p>

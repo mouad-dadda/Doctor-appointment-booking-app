@@ -12,6 +12,7 @@ import {
 
 
 import "./index.css";
+import Signup from "./Pages/Signup";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       {/* <Settings/> */}
       {/* <SearchDoctors/> */}
       <Login/>
+      {/* <Signup/> */}
     </>
   );
 };

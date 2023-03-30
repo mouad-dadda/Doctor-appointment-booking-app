@@ -2,7 +2,7 @@ import React from "react";
 
 import { Footer, Header, Section } from "../Components";
 
-import '../Components/Css/HomeCss/Home.css'
+import '../Assets/Css/HomeCss/Home.css'
 
 export const Home = () => {
   return (

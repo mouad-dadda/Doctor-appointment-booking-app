@@ -32,3 +32,11 @@ a {
 /* a:hover{
   color: #ffffff;
 } */
+
+
+.add_img{
+  background-image: url(../../../../public/img/bglogin.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}

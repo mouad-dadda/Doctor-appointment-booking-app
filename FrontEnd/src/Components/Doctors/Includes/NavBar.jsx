@@ -1,5 +1,5 @@
 import { Dropdown, Tooltip } from "flowbite-react";
-import '../../Css/Doctors/Dashboard.css'
+import '../../../Assets/Css/Doctors/Dashboard.css'
 import Notification from "./Notification";
 
 import React from "react";

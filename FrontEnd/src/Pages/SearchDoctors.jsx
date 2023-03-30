@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Footer, Header, InputSearch, Section  , AlertToRegistre} from "../Components";
-import "../Components/Css/HomeCss/SearchDoctors.css";
+import '../Assets/Css/HomeCss/SearchDoctors.css'
 import { MapPinIcon, ClockIcon } from "@heroicons/react/20/solid";
 
 

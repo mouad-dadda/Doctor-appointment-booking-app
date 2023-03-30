@@ -3,6 +3,7 @@
 
 export {default as Home } from './Home'
 export { default as SearchDoctors } from './SearchDoctors'
+export {default as Login} from './Login.jsx'
 
 // PAGE DASHBOARD DOCTORS
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "../Css/HomeCss/Footer.css";
+import '../../Assets/Css/HomeCss/Footer.css'
 const Footer = () => {
   return (
     <footer className="footer_height">

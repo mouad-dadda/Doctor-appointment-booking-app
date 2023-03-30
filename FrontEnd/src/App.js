@@ -4,6 +4,7 @@ import {
   Dashboard,
   Historique,
   Home,
+  Login,
   RendezVous,
   SearchDoctors,
   Settings,
@@ -21,6 +22,7 @@ const App = () => {
       {/* <Historique/> */}
       {/* <Settings/> */}
       {/* <SearchDoctors/> */}
+      <Login/>
     </>
   );
 };

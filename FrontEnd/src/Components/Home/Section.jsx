@@ -1,5 +1,5 @@
 import React from "react";
-import "../Css/HomeCss/Section.css";
+import '../../Assets/Css/HomeCss/Section.css'
 import Card from "./Card";
 
 const Section = () => {

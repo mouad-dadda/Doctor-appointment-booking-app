@@ -1,3 +1,4 @@
+import { PageNotfond } from "../Components";
 import {
   SearchDoctors,
   Home,
@@ -14,6 +15,7 @@ const { createBrowserRouter } = require("react-router-dom");
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement:<PageNotfond/> ,
     element: <Home />,
   },
   {

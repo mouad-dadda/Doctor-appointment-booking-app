@@ -2,6 +2,8 @@ import React from 'react'
 import { ListOfHistorique, NavBarDoctors, SidebarDoctors } from '../../Components'
 
 const Historique = () => {
+  document.title='Historique'
+
   return (
     <>
       <NavBarDoctors />

@@ -5,6 +5,8 @@ import { Footer, Header, Section } from "../Components";
 import '../Assets/Css/HomeCss/Home.css'
 
 export const Home = () => {
+  document.title='Doctolib'
+
   return (
     <>
       <Header />

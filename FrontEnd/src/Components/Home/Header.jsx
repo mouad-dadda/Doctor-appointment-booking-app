@@ -47,12 +47,15 @@ const Header = () => {
             </li>
           </ul>
           <div className="mr_left">
-            <button className="_btn btn_bg_white "> 
-            <Link to={'/Connexion'} > Connexion </Link>
-            </button>
-            <button className="_btn btn_bg_primary btn_mrl">
-              <Link to={'/identifier'} >S'identifier</Link>
-            </button>
+            <Link to={"/Connexion"}>
+              <button className="_btn btn_bg_white "> Connexion</button>
+            </Link>
+
+            <Link to={"/identifier"}>
+              <button className="_btn btn_bg_primary btn_mrl">
+                S'identifier
+              </button>
+            </Link>
           </div>
         </div>
       </div>

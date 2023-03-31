@@ -4,6 +4,7 @@ export { default as Header } from "./Home/Header";
 export { default as Section } from "./Home/Section";
 export { default as Footer } from "./Home/Footer";
 export { default as InputSearch } from "./Home/InputSearch";
+export {default as PageNotfond } from './404Page.jsx'
 
 // Doctors Dashboard Export
 

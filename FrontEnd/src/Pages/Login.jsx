@@ -2,6 +2,7 @@ import React from "react";
 import { Footer, Header } from "../Components";
 
 const Login = () => {
+  document.title='Connexion'
   return (
     <>
       <div className=" absolute w-[100%] h-[133vh]  add_img">

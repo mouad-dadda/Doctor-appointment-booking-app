@@ -2,6 +2,7 @@ import React from "react";
 import { Footer, Header } from "../Components";
 
 const Signup = () => {
+  document.title="S'identifier"
   return (
     <>
       <div className=" absolute w-[100%] h-[133vh]  add_img">

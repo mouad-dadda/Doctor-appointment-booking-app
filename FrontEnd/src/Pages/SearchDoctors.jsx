@@ -6,6 +6,7 @@ import { MapPinIcon, ClockIcon } from "@heroicons/react/20/solid";
 
 
 const SearchDoctors = () => {
+  document.title='Recherche Medecin'
   const [showAlertToRegistre , setSowAlertToRegistre]=useState(false)
   return (
     <>

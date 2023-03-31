@@ -10,14 +10,13 @@ import {
   Settings,
 } from "./Pages";
 
-
 import "./index.css";
 import Signup from "./Pages/Signup";
 
 const App = () => {
   return (
     <>
-      <Home/>
+      <Home />
       {/* <Dashboard/> */}
       {/* <RendezVous/> */}
       {/* <Historique/> */}
@@ -30,3 +29,10 @@ const App = () => {
 };
 
 export default App;
+
+{
+  /* 
+    
+   
+    */
+}

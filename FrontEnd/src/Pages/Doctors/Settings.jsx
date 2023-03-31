@@ -2,6 +2,8 @@ import React from "react";
 import { NavBarDoctors, SidebarDoctors ,Setttings } from "../../Components";
 
 const Settings = () => {
+  document.title='Settings'
+
   return (
     <>
       <NavBarDoctors />

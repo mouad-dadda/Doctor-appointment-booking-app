@@ -3,6 +3,8 @@ import {NavBarDoctors, SidebarDoctors, TableDashboard } from "../../Components";
 import { HandThumbUpIcon} from "@heroicons/react/24/solid";
 
 const Dashboard = () => {
+  document.title='Doctor Dashboard'
+
   return (
     <>
     <NavBarDoctors/>

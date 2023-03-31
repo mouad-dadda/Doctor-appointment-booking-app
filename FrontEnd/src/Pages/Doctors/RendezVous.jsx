@@ -6,6 +6,8 @@ import {
 } from "../../Components";
 
 const RendezVous = () => {
+  document.title='Rendez vous'
+
   return (
     <>
       <NavBarDoctors />

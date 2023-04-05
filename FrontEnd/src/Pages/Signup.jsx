@@ -2,7 +2,7 @@ import React from "react";
 import { Footer, Header } from "../Components";
 
 const Signup = () => {
-  document.title="S'identifier"
+  document.title = "S'identifier";
   return (
     <>
       <div className=" absolute w-[100%] h-[133vh]  add_img">
@@ -16,7 +16,7 @@ const Signup = () => {
                 </div>
                 <div className="mb-[14px]">
                   <h1 className="mt-4 text-[25px] font-medium text-gray-900 ">
-                    Welcome to Doctolib
+                    Bienvenue sur Doctolib
                   </h1>
                 </div>
                 <div>
@@ -34,13 +34,13 @@ const Signup = () => {
                       htmlFor="FirstName"
                       className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
                     >
-                      Nom
+                      Prenom
                     </label>
                     <input
                       type="text"
-                      id="FirstName"
+                      name="FirstName"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="John"
+                      placeholder="Prenom"
                       required
                     />
                   </div>
@@ -49,13 +49,13 @@ const Signup = () => {
                       htmlFor="LastName"
                       className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
                     >
-                      Prenom
+                      Nom
                     </label>
                     <input
                       type="text"
-                      id="LastName"
+                      name="LastName"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="John"
+                      placeholder="Nom"
                       required
                     />
                   </div>
@@ -69,7 +69,7 @@ const Signup = () => {
                   </label>
                   <input
                     type="text"
-                    id="email"
+                    name="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="exemple@gmail.com"
                     required
@@ -82,11 +82,11 @@ const Signup = () => {
                       htmlFor="Password"
                       className="block mb-1 text-[12px]  font-medium text-red-700 dark:text-white"
                     >
-                      Password
+                      Mot de passe
                     </label>
                     <input
                       type="text"
-                      id="Password"
+                      name="Password"
                       className="bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="•••••••••"
                       required
@@ -101,11 +101,11 @@ const Signup = () => {
                       htmlFor="PasswordConfirmation"
                       className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
                     >
-                      Password Confirmation
+                      Confirmation mot de passe
                     </label>
                     <input
                       type="text"
-                      id="PasswordConfirmation"
+                      name="PasswordConfirmation"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="•••••••••"
                       required
@@ -115,7 +115,7 @@ const Signup = () => {
                 <div className=" mb-2">
                   <a href="/tets" className="  flex  flex-row-reverse ">
                     <span className="text-medium tracking-wide text-[13px] text-blue-600">
-                      Forgot password ?
+                      Mot de passe oublié ?
                     </span>
                   </a>
                 </div>
@@ -124,16 +124,16 @@ const Signup = () => {
                     type="submit"
                     className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]   px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    Create Acount
+                    Créer un compte
                   </button>
                 </div>
               </form>
               <div className="  flex justify-center items-center mb-4 ">
                 <p className="mt-4 text-[14px] text-gray-500 sm:mt-0">
-                  Already have an account?
+                  Vous avez déjà un compte?
                   <a href="#" className="text-gray-700 underline">
                     {" "}
-                    Log in
+                    Connexion
                   </a>
                   .
                 </p>

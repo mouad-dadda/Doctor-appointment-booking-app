@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Footer, Header } from "../Components";
 
 const Signup = () => {
   document.title = "S'identifier";
+
+  const [Data, setData] = useState({
+    firstname: "",
+    lastname: "",
+    cin: "",
+    email: "",
+    password: "",
+    passwordConfirmation: "",
+  });
+
+  const HandleChangeData = (e) => {
+    const { name, value } = e.target;
+    setData({ ...Data, [name]: value });
+  };
+
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    console.log(Data);
+  };
+
   return (
     <>
       <div className=" absolute w-[100%] h-[133vh]  add_img">
@@ -27,7 +47,7 @@ const Signup = () => {
                   </p>
                 </div>
               </div>
-              <form className="  p-5 pl-8 pr-8 ">
+              <form className="  p-5 pl-8 pr-8 " onSubmit={HandleSubmit}>
                 <div className="grid gap-6 mb-[20px] md:grid-cols-2">
                   <div>
                     <label
@@ -38,10 +58,12 @@ const Signup = () => {
                     </label>
                     <input
                       type="text"
-                      name="FirstName"
+                      id="FirstName"
+                      name="firstname"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Prenom"
                       required
+                      onChange={HandleChangeData}
                     />
                   </div>
                   <div>
@@ -53,13 +75,34 @@ const Signup = () => {
                     </label>
                     <input
                       type="text"
-                      name="LastName"
+                      id="LastName"
+                      name="lastname"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Nom"
                       required
+                      onChange={HandleChangeData}
                     />
                   </div>
                 </div>
+
+                <div className="mb-[20px]">
+                  <label
+                    htmlFor="cin"
+                    className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
+                  >
+                    Cin
+                  </label>
+                  <input
+                    type="text"
+                    id="cin"
+                    name="cin"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Cin"
+                    onChange={HandleChangeData}
+                    required
+                  />
+                </div>
+
                 <div className="mb-[20px]">
                   <label
                     htmlFor="email"
@@ -70,9 +113,11 @@ const Signup = () => {
                   <input
                     type="text"
                     name="email"
+                    id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="exemple@gmail.com"
                     required
+                    onChange={HandleChangeData}
                   />
                 </div>
 
@@ -86,10 +131,12 @@ const Signup = () => {
                     </label>
                     <input
                       type="text"
-                      name="Password"
+                      id="Password"
+                      name="pasword"
                       className="bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="•••••••••"
                       required
+                      onChange={HandleChangeData}
                     />
                     <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
                       {" "}
@@ -105,10 +152,12 @@ const Signup = () => {
                     </label>
                     <input
                       type="text"
-                      name="PasswordConfirmation"
+                      id="PasswordConfirmation"
+                      name="passwordConfirmation"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="•••••••••"
                       required
+                      onChange={HandleChangeData}
                     />
                   </div>
                 </div>
@@ -120,10 +169,7 @@ const Signup = () => {
                   </a>
                 </div>
                 <div className="flex justify-center items-center w-full ">
-                  <button
-                    type="submit"
-                    className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]   px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
+                  <button className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]   px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Créer un compte
                   </button>
                 </div>

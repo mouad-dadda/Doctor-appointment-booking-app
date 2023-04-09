@@ -1,4 +1,5 @@
 import { PageNotfond } from "../Components";
+import AuthGuard from "../Middleware/AuthGuard";
 import {
   SearchDoctors,
   Home,
@@ -9,13 +10,14 @@ import {
   DoctorHistorique,
   DocotrSettings,
 } from "../Pages";
+import Profile from "../Pages/Users/Profile";
 
 const { createBrowserRouter } = require("react-router-dom");
 
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<PageNotfond/> ,
+    errorElement: <PageNotfond />,
     element: <Home />,
   },
   {
@@ -30,7 +32,20 @@ const router = createBrowserRouter([
     path: "/identifier",
     element: <Signup />,
   },
+
+  // Users Router
+
+  {
+    path: "/user/profile",
+    element: (
+      <AuthGuard>
+        <Profile />
+      </AuthGuard>
+    ),
+  },
+
   //Doctors Router
+
   {
     path: "/doctor/dashboard",
     element: <DocotrDashboard />,

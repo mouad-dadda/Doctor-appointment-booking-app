@@ -1,26 +1,69 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Footer, Header } from "../Components";
+import axiosClient from "../AxiosClient.js";
+import { useDispatch, useSelector } from "react-redux";
+import { signUpSuccess } from "../Slice/SliceAuthUser";
+import { get, storeInLocalStorage } from "../Services/LocalStorageService";
+import { useNavigate } from "react-router";
 
 const Signup = () => {
   document.title = "S'identifier";
 
-  const [Data, setData] = useState({
+  const userData = useSelector((state) => state.authUser);
+  console.log(userData);
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  if(userData.isAuthenticated && get("TOKEN") ){
+    navigate("/user/profile");
+  }
+
+  const [DataForm, setData] = useState({
     firstname: "",
     lastname: "",
     cin: "",
     email: "",
     password: "",
-    passwordConfirmation: "",
+    password_confirmation: "",
+  });
+
+  const [error, setError] = useState({
+    firstname: "",
+    lastname: "",
+    cin: "",
+    email: "",
+    password: "",
   });
 
   const HandleChangeData = (e) => {
     const { name, value } = e.target;
-    setData({ ...Data, [name]: value });
+    setData({ ...DataForm, [name]: value });
   };
 
   const HandleSubmit = (e) => {
     e.preventDefault();
-    console.log(Data);
+    console.log(DataForm);
+
+    axiosClient
+      .post("/signup", DataForm)
+
+      .then(({ data }) => {
+        dispatch(signUpSuccess(data));
+
+        storeInLocalStorage("TOKEN", data.token);
+
+        navigate("/user/profile");
+      })
+
+      .catch((er) => {
+        if (er.response && er.response.status === 422) {
+          setError({ ...error, ...er.response.data.errors });
+        } else {
+          console.log(er);
+        }
+      });
   };
 
   return (
@@ -60,11 +103,20 @@ const Signup = () => {
                       type="text"
                       id="FirstName"
                       name="firstname"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className={
+                        error.firstname != ""
+                          ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      }
                       placeholder="Prenom"
                       required
                       onChange={HandleChangeData}
                     />
+                    {error.firstname && (
+                      <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
+                        {error.firstname[0]}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label
@@ -77,11 +129,20 @@ const Signup = () => {
                       type="text"
                       id="LastName"
                       name="lastname"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className={
+                        error.lastname != ""
+                          ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      }
                       placeholder="Nom"
                       required
                       onChange={HandleChangeData}
                     />
+                    {error.lastname && (
+                      <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
+                        {error.lastname[0]}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -96,11 +157,20 @@ const Signup = () => {
                     type="text"
                     id="cin"
                     name="cin"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className={
+                      error.cin != ""
+                        ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    }
                     placeholder="Cin"
                     onChange={HandleChangeData}
                     required
                   />
+                  {error.cin && (
+                    <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
+                      {error.cin[0]}
+                    </p>
+                  )}
                 </div>
 
                 <div className="mb-[20px]">
@@ -114,34 +184,48 @@ const Signup = () => {
                     type="text"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className={
+                      error.email != ""
+                        ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    }
                     placeholder="exemple@gmail.com"
                     required
                     onChange={HandleChangeData}
                   />
+                  {error.email && (
+                    <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
+                      {error.email[0]}
+                    </p>
+                  )}
                 </div>
 
                 <div className="grid gap-6 mb-[15px] md:grid-cols-2">
                   <div>
                     <label
                       htmlFor="Password"
-                      className="block mb-1 text-[12px]  font-medium text-red-700 dark:text-white"
+                      className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
                     >
                       Mot de passe
                     </label>
                     <input
                       type="text"
                       id="Password"
-                      name="pasword"
-                      className="bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      name="password"
+                      className={
+                        error.password != ""
+                          ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      }
                       placeholder="•••••••••"
                       required
                       onChange={HandleChangeData}
                     />
-                    <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
-                      {" "}
-                      Some error message.
-                    </p>
+                    {error.password && (
+                      <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
+                        {error.password[0]}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label
@@ -153,7 +237,7 @@ const Signup = () => {
                     <input
                       type="text"
                       id="PasswordConfirmation"
-                      name="passwordConfirmation"
+                      name="password_confirmation"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="•••••••••"
                       required

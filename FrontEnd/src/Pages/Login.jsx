@@ -1,8 +1,60 @@
-import React from "react";
-import { Footer, Header } from "../Components";
+import React, { useEffect, useState } from "react";
+import { AlertErrorMessage, Footer, Header } from "../Components";
+import { useDispatch, useSelector } from "react-redux";
+import { get, storeInLocalStorage } from "../Services/LocalStorageService";
+import { useNavigate } from "react-router";
+import axiosClient from "../AxiosClient";
+import { loginSuccess } from "../Redux/SliceAuthUser";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  document.title='Connexion'
+  document.title = "Connexion";
+
+  const userData = useSelector((state) => state.authUser);
+  const navigate = useNavigate();
+  console.log(userData);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (userData.isAuthenticated && get("TOKEN")) {
+      navigate("/user/profile");
+    }
+  }, []);
+
+  const [DataForm, setDataForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [error, setError] = useState("");
+
+  const HandleChangeData = (ev) => {
+    const { name, value } = ev.target;
+    setDataForm({ ...DataForm, [name]: value });
+  };
+
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    axiosClient
+      .post("/login", DataForm)
+      .then(({ data }) => {
+        console.log({ data });
+        dispatch(loginSuccess(data));
+
+        storeInLocalStorage("TOKEN", data.token);
+
+        navigate("/user/profile");
+      })
+      .catch((err) => {
+        if (err.response && err.response.status === 422) {
+          setError(err.response.data.error);
+        } else {
+          console.log(err);
+        }
+      });
+  };
+
   return (
     <>
       <div className=" absolute w-[100%] h-[133vh]  add_img">
@@ -27,7 +79,8 @@ const Login = () => {
                   </p>
                 </div>
               </div>
-              <form className="  p-5 pl-8 pr-8 ">
+              {error && <AlertErrorMessage message={error} />}
+              <form className="  p-5 pl-8 pr-8 " onSubmit={HandleSubmit}>
                 <div className="mb-[20px]">
                   <label
                     htmlFor="email"
@@ -38,9 +91,11 @@ const Login = () => {
                   <input
                     type="text"
                     id="email"
+                    name="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="exemple@gmail.com"
                     required
+                    onChange={HandleChangeData}
                   />
                 </div>
 
@@ -52,29 +107,38 @@ const Login = () => {
                     Password
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     id="Password"
+                    name="password"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="•••••••••"
                     required
+                    onChange={HandleChangeData}
                   />
+                </div>
+                <div className=" mb-2">
+                  <a href="/tets" className="  flex  flex-row-reverse ">
+                    <span className="text-medium tracking-wide text-[13px] text-blue-600">
+                      Mot de passe oublié ?
+                    </span>
+                  </a>
                 </div>
                 <div className="flex justify-center items-center w-full ">
                   <button
                     type="submit"
                     className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]   px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    Create Acount
+                    se connecter
                   </button>
                 </div>
               </form>
               <div className="  flex justify-center items-center mb-4 ">
                 <p className="mt-4 text-[14px] text-gray-500 sm:mt-0">
-                  Don't have an account?
-                  <a href="#" className="text-gray-700 underline">
+                  Vous n'avez pas de compte ?
+                  <Link to="/identifier" className="text-gray-700 underline">
                     {" "}
-                    Sign Up
-                  </a>
+                    S'identifier
+                  </Link>
                   .
                 </p>
               </div>

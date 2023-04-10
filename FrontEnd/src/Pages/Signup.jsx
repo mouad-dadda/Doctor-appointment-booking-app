@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Footer, Header } from "../Components";
 import axiosClient from "../AxiosClient.js";
 import { useDispatch, useSelector } from "react-redux";
-import { signUpSuccess } from "../Slice/SliceAuthUser";
+import { signUpSuccess } from "../Redux/SliceAuthUser";
 import { get, storeInLocalStorage } from "../Services/LocalStorageService";
-import { useNavigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   document.title = "S'identifier";
@@ -16,9 +17,11 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  if(userData.isAuthenticated && get("TOKEN") ){
-    navigate("/user/profile");
-  }
+  useEffect(() => {
+    if (userData.isAuthenticated && get("TOKEN")) {
+      navigate("/user/profile");
+    }
+  }, []);
 
   const [DataForm, setData] = useState({
     firstname: "",
@@ -245,13 +248,6 @@ const Signup = () => {
                     />
                   </div>
                 </div>
-                <div className=" mb-2">
-                  <a href="/tets" className="  flex  flex-row-reverse ">
-                    <span className="text-medium tracking-wide text-[13px] text-blue-600">
-                      Mot de passe oublié ?
-                    </span>
-                  </a>
-                </div>
                 <div className="flex justify-center items-center w-full ">
                   <button className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]   px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Créer un compte
@@ -261,10 +257,10 @@ const Signup = () => {
               <div className="  flex justify-center items-center mb-4 ">
                 <p className="mt-4 text-[14px] text-gray-500 sm:mt-0">
                   Vous avez déjà un compte?
-                  <a href="#" className="text-gray-700 underline">
+                  <Link to="/Connexion" className="text-gray-700 underline">
                     {" "}
                     Connexion
-                  </a>
+                  </Link>
                   .
                 </p>
               </div>

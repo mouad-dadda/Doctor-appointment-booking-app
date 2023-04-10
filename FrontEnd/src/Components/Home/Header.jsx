@@ -9,7 +9,7 @@ const Header = () => {
       <div className="Header_container _container">
         <div className="logo_siz d_flex">
           <Link to={"/"}>
-            <img src="./img/logo.png" className="logo_nav" alt="" />
+            <img src="/img/logo.png" className="logo_nav" alt="" />
           </Link>
           <div className="menu_mobile">
             {Toggle ? (

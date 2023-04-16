@@ -4,7 +4,7 @@ import axiosClient from "../AxiosClient.js";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpSuccess } from "../Redux/SliceAuthUser";
 import { get, storeInLocalStorage } from "../Services/LocalStorageService";
-import { Navigate, useNavigate } from "react-router";
+import {  useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 const Signup = () => {

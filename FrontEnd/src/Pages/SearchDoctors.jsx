@@ -1,24 +1,92 @@
 import React, { useState } from "react";
-
-import { Footer, Header, InputSearch, Section  , AlertToRegistre} from "../Components";
-import '../Assets/Css/HomeCss/SearchDoctors.css'
+import { Footer, Header, AlertToRegistre } from "../Components";
+import "../Assets/Css/HomeCss/SearchDoctors.css";
 import { MapPinIcon, ClockIcon } from "@heroicons/react/20/solid";
 
-
 const SearchDoctors = () => {
-  document.title='Recherche Medecin'
-  const [showAlertToRegistre , setSowAlertToRegistre]=useState(false)
+  document.title = "Recherche Medecin";
+
+  const [DataForm, setDataForm] = useState({
+    specialty: "",
+    ville: "",
+    docteur: "",
+    hopital: "",
+  });
+
+  const HandleChangeData = (ev) => {
+    const { name, value } = ev.target;
+    setDataForm({ ...DataForm, [name]: value });
+  };
+
+  const HandleSubmitData = (e) => {
+    e.preventDefault();
+    console.log(DataForm);
+  };
+
+  const [showAlertToRegistre, setSowAlertToRegistre] = useState(false);
   return (
     <>
       <Header />
       <section>
         <div className="_img_cover">
           <div className="search_bar">
-            <form onSubmit={(e) => e.preventDefault()}>
-              <InputSearch label="Specialty" placeholder="Choose specialty" />
-              <InputSearch label="Ville" placeholder="Choose Ville" />
-              <InputSearch label="Docteur" placeholder="Choose Docteur" />
-              <InputSearch label="Hôpital" placeholder="Choose Hospital" />
+            <form onSubmit={HandleSubmitData}>
+              <div className="search_input">
+                <label htmlFor="Specialty" className="label_search">
+                  Specialty
+                  <i className="fa-light fa-chevron-down"></i>
+                </label>
+                <input
+                  id="Specialty"
+                  type="text"
+                  name="specialty"
+                  className="input_search"
+                  placeholder="Choose specialty"
+                  onChange={HandleChangeData}
+                />
+              </div>
+              <div className="search_input">
+                <label htmlFor="Ville" className="label_search">
+                  Ville
+                  <i className="fa-light fa-chevron-down"></i>
+                </label>
+                <input
+                  id="Ville"
+                  type="text"
+                  name="ville"
+                  className="input_search"
+                  placeholder="Choose Ville"
+                  onChange={HandleChangeData}
+                />
+              </div>
+              <div className="search_input">
+                <label htmlFor="Docteur" className="label_search">
+                  Docteur
+                  <i className="fa-light fa-chevron-down"></i>
+                </label>
+                <input
+                  id="Docteur"
+                  type="text"
+                  name="docteur"
+                  className="input_search"
+                  placeholder="Choose Docteur"
+                  onChange={HandleChangeData}
+                />
+              </div>
+              <div className="search_input">
+                <label htmlFor="Hôpital" className="label_search">
+                  Hôpital
+                  <i className="fa-light fa-chevron-down"></i>
+                </label>
+                <input
+                  id="Hôpital"
+                  type="text"
+                  name="hopital"
+                  className="input_search"
+                  placeholder="Choose Hospital"
+                  onChange={HandleChangeData}
+                />
+              </div>
               <button className="btn_search btn_bg_primary ">Search</button>
             </form>
           </div>
@@ -180,7 +248,10 @@ const SearchDoctors = () => {
         </div>
       </main>
       <Footer />
-      <AlertToRegistre showAlertToRegistre={showAlertToRegistre} setSowAlertToRegistre={setSowAlertToRegistre}/>
+      <AlertToRegistre
+        showAlertToRegistre={showAlertToRegistre}
+        setSowAlertToRegistre={setSowAlertToRegistre}
+      />
     </>
   );
 };

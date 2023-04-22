@@ -35,10 +35,10 @@ footer img {
   height: 1px;
   background-color: rgba(140, 141, 150, 0.26);
 }
-
+/* 
 footer img {
   width: 10%;
-}
+} */
 
 .content_footer {
   display: flex;

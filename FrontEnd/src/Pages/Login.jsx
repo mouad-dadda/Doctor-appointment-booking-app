@@ -20,7 +20,7 @@ const Login = () => {
     if (userData.isAuthenticated && get("TOKEN")) {
       navigate("/user/profile");
     }
-  }, []);
+  }, [navigate,userData.isAuthenticated]);
 
   const [DataForm, setDataForm] = useState({
     email: "",

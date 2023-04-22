@@ -4,6 +4,7 @@ import ChangePassword from "./ChangePassword";
 import PersonalInformation from "./PersonalInformation";
 import ProfileUploadImg from "./ProfileUploadImg";
 import TamingWork from "./TamingWork";
+import { Link } from "react-router-dom";
 
 const Setttings = () => {
   return (
@@ -14,8 +15,8 @@ const Setttings = () => {
           <nav className="flex mb-5" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
               <li className="inline-flex items-center">
-                <a
-                  href="#"
+                <Link
+                  to="/doctors/dashboard"
                   className="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"
                 >
                   <svg
@@ -27,7 +28,7 @@ const Setttings = () => {
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
                   </svg>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <div className="flex items-center">
@@ -84,13 +85,17 @@ const Setttings = () => {
 
         <div className="col-span-2">
           <Tabs.Group aria-label="Default tabs" style="default">
-            <Tabs.Item active={true} className="border-none" title="Personal Information">
+            <Tabs.Item
+              active={true}
+              className="border-none"
+              title="Personal Information"
+            >
               <PersonalInformation />
             </Tabs.Item>
-            <Tabs.Item  title="Chronometrage Travail">
+            <Tabs.Item title="Chronometrage Travail">
               <TamingWork />
             </Tabs.Item>
-            <Tabs.Item   title="Change Password">
+            <Tabs.Item title="Change Password">
               <ChangePassword />
             </Tabs.Item>
           </Tabs.Group>

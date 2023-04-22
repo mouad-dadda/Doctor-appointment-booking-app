@@ -24,7 +24,7 @@ const Profile = () => {
           navigate("/Connexion");
         });
     }
-  }, []);
+  }, [UserData.isAuthenticated,UserData.user,dispatch,navigate]);
 
   const HandleLogout = () => {
     axiosClient

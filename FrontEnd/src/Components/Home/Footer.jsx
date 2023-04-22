@@ -6,7 +6,10 @@ const Footer = () => {
     <footer className="footer_height">
       <div className="lgine"></div>
       <div className="_container content_footer">
-        <img src="/img/logo.png" alt="" />
+        <Link to={"/"}>
+          {" "}
+          <img src="/img/logo.png" alt="" />
+        </Link>
         <p>Copyright © 2023 Doctolib, tous droits réservés.</p>
       </div>
     </footer>

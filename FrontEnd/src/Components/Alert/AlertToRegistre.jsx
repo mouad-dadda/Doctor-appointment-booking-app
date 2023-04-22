@@ -1,5 +1,6 @@
 import { Modal } from "flowbite-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AlertToRegistre = ({showAlertToRegistre , setSowAlertToRegistre }) => {
   return (
@@ -50,10 +51,10 @@ const AlertToRegistre = ({showAlertToRegistre , setSowAlertToRegistre }) => {
             </svg>
             <h3 className="mt-5 mb-6 text-lg text-gray-500 dark:text-gray-400">
               pour obtenir un rendez vous , vous devez
-              <a href="/test" className=" text-primary-600 ">
+              <Link to="/connection" className=" text-primary-600 ">
                 {" "}
                 connecter{" "}
-              </a>
+              </Link>
               !
             </h3>
             <button 

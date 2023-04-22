@@ -4,7 +4,7 @@ import AnnulerModel from "../Includes/AnnulerModel";
 import data from "../users.json";
 
 const TableDashboard = () => {
-  const [showAnnuler , setShowAnnuler]=useState(false)
+  const [showAnnuler, setShowAnnuler] = useState(false);
 
   const [idAppointment, setIdAppointment] = useState(null);
 
@@ -43,37 +43,42 @@ const TableDashboard = () => {
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        Name
+                        Nom & Prenom
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        Biography
+                        Cin
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        Position
+                        NumeroTelephone
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        Country
+                        type
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        Status
+                        DateRendezvous
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        Actions
+                        heur
+                      </th>
+                      <th
+                        scope="col"
+                        className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
+                      >
                       </th>
                     </tr>
                   </thead>
@@ -87,27 +92,31 @@ const TableDashboard = () => {
                           <td className="flex items-center p-4  space-x-6 whitespace-nowrap">
                             <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
                               <div className="text-base font-semibold text-gray-900 dark:text-white">
-                                {el.name}
+                                {el.nom}
                               </div>
-                              <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                              {/* <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
                                 {el.email}
-                              </div>
+                              </div> */}
                             </div>
                           </td>
                           <td className="max-w-sm p-4 overflow-hidden text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
-                            {el.country}
+                            {el.cin}
                           </td>
                           <td className="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {el.position}
+                            {el.NumeroTelephone}
                           </td>
                           <td className="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {el.status}
+                            {el.type}
                           </td>
                           <td className="p-4 text-base font-normal text-gray-900 whitespace-nowrap dark:text-white">
                             <div className="flex items-center">
-                              <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
-                              <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                              {/* <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+                              <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div> */}
+                              {el.DateRendezvous}
                             </div>
+                          </td>
+                          <td className="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {el.heur}
                           </td>
                           <td className="p-4 space-x-2 whitespace-nowrap">
                             <button
@@ -121,7 +130,7 @@ const TableDashboard = () => {
                               type="button"
                               className="inline-flex items-center px-2 py-1.5 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
                               onClick={() => {
-                                setIdAppointment(el.id);
+                                setIdAppointment(idx);
                                 setShowAnnuler(!showAnnuler);
                               }}
                             >

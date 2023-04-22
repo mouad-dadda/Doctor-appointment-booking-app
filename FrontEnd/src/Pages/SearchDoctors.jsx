@@ -117,7 +117,9 @@ const SearchDoctors = () => {
               </p>
             </div>
             <div className=" mt-3 ">
-              <button className=" mr-3 px-[32px] py-[9px] text-white bg-[#0D63F3] rounded-[26px] font-medium text-[13px] ">
+              <button
+              className=" mr-3 px-[32px] py-[9px] text-white bg-[#0D63F3] rounded-[26px] font-medium text-[13px] "
+              >
                 Book Now
               </button>
               <button className=" ml-3 px-[32px] py-[7px] border-[2px] border-[#0D63F3] text-[#0D63F3] rounded-[26px] font-medium text-[13px] ">

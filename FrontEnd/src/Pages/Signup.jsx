@@ -4,7 +4,7 @@ import axiosClient from "../AxiosClient.js";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpSuccess } from "../Redux/SliceAuthUser";
 import { get, storeInLocalStorage } from "../Services/LocalStorageService";
-import {  useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
@@ -21,7 +21,7 @@ const Signup = () => {
     if (userData.isAuthenticated && get("TOKEN")) {
       navigate("/user/profile");
     }
-  }, []);
+  }, [navigate, userData.isAuthenticated]);
 
   const [DataForm, setData] = useState({
     firstname: "",
@@ -107,7 +107,7 @@ const Signup = () => {
                       id="FirstName"
                       name="firstname"
                       className={
-                        error.firstname != ""
+                        error.firstname !== ""
                           ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       }
@@ -133,7 +133,7 @@ const Signup = () => {
                       id="LastName"
                       name="lastname"
                       className={
-                        error.lastname != ""
+                        error.lastname !== ""
                           ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       }
@@ -161,7 +161,7 @@ const Signup = () => {
                     id="cin"
                     name="cin"
                     className={
-                      error.cin != ""
+                      error.cin !== ""
                         ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     }
@@ -188,7 +188,7 @@ const Signup = () => {
                     name="email"
                     id="email"
                     className={
-                      error.email != ""
+                      error.email !== ""
                         ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     }
@@ -216,7 +216,7 @@ const Signup = () => {
                       id="Password"
                       name="password"
                       className={
-                        error.password != ""
+                        error.password !== ""
                           ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       }

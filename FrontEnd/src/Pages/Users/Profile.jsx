@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Footer, Header } from "../../Components";
+import { Footer, Header, UserNavSettings } from "../../Components";
 import { useDispatch, useSelector } from "react-redux";
 import axiosClient from "../../AxiosClient";
 import { addUserData, logout } from "../../Redux/SliceAuthUser";
@@ -24,7 +24,7 @@ const Profile = () => {
           navigate("/Connexion");
         });
     }
-  }, [UserData.isAuthenticated,UserData.user,dispatch,navigate]);
+  }, [UserData.isAuthenticated, UserData.user, dispatch, navigate]);
 
   const HandleLogout = () => {
     axiosClient
@@ -44,16 +44,12 @@ const Profile = () => {
   return (
     <>
       <Header />
+      <div className="_container my-8 flex ">
+        <UserNavSettings/>
+        <div className=" w-[75%] ">
+        </div>
+      </div>
       <div>
-        <p> page profile </p>
-        {UserData.user && (
-          <p>
-            nom : {UserData.user.firstname} <br />
-            prenom :{UserData.user.lastname} <br />
-            email :{UserData.user.email} <br />
-            cin : {UserData.user.cin} <br />
-          </p>
-        )}
         <div>
           <button
             onClick={HandleLogout}

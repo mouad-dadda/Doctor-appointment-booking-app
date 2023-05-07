@@ -15,3 +15,4 @@ export { default as DocotrSettings } from "./Doctors/Settings.jsx";
 // PAGE USER
 
 export { default as UserProfile } from "./Users/Profile.jsx";
+export { default as UserSettings } from "./Users/Settings.jsx";

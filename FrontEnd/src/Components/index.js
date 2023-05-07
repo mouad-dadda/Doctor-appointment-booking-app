@@ -18,3 +18,7 @@ export { default as Setttings } from "./Doctors/Settings/Setttings.jsx";
 
 export { default as AlertToRegistre } from "./Alert/AlertToRegistre.jsx";
 export { default as AlertErrorMessage } from "./Alert/AlertErrorMessage.jsx";
+
+// User
+
+export { default as UserNavSettings } from "./User/NavSettings.jsx";

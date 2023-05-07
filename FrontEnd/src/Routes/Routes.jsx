@@ -9,8 +9,9 @@ import {
   DoctorRendezVous,
   DoctorHistorique,
   DocotrSettings,
+  UserSettings,
+  UserProfile,
 } from "../Pages";
-import Profile from "../Pages/Users/Profile";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -39,7 +40,16 @@ const router = createBrowserRouter([
     path: "/user/profile",
     element: (
       <AuthGuard>
-        <Profile />
+        <UserProfile />
+      </AuthGuard>
+    ),
+  },
+
+  {
+    path: "/user/settings",
+    element: (
+      <AuthGuard>
+        <UserSettings />
       </AuthGuard>
     ),
   },

@@ -6,7 +6,7 @@ const Settings = () => {
     <>
       <Header />
       <div className="_container my-8 flex ">
-        <UserNavSettings/>
+        <UserNavSettings />
         <div className=" w-[75%] ">
           <div className=" ml-7   ">
             <div className="p-4 mb-4 bg-white   ">
@@ -43,6 +43,8 @@ const Settings = () => {
             </div>
           </div>
           <div className="  ml-16 ">
+            <h3 className="mb-7  text-sm  ">Personal Information :</h3>
+
             <form className=" w-[55%] ">
               <div className="grid gap-6 mb-[20px] md:grid-cols-2">
                 <div>
@@ -102,6 +104,8 @@ const Settings = () => {
             </form>
           </div>
           <div className="  ml-16 mt-7 ">
+            <h3 className="mb-2  text-sm  text-red-600 ">Delete Account :</h3>
+            <p className=" mb-5 text-[16px] " >Do you want to delete the account? Please press below "Delete" button</p>
             <form className=" w-[55%] ">
               <button className="inline-flex items-center px-3 py-2 text-[12px]  text-center text-white rounded-lg bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 ">
                 Delete Acount

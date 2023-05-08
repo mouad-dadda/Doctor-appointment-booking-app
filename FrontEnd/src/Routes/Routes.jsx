@@ -11,6 +11,7 @@ import {
   DocotrSettings,
   UserSettings,
   UserProfile,
+  UserChangePassword,
 } from "../Pages";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -53,7 +54,14 @@ const router = createBrowserRouter([
       </AuthGuard>
     ),
   },
-
+  {
+    path: "/user/changepassword",
+    element: (
+      <AuthGuard>
+        <UserChangePassword />
+      </AuthGuard>
+    ),
+  },
   //Doctors Router
 
   {

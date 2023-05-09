@@ -40,3 +40,9 @@ a {
   background-size: cover;
 
 }
+
+.img_bg{
+  background-image: url(../../../../public/img/apointment_img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -12,6 +12,7 @@ import {
   UserSettings,
   UserProfile,
   UserChangePassword,
+  BookingAppointment,
 } from "../Pages";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/identifier",
     element: <Signup />,
+  },
+  {
+    path: "/bookingappointment",
+    element: <BookingAppointment />,
   },
 
   // Users Router

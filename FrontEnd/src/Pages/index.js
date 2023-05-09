@@ -4,6 +4,8 @@ export { default as Home } from "./Home";
 export { default as SearchDoctors } from "./SearchDoctors";
 export { default as Login } from "./Login.jsx";
 export { default as Signup } from "./Signup.jsx";
+export { default as BookingAppointment } from "./BookingAppointment";
+export { default as DoctorProfile } from "./DoctorProfile";
 
 // PAGE DASHBOARD DOCTORS
 
@@ -17,4 +19,3 @@ export { default as DocotrSettings } from "./Doctors/Settings.jsx";
 export { default as UserProfile } from "./Users/Profile.jsx";
 export { default as UserSettings } from "./Users/Settings.jsx";
 export { default as UserChangePassword } from "./Users/ChangePassword";
-

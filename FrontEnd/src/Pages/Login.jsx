@@ -20,7 +20,7 @@ const Login = () => {
     if (userData.isAuthenticated && get("TOKEN")) {
       navigate("/user/profile");
     }
-  }, [navigate,userData.isAuthenticated]);
+  }, [navigate, userData.isAuthenticated]);
 
   const [DataForm, setDataForm] = useState({
     email: "",
@@ -60,7 +60,7 @@ const Login = () => {
       <div className=" absolute w-[100%] h-[133vh]  add_img">
         <div className=" relative bg-black h-[133vh] bg-opacity-75 ">
           <Header />
-          <div className="h-[40rem] flex justify-center items-center ">
+          <div className="h-[41rem] flex justify-center items-center ">
             <div className="  w-[27rem] rounded-md  bg-white pl-8 pt-7 pr-8 pb-7">
               <div className=" text-center">
                 <div className="flex justify-center items-center">
@@ -149,7 +149,7 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <Footer />
+          <Footer colorText="white" />
         </div>
       </div>
     </>

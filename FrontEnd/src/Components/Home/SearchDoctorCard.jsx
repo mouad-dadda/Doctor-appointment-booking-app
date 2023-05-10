@@ -5,7 +5,14 @@ import { Link } from "react-router-dom";
 const SearchDoctorCard = () => {
   return (
     <>
-      <div className="border_card mx-auto p-4 w-[372px] text-center  capitalize">
+      <div className="border_card mx-auto p-4 w-[372px]  relative text-center  capitalize">
+        <div className="  absolute top-[12px] right-0 flex  items-center ">
+          <div class="bg-green-100 flex items-center text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
+            <span class="flex w-3 h-3 bg-green-500 items-center mr-1 rounded-full"></span>
+            Indigo
+          </div>
+        </div>
+
         <div>
           <img
             src="img/Rectangle 5.jpg"

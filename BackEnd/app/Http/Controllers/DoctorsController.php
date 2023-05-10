@@ -19,7 +19,7 @@ class DoctorsController extends Controller
         return response()->json($doctors);
     }
 
-
+//get 5 Doctors with a premium account 
 public function getRandomPremiumDoctors()
 {
     $doctors = Doctor::inRandomOrder()

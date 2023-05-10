@@ -37,3 +37,9 @@ Route::get('/doctors/search/{key}', function ($key) {
     ->get();
   return response()->json($doctors);
 });
+
+
+// Route::post('/doctors/search/{$key}', [App\Http\Controllers\DoctorsController::class, 'search']);
+Route::get('/doctors', [App\Http\Controllers\DoctorsController::class, 'getRandomPremiumDoctors']);
+
+

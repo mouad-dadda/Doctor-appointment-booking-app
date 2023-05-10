@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
-import '../../Assets/Css/HomeCss/Card.css'
+import axios from "axios";
+import "../../Assets/Css/HomeCss/Card.css";
 
 const Card = (props) => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/doctors')
-      .then(response => {
+    axios
+      .get("http://127.0.0.1:8000/api/doctors")
+      .then((response) => {
         const doctorsData = response.data;
         setDoctors(doctorsData);
       })
-      .catch(error => {
-       console.error( error);
+      .catch((error) => {
+        console.error(error);
       });
   }, []);
 
   return (
     <>
-      {doctors.map(doctor => (
+      {doctors.map((doctor) => (
         <div className="card_body" key={doctor.id}>
           <div>
             <img src={doctor.img} alt="" style={{ display: "initial" }} />

@@ -28,14 +28,28 @@ function TimePicker({ minTime, maxTime, stepInMinutes, onChange }) {
     return `${hours}:${minutes}`;
   });
 
+  const disabledDate = ["12:00", "12:15"];
+
   return (
-    <select onChange={onChange}>
-      {formattedTimeOptions.map((timeStr) => (
-        <option key={timeStr} value={timeStr}>
-          {timeStr}
-        </option>
-      ))}
-    </select>
+    <>
+      <select
+        onChange={onChange}
+        id="countries"
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 "
+      >
+        {formattedTimeOptions.map((timeStr) => {
+          if (disabledDate.includes(timeStr)) {
+            return null;
+          } else {
+            return (
+              <option key={timeStr} value={timeStr}>
+                {timeStr}
+              </option>
+            );
+          }
+        })}
+      </select>
+    </>
   );
 }
 export default TimePicker;

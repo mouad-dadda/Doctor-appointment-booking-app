@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\auth\AuthController;
-use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,30 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-Route::middleware('auth:sanctum')->group(function () {
-  Route::get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-  });
-  Route::post('/logout', [AuthController::class, 'Logout']);
 });
-
-Route::post('/signup', [AuthController::class, 'signup']);
-
-Route::post('/login', [AuthController::class, 'login']);
-
-Route::get('/doctors/search/{key}', function ($key) {
-  $doctors = Doctor::where('specialite', 'LIKE', "%$key%")
-    ->orWhere('address_cabinet', 'LIKE', "%$key%")
-    ->orWhere('firstname', 'LIKE', "%$key%")
-    ->orWhere('nom_cabinet', 'LIKE', "%$key%")
-    ->get();
-  return response()->json($doctors);
-});
-
-
-// Route::post('/doctors/search/{$key}', [App\Http\Controllers\DoctorsController::class, 'search']);
-Route::get('/doctors', [App\Http\Controllers\DoctorsController::class, 'getRandomPremiumDoctors']);
-
-

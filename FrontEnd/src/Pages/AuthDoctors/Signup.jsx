@@ -266,12 +266,12 @@ const Signup = () => {
               </div>
               <div className="  flex justify-center items-center ">
                 <p className="mt-4 text-[14px] text-blue-600 sm:mt-0">
-                  <a href="/doctor/signup">Etes-vous un docteur ??</a>
+                  <a href="/test">Etes-vous un docteur ??</a>
                 </p>
               </div>
             </div>
           </div>
-          <Footer  colorText="white" />
+          <Footer colorText="white" />
         </div>
       </div>
     </>

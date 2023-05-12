@@ -8,7 +8,7 @@ import { loginSuccess } from "../Redux/SliceAuthUser";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  document.title = "Connexion";
+  document.title = "Doctors Connexion";
 
   const userData = useSelector((state) => state.authUser);
   const navigate = useNavigate();
@@ -144,7 +144,7 @@ const Login = () => {
               </div>
               <div className="  flex justify-center items-center ">
                 <p className="mt-4 text-[14px] text-blue-600 sm:mt-0">
-                  <a href="/doctor/login">Etes-vous un docteur ??</a>
+                  <a href="/test">Etes-vous un docteur ??</a>
                 </p>
               </div>
             </div>

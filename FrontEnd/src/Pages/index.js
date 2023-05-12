@@ -6,6 +6,8 @@ export { default as Login } from "./Login.jsx";
 export { default as Signup } from "./Signup.jsx";
 export { default as BookingAppointment } from "./BookingAppointment";
 export { default as DoctorProfile } from "./DoctorProfile";
+export { default as DoctorsSignup } from "./AuthDoctors/Signup";
+export { default as DoctorsLogin } from "./AuthDoctors/Login";
 
 // PAGE DASHBOARD DOCTORS
 

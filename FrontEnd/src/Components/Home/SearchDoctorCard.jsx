@@ -38,9 +38,11 @@ const SearchDoctorCard = () => {
               Book Now
             </button>
           </Link>
-          <button className=" ml-3 px-[32px] py-[7px] border-[2px] border-[#0D63F3] text-[#0D63F3] rounded-[26px] font-medium text-[13px] ">
-            View Profile
-          </button>
+          <Link  to={"/doctor/profile"}>
+            <button className=" ml-3 px-[32px] py-[7px] border-[2px] border-[#0D63F3] text-[#0D63F3] rounded-[26px] font-medium text-[13px] ">
+              View Profile
+            </button>
+          </Link>
         </div>
       </div>
     </>

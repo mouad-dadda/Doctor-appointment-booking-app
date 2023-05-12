@@ -13,6 +13,8 @@ import {
   UserProfile,
   UserChangePassword,
   BookingAppointment,
+  DoctorsLogin,
+  DoctorsSignup,
 } from "../Pages";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -68,6 +70,14 @@ const router = createBrowserRouter([
     ),
   },
   //Doctors Router
+  {
+    path: "/doctor/login",
+    element: <DoctorsLogin />,
+  },
+  {
+    path: "/doctor/signup",
+    element: <DoctorsSignup />,
+  },
 
   {
     path: "/doctor/dashboard",

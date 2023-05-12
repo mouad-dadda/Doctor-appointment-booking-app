@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Footer, Header, TimePicker } from "../Components";
+import ComplitedAppointment from "./ComplitedAppointment";
+import datepicker from "flowbite-datepicker"
 
 const BookingAppointment = () => {
   const [selectedTime, setSelectedTime] = useState("");
 
-
+  const [showComplitedAppointment, setShowComplitedAppointment] =
+    useState(true);
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
@@ -98,21 +101,10 @@ const BookingAppointment = () => {
           <Footer colorText="white" />
         </div>
       </div>
+
+      <ComplitedAppointment showComplitedAppointment={showComplitedAppointment} setShowComplitedAppointment={setShowComplitedAppointment} />
     </>
   );
 };
 
 export default BookingAppointment;
-
-{
-  /* <div>
-                <label>Select a time:</label>
-                <TimePicker
-                  minTime="08:00"
-                  maxTime="20:00"
-                  stepInMinutes={46}
-                  onChange={handleTimeChange}
-                />
-                <p>You selected: {selectedTime}</p>
-              </div> */
-}

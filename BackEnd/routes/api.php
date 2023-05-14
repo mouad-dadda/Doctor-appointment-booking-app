@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\Doctor\DoctorAuthController;
+use App\Http\Controllers\Auth\User\UserAuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:sanctum')->group(
+  function () {
+
+    // DOCTOR ROUTE
+
+    Route::get('/doctor', [DoctorAuthController::class, 'doctor']);
+
+    Route::post('/doctor/logout', [DoctorAuthController::class, 'login']);
+
+    //USER ROUTE
+
+
+    Route::get('/user', [UserAuthController::class, 'user']);
+
+    Route::post('/user/logout', [UserAuthController::class, 'login']);
+  }
+);
+
+
+//USER ROUTE
+
+
+Route::post('/user/login', [UserAuthController::class, 'login']);
+
+Route::post('/user/register', [UserAuthController::class, 'register']);
+
+
+// DOCTOR ROUTE
+
+
+Route::post('/doctor/login', [DoctorAuthController::class, 'login']);
+
+Route::post('/doctor/register', [DoctorAuthController::class, 'register']);

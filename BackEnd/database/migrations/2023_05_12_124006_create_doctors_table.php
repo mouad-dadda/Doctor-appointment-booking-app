@@ -21,10 +21,10 @@ return new class extends Migration
       $table->string('password');
       $table->string('avatar')->nullable();
       $table->string('Matricule')->unique();
-      $table->string('specialite');
-      $table->string('nom_cabinet');
-      $table->string('address_cabinet');
-      $table->date('date_debut_work');
+      $table->string('specialite')->nullable();
+      $table->string('nom_cabinet')->nullable();
+      $table->string('address_cabinet')->nullable();
+      $table->date('date_debut_work')->nullable();
       $table->date('date_fin_work')->nullable();
       $table->timestamps();
     });

@@ -5,17 +5,17 @@ import "../../Assets/Css/HomeCss/Card.css";
 const Card = (props) => {
   const [doctors, setDoctors] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/doctors")
-      .then((response) => {
-        const doctorsData = response.data;
-        setDoctors(doctorsData);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://127.0.0.1:8000/api/doctors")
+  //     .then((response) => {
+  //       const doctorsData = response.data;
+  //       setDoctors(doctorsData);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, []);
 
   return (
     <>

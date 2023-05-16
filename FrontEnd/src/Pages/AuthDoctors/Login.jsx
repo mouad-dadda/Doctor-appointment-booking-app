@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { AlertErrorMessage, Footer, Header } from "../Components";
+import { AlertErrorMessage, Footer, Header } from "../../Components";
 import { useDispatch, useSelector } from "react-redux";
-import { get, storeInLocalStorage } from "../Services/LocalStorageService";
+import { get, storeInLocalStorage } from "../../Services/LocalStorageService";
 import { useNavigate } from "react-router";
-import axiosClient from "../AxiosClient";
-import { loginSuccess } from "../Redux/SliceAuthUser";
+import axiosClient from "../../AxiosClient";
+import { loginSuccess } from "../../Redux/SliceAuthUser";
 import { Link } from "react-router-dom";
 
 const Login = () => {

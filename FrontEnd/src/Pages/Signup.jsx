@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Footer, Header } from "../Components";
+import { Footer, Header, AuthButton } from "../Components";
 import axiosClient from "../AxiosClient.js";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpSuccess } from "../Redux/SliceAuthUser";
@@ -17,8 +17,10 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    if (userData.isAuthenticated && get("TOKEN")) {
+    if (userData.isAuthenticated && get("TOKEN_USER")) {
       navigate("/user/profile");
     }
   }, [navigate, userData.isAuthenticated]);
@@ -41,26 +43,29 @@ const Signup = () => {
   });
 
   const HandleChangeData = (e) => {
+    
     const { name, value } = e.target;
     setData({ ...DataForm, [name]: value });
   };
 
   const HandleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
     console.log(DataForm);
 
     axiosClient
-      .post("/signup", DataForm)
+      .post("/user/register", DataForm)
 
       .then(({ data }) => {
         dispatch(signUpSuccess(data));
 
-        storeInLocalStorage("TOKEN", data.token);
-
+        storeInLocalStorage("TOKEN_USER", data.token);
+        setLoading(false);
         navigate("/user/profile");
       })
 
       .catch((er) => {
+        setLoading(false)
         if (er.response && er.response.status === 422) {
           setError({ ...error, ...er.response.data.errors });
         } else {
@@ -249,9 +254,7 @@ const Signup = () => {
                   </div>
                 </div>
                 <div className="flex justify-center items-center w-full ">
-                  <button className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]   px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Créer un compte
-                  </button>
+                  <AuthButton Text="Créer un compte" Loading={loading} />
                 </div>
               </form>
               <div className="  flex justify-center items-center mb-4 ">
@@ -271,7 +274,7 @@ const Signup = () => {
               </div>
             </div>
           </div>
-          <Footer  colorText="white" />
+          <Footer colorText="white" />
         </div>
       </div>
     </>

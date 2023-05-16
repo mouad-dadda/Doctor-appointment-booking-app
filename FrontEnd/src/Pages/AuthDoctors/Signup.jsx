@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Footer, Header } from "../Components";
-import axiosClient from "../AxiosClient.js";
+import { Footer, Header } from "../../Components";
+import axiosClient from "../../AxiosClient.js";
 import { useDispatch, useSelector } from "react-redux";
-import { signUpSuccess } from "../Redux/SliceAuthUser";
-import { get, storeInLocalStorage } from "../Services/LocalStorageService";
+import { signUpSuccess } from "../../Redux/SliceAuthUser";
+import { get, storeInLocalStorage } from "../../Services/LocalStorageService";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 

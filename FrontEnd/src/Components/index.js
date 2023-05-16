@@ -4,8 +4,9 @@ export { default as Header } from "./Home/Header";
 export { default as Section } from "./Home/Section";
 export { default as Footer } from "./Home/Footer";
 export { default as PageNotfond } from "./404Page.jsx";
-export {default as SearchDoctorCard} from "./Home/SearchDoctorCard"
-export {default as TimePicker} from './Home/TimePicker'
+export { default as SearchDoctorCard } from "./Home/SearchDoctorCard";
+export { default as TimePicker } from "./Home/TimePicker";
+export {default as AuthButton} from './AuthButton'
 
 // Doctors Dashboard Export
 

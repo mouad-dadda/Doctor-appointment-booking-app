@@ -6,7 +6,7 @@ const axiosClient = axios.create({
 });
 
 axiosClient.interceptors.request.use((config) => {
-  const token = get("TOKEN");
+  const token = get("TOKEN_USER");
   config.headers.Authorization = `Bearer ${token}`;
   return config;
 });

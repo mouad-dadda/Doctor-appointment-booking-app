@@ -14,14 +14,14 @@ const Profile = () => {
   console.log(UserData);
 
   useEffect(() => {
-    if (UserData.isAuthenticated && get("TOKEN") && UserData.user === null) {
+    if (UserData.isAuthenticated && get("TOKEN_USER") && UserData.user === null) {
       axiosClient
         .get("/user")
         .then((re) => {
           dispatch(addUserData(re.data));
         })
         .catch((er) => {
-          navigate("/Connexion");
+          navigate("/connexion");
         });
     }
   }, [UserData.isAuthenticated, UserData.user, dispatch, navigate]);
@@ -32,7 +32,7 @@ const Profile = () => {
       .then((res) => {
         if (res.data.success && res.status === 200) {
           dispatch(logout());
-          remove("TOKEN");
+          remove("TOKEN_USER");
           navigate("/Connexion");
         }
       })

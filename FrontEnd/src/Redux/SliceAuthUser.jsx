@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { get } from "../Services/LocalStorageService";
 
 const initialState = {
-  isAuthenticated: get("TOKEN") ? true : false,
-  userToken: get("TOKEN") || null,
+  isAuthenticated: get("TOKEN_USER") ? true : false,
+  userToken: get("TOKEN_USER") || null,
   user: null,
 };
 

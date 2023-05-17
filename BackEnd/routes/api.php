@@ -3,7 +3,6 @@
 use App\Http\Controllers\Auth\Doctor\DoctorAuthController;
 use App\Http\Controllers\Auth\User\UserAuthController;
 use App\Http\Controllers\UsersManagementController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,7 +42,9 @@ Route::post('/user/login', [UserAuthController::class, 'login']);
 
 Route::post('/user/register', [UserAuthController::class, 'register']);
 
-Route::put('/user/update' ,[UsersManagementController::class , 'update']) ;
+Route::put('/user/update', [UsersManagementController::class, 'update']);
+
+Route::delete('/user/delete', [UsersManagementController::class, 'delete']);
 
 
 // DOCTOR ROUTE

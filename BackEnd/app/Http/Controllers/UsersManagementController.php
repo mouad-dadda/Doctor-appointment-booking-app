@@ -28,7 +28,7 @@ class UsersManagementController extends Controller
       $path = $image->store('public/images');
       $imageName = basename($path);
       $user_img = User::find($data['id']);
-      $user_img->user_avatar = $imageName;
+      $user_img->user_avatar = $imageName ;
       $user_img->save();
     };
 

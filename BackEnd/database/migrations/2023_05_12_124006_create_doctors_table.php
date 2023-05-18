@@ -21,6 +21,7 @@ return new class extends Migration
       $table->string('password');
       $table->string('avatar')->nullable();
       $table->string('Matricule')->unique();
+      $table->string('about')->unique();
       $table->string('specialite')->nullable();
       $table->string('nom_cabinet')->nullable();
       $table->string('address_cabinet')->nullable();

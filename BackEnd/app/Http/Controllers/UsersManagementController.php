@@ -11,7 +11,6 @@ class UsersManagementController extends Controller
 
   public function update(Request $request)
   {
-
     $validator = Validator::make($request->all(), [
       'firstname' => 'required',
       'lastname' => 'required',
@@ -24,6 +23,15 @@ class UsersManagementController extends Controller
 
     $data = $validator->validated();
 
+    if ($request->file('user_avatar')) {
+      $image = $request->file('user_avatar');
+      $path = $image->store('public/images');
+      $imageName = basename($path);
+      $user_img = User::find($data['id']);
+      $user_img->user_avatar = $imageName;
+      $user_img->save();
+    };
+
     $user = User::find($data['id']);
 
     $user->firstname = $data['firstname'];
@@ -34,11 +42,11 @@ class UsersManagementController extends Controller
     $user->save();
 
     return response([
-      'updated' => 'succes',
+      'updated' => 'success',
       'user' => $user
     ], 200);
-    return   $data;
   }
+
 
 
   public function delete(Request $request)

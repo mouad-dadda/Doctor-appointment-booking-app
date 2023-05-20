@@ -24,7 +24,8 @@ class Doctor extends Authenticatable
     'nom_cabinet',
     'address_cabinet',
     'date_debut_work',
-    'date_fin_work'
+    'date_fin_work',
+    'premium'
   ];
 
 

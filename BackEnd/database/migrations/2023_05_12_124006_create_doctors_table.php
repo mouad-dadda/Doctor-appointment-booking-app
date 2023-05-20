@@ -24,6 +24,7 @@ return new class extends Migration
       $table->string('about')->unique();
       $table->string('specialite')->nullable();
       $table->string('nom_cabinet')->nullable();
+      $table->string('premium')->default(true);
       $table->string('address_cabinet')->nullable();
       $table->date('date_debut_work')->nullable();
       $table->date('date_fin_work')->nullable();

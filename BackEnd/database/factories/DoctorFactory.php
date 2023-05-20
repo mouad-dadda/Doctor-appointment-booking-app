@@ -19,14 +19,20 @@ class DoctorFactory extends Factory
       'phoneNumber' => $this->faker->phoneNumber,
       'email' => $this->faker->unique()->safeEmail,
       'password' => bcrypt('password'),
-      'avatar' => null,
+      'avatar_doctor' => null,
       'Matricule' => $this->faker->unique()->randomNumber(5),
       'specialite' => $this->faker->randomElement(['Cardiology', 'Dermatology', 'Neurology']),
       'nom_cabinet' => $this->faker->company,
       'address_cabinet' => $this->faker->address,
-      'date_debut_work' => $this->faker->dateTimeBetween('-1 year', 'now'),
-      'date_fin_work' => $this->faker->dateTimeBetween('now', '+1 year'),
       'premium' => $this->faker->boolean(30),
-    ];
+      'day_debut_work' => $this->faker->randomElement(['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']),
+      'day_fin_work' => $this->faker->randomElement(['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']),
+      'time_debut_work' => $this->faker->time('H:i'),
+      'time_fin_work' => $this->faker->time('H:i'),
+      'time_debut_appointment' => $this->faker->time('H:i'),
+      'time_fin_appointment' => $this->faker->time('H:i'),
+      'available' => $this->faker->boolean(),
+  ];
+
   }
 }

@@ -18,14 +18,19 @@ class Doctor extends Authenticatable
     'phoneNumber',
     'email',
     'password',
-    'avatar',
+    'avatar_doctor',
     'Matricule',
     'specialite',
     'nom_cabinet',
     'address_cabinet',
-    'date_debut_work',
-    'date_fin_work',
-    'premium'
+    'day_debut_work',
+    'day_fin_work',
+    'time_debut_work',
+    'time_fin_work',
+    'time_debut_appointment',
+    'time_fin_appointment',
+    'available',
+    'premium',
   ];
 
 

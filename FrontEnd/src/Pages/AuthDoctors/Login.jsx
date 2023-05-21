@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { AlertErrorMessage, Footer, Header } from "../../Components";
+import {
+  AlertErrorMessage,
+  AuthButton,
+  Footer,
+  Header,
+} from "../../Components";
 import { useDispatch, useSelector } from "react-redux";
 import { get, storeInLocalStorage } from "../../Services/LocalStorageService";
 import { useNavigate } from "react-router";
@@ -13,12 +18,13 @@ const Login = () => {
   const userData = useSelector((state) => state.authUser);
   const navigate = useNavigate();
   console.log(userData);
+  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (userData.isAuthenticated && get("TOKEN")) {
-      navigate("/user/profile");
+    if (userData.isAuthenticated && get("TOKEN_DOCTOR")) {
+      navigate("/doctor/dashboard");
     }
   }, [navigate, userData.isAuthenticated]);
 
@@ -35,20 +41,22 @@ const Login = () => {
   };
 
   const HandleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
     axiosClient
-      .post("/login", DataForm)
+      .post("/doctor/login", DataForm)
       .then(({ data }) => {
         console.log({ data });
         dispatch(loginSuccess(data));
 
-        storeInLocalStorage("TOKEN", data.token);
-
-        navigate("/user/profile");
+        storeInLocalStorage("TOKEN_DOCTOR", data.token);
+        setLoading(false);
+        navigate("/doctor/dashboard");
       })
       .catch((err) => {
+        setLoading(false);
         if (err.response && err.response.status === 422) {
-          setError(err.response.data.error);
+          setError(err.response.data.message);
         } else {
           console.log(err);
         }
@@ -124,27 +132,17 @@ const Login = () => {
                   </a>
                 </div>
                 <div className="flex justify-center items-center w-full ">
-                  <button
-                    type="submit"
-                    className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]   px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
-                    se connecter
-                  </button>
+                  <AuthButton Text={"se connecter"} Loading={loading} />
                 </div>
               </form>
               <div className="  flex justify-center items-center mb-4 ">
                 <p className="mt-4 text-[14px] text-gray-500 sm:mt-0">
                   Vous n'avez pas de compte ?
-                  <Link to="/identifier" className="text-gray-700 underline">
+                  <Link to="/doctor/signup" className="text-gray-700 underline">
                     {" "}
                     S'identifier
                   </Link>
                   .
-                </p>
-              </div>
-              <div className="  flex justify-center items-center ">
-                <p className="mt-4 text-[14px] text-blue-600 sm:mt-0">
-                  <a href="/test">Etes-vous un docteur ??</a>
                 </p>
               </div>
             </div>

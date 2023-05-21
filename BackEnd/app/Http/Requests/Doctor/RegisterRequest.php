@@ -24,12 +24,12 @@ class RegisterRequest extends FormRequest
     return [
       'firstname' => 'required|string',
       'lastname' => 'required|string',
-      'cin' => 'required|string|unique:doctors,cin',
+      'Matricule' => 'required|string|unique:doctors,Matricule',
       'phoneNumber' => 'required',
       'email' => 'required|email|string|unique:doctors,email',
       'password' => [
         'required',
-        // 'confirmed'
+        'confirmed'
       ],
       'Matricule' => 'required|string|unique:doctors,Matricule'
     ];

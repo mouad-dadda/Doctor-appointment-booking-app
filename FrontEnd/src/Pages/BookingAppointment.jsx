@@ -70,7 +70,7 @@ const BookingAppointment = () => {
         date_appointment: formattedDate,
         time_appointment: selectedTime,
       })
-      .then((res) => console.log(res))
+      .then((res) => setShowComplitedAppointment(true))
       .catch((err) => console.log(err));
   };
 

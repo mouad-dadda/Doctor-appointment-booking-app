@@ -70,6 +70,6 @@ Route::put('/doctor/update/info/time', [DoctorManagementController::class, 'Upda
 
 Route::get('/doctor/appointment/{id}', [AppointmentManagementController::class, 'GetApointmentDoctor']);
 
-Route::get('/doctor/home', [DoctorManagementController::class, 'getRandomPremiumDoctors']);
+Route::post('/doctor/home', [DoctorManagementController::class, 'getRandomPremiumDoctors']);
 
 Route::post('/search/doctors', [DoctorManagementController::class, 'SearchDoctors']);

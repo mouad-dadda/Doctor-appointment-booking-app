@@ -23,7 +23,7 @@ const ComplitedAppointment = ({
         >
           {/* <!-- Modal header --> */}
           <div className="flex justify-end p-2">
-            <button
+            {/* <button
               onClick={() => setShowComplitedAppointment(!showComplitedAppointment)}
               type="button"
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-700 dark:hover:text-white"
@@ -40,7 +40,7 @@ const ComplitedAppointment = ({
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </button> */}
           </div>
           {/* <!-- Modal body --> */}
           <div className="p-6 pt-0 text-center">

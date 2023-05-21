@@ -20,7 +20,6 @@ class DoctorAuthController extends Controller
       [
         'firstname' => $data['firstname'],
         'lastname' => $data['lastname'],
-        'cin' => $data['cin'],
         'phoneNumber' => $data['phoneNumber'],
         'email' => $data['email'],
         'password' => bcrypt($data['password']),
@@ -58,7 +57,7 @@ class DoctorAuthController extends Controller
       ], 200);
     }
 
-    return response(['message' => 'Invalid login credentials'], 401);
+    return response(['message' => 'Invalid login credentials'], 422);
   }
 
 

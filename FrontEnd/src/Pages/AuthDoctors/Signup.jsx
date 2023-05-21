@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Footer, Header } from "../../Components";
+import { AuthButton, Footer, Header } from "../../Components";
 import axiosClient from "../../AxiosClient.js";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpSuccess } from "../../Redux/SliceAuthUser";
@@ -8,25 +8,28 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
-  document.title = "S'identifier";
+  document.title = "S'identifier Doctors";
 
-  const userData = useSelector((state) => state.authUser);
+  const userData = useSelector((state) => state.AuthDoctor);
   console.log(userData);
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    if (userData.isAuthenticated && get("TOKEN")) {
-      navigate("/user/profile");
+    if (userData.isAuthenticated && get("TOKEN_DOCTOR")) {
+      navigate("/doctor/dashboard");
     }
   }, [navigate, userData.isAuthenticated]);
 
   const [DataForm, setData] = useState({
     firstname: "",
     lastname: "",
-    cin: "",
+    Matricule: "",
+    phoneNumber: "",
     email: "",
     password: "",
     password_confirmation: "",
@@ -35,7 +38,8 @@ const Signup = () => {
   const [error, setError] = useState({
     firstname: "",
     lastname: "",
-    cin: "",
+    Matricule: "",
+    phoneNumber: "",
     email: "",
     password: "",
   });
@@ -46,23 +50,26 @@ const Signup = () => {
   };
 
   const HandleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
     console.log(DataForm);
 
     axiosClient
-      .post("/signup", DataForm)
+      .post("/doctor/register", DataForm)
 
       .then(({ data }) => {
         dispatch(signUpSuccess(data));
 
-        storeInLocalStorage("TOKEN", data.token);
-
-        navigate("/user/profile");
+        storeInLocalStorage("TOKEN_DOCTOR", data.token);
+        setLoading(false);
+        navigate("/doctor/dashboard");
       })
 
       .catch((er) => {
+        setLoading(false);
         if (er.response && er.response.status === 422) {
           setError({ ...error, ...er.response.data.errors });
+          console.log(er);
         } else {
           console.log(er);
         }
@@ -151,25 +158,52 @@ const Signup = () => {
 
                 <div className="mb-[20px]">
                   <label
-                    htmlFor="cin"
+                    htmlFor="Matricule"
                     className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
                   >
-                    Cin
+                    Matricule
                   </label>
                   <input
                     type="text"
-                    id="cin"
-                    name="cin"
+                    id="Matricule"
+                    name="Matricule"
                     className={
-                      error.cin !== ""
+                      error.Matricule !== ""
                         ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     }
-                    placeholder="Cin"
+                    placeholder="Matricule"
                     onChange={HandleChangeData}
                     required
                   />
-                  {error.cin && (
+                  {error.Matricule && (
+                    <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
+                      {error.cin[0]}
+                    </p>
+                  )}
+                </div>
+
+                <div className="mb-[20px]">
+                  <label
+                    htmlFor="phoneNumber"
+                    className="block mb-1 text-[12px]  font-medium text-gray-900 dark:text-white"
+                  >
+                    phoneNumber
+                  </label>
+                  <input
+                    type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    className={
+                      error.phoneNumber !== ""
+                        ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-[12px] rounded-lg focus:ring-red-500 focus:border-red-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        : "bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    }
+                    placeholder="phoneNumber"
+                    onChange={HandleChangeData}
+                    required
+                  />
+                  {error.phoneNumber && (
                     <p className="mt-2 text-[11px] text-red-600 dark:text-red-500">
                       {error.cin[0]}
                     </p>
@@ -249,9 +283,7 @@ const Signup = () => {
                   </div>
                 </div>
                 <div className="flex justify-center items-center w-full ">
-                  <button className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]   px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Créer un compte
-                  </button>
+                  <AuthButton Text="Créer un compte" Loading={loading} />
                 </div>
               </form>
               <div className="  flex justify-center items-center mb-4 ">
@@ -262,11 +294,6 @@ const Signup = () => {
                     Connexion
                   </Link>
                   .
-                </p>
-              </div>
-              <div className="  flex justify-center items-center ">
-                <p className="mt-4 text-[14px] text-blue-600 sm:mt-0">
-                  <a href="/test">Etes-vous un docteur ??</a>
                 </p>
               </div>
             </div>

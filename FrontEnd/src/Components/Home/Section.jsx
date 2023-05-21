@@ -9,7 +9,7 @@ const Section = () => {
 
   useEffect(() => {
     axiosClient
-      .get("/doctor/home")
+      .post("/doctor/home")
       .then((res) => setDoctors(res.data))
       .catch((err) => console.log(err));
   }, []);

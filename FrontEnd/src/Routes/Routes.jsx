@@ -17,6 +17,7 @@ import {
   DoctorsLogin,
   DoctorsSignup,
 } from "../Pages";
+import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -86,19 +87,35 @@ const router = createBrowserRouter([
 
   {
     path: "/doctor/dashboard",
-    element: <DocotrDashboard />,
+    element: (
+      <AuthDoctorGuard>
+        <DocotrDashboard />
+      </AuthDoctorGuard>
+    ),
   },
   {
     path: "/docotr/rendezvous",
-    element: <DoctorRendezVous />,
+    element: (
+      <AuthDoctorGuard>
+        <DoctorRendezVous />
+      </AuthDoctorGuard>
+    ),
   },
   {
     path: "/doctor/historique",
-    element: <DoctorHistorique />,
+    element: (
+      <AuthDoctorGuard>
+        <AuthDoctorGuard></AuthDoctorGuard>
+      </AuthDoctorGuard>
+    ),
   },
   {
     path: "/doctor/settings",
-    element: <DocotrSettings />,
+    element: (
+      <AuthDoctorGuard>
+        <DocotrSettings />
+      </AuthDoctorGuard>
+    ),
   },
 ]);
 

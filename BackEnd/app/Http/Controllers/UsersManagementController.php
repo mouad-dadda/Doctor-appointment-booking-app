@@ -23,7 +23,7 @@ class UsersManagementController extends Controller
 
     $data = $validator->validated();
 
-    if ($request->file('user_avatar')) {
+    if ($request->hasFile('user_avatar')) {
       $image = $request->file('user_avatar');
       $path = $image->store('public/images/users');
       $imageName = basename($path);

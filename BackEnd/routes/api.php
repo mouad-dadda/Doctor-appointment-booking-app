@@ -33,6 +33,9 @@ Route::middleware('auth:sanctum')->group(
     Route::get('/user', [UserAuthController::class, 'user']);
 
     Route::post('/user/logout', [UserAuthController::class, 'login']);
+
+    Route::put('/user/update', [UsersManagementController::class, 'update']);
+
   }
 );
 
@@ -43,8 +46,6 @@ Route::middleware('auth:sanctum')->group(
 Route::post('/user/login', [UserAuthController::class, 'login']);
 
 Route::post('/user/register', [UserAuthController::class, 'register']);
-
-Route::put('/user/update', [UsersManagementController::class, 'update']);
 
 Route::delete('/user/delete', [UsersManagementController::class, 'delete']);
 

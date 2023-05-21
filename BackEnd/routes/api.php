@@ -64,6 +64,9 @@ Route::get('/doctor/appointment/{id}', [AppointmentManagementController::class, 
 
 Route::get('/doctor/home', [DoctorManagementController::class, 'getRandomPremiumDoctors']);
 
+Route::post('/search/doctors', [DoctorManagementController::class, 'SearchDoctors']);
+
+
 //ROUTE APPOINTMENT
 
 Route::post('/take/appointment', [AppointmentManagementController::class, 'TakeAppointment']);

@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import { Footer, Header, AlertToRegistre, SearchDoctorCard } from "../Components";
+import {
+  Footer,
+  Header,
+  AlertToRegistre,
+  SearchDoctorCard,
+} from "../Components";
 import "../Assets/Css/HomeCss/SearchDoctors.css";
+import axiosClient from "../AxiosClient";
 
 const SearchDoctors = () => {
   document.title = "Recherche Medecin";
@@ -12,6 +18,8 @@ const SearchDoctors = () => {
     hopital: "",
   });
 
+  const [DataSearch, setDataSearch] = useState([]);
+
   const HandleChangeData = (ev) => {
     const { name, value } = ev.target;
     setDataForm({ ...DataForm, [name]: value });
@@ -19,7 +27,13 @@ const SearchDoctors = () => {
 
   const HandleSubmitData = (e) => {
     e.preventDefault();
-    console.log(DataForm);
+
+    axiosClient
+      .post("/search/doctors", {
+        key: DataForm.specialty,
+      })
+      .then((res) => setDataSearch(res.data.DataSearch))
+      .catch((err) => console.log(err));
   };
 
   const [showAlertToRegistre, setSowAlertToRegistre] = useState(false);
@@ -95,12 +109,22 @@ const SearchDoctors = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 ">
           {/* Card  For  Resulta  Doctor */}
 
-<SearchDoctorCard/>
-<SearchDoctorCard/>
-<SearchDoctorCard/>
-<SearchDoctorCard/>
-
-
+          {DataSearch.map((info, idx) => {
+            return (
+              <SearchDoctorCard
+                key={idx}
+                name={info.firstname + " " + info.lastname}
+                id={info.id}
+                day_debut_work={info.day_debut_work}
+                day_fin_work={info.day_fin_work}
+                specialite={info.specialite}
+                available={info.available}
+                avatar_doctor={info.avatar_doctor}
+                time_debut_work={info.time_debut_work}
+                time_fin_work={info.time_fin_work}
+              />
+            );
+          })}
         </div>
       </main>
       <Footer />

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\Doctor\DoctorAuthController;
 use App\Http\Controllers\Auth\User\UserAuthController;
+use App\Http\Controllers\DoctorManagementController;
 use App\Http\Controllers\UsersManagementController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,3 +54,7 @@ Route::delete('/user/delete', [UsersManagementController::class, 'delete']);
 Route::post('/doctor/login', [DoctorAuthController::class, 'login']);
 
 Route::post('/doctor/register', [DoctorAuthController::class, 'register']);
+
+Route::put('/doctor/update/info', [DoctorManagementController::class, 'updateInfo']);
+
+Route::put('/doctor/update/info/time', [DoctorManagementController::class, 'UpdateInfoTimeWork']);

@@ -25,7 +25,7 @@ class UsersManagementController extends Controller
 
     if ($request->file('user_avatar')) {
       $image = $request->file('user_avatar');
-      $path = $image->store('public/images');
+      $path = $image->store('public/images/users');
       $imageName = basename($path);
       $user_img = User::find($data['id']);
       $user_img->user_avatar = $imageName ;

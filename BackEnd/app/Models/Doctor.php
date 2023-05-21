@@ -27,8 +27,6 @@ class Doctor extends Authenticatable
     'day_fin_work',
     'time_debut_work',
     'time_fin_work',
-    'time_debut_appointment',
-    'time_fin_appointment',
     'available',
     'premium',
   ];

@@ -29,8 +29,6 @@ class DoctorFactory extends Factory
       'day_fin_work' => $this->faker->randomElement(['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']),
       'time_debut_work' => $this->faker->time('H:i'),
       'time_fin_work' => $this->faker->time('H:i'),
-      'time_debut_appointment' => $this->faker->time('H:i'),
-      'time_fin_appointment' => $this->faker->time('H:i'),
       'available' => $this->faker->boolean(),
   ];
 

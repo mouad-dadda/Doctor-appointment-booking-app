@@ -30,8 +30,6 @@ return new class extends Migration
       $table->string('day_fin_work')->nullable();
       $table->string('time_debut_work')->nullable();
       $table->string('time_fin_work')->nullable();
-      $table->string('time_debut_appointment')->nullable();
-      $table->string('time_fin_appointment')->nullable();
       $table->string('available')->default(true);
       $table->timestamps();
     });

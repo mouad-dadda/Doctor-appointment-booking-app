@@ -28,7 +28,7 @@ const Profile = () => {
 
   const HandleLogout = () => {
     axiosClient
-      .post("/logout")
+      .post("/user/logout")
       .then((res) => {
         if (res.data.success && res.status === 200) {
           dispatch(logout());

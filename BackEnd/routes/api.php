@@ -32,7 +32,7 @@ Route::middleware('auth:sanctum')->group(
 
     Route::get('/user', [UserAuthController::class, 'user']);
 
-    Route::post('/user/logout', [UserAuthController::class, 'login']);
+    Route::post('/user/logout', [UserAuthController::class, 'logout']);
 
     Route::put('/user/update', [UsersManagementController::class, 'update']);
 

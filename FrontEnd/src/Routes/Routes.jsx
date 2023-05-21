@@ -1,5 +1,6 @@
 import { PageNotfond } from "../Components";
 import AuthGuard from "../Middleware/AuthGuard";
+import AppointmentGuard from "../Middleware/AppointmentGuard";
 import {
   SearchDoctors,
   Home,
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/bookingappointment",
-    element: <BookingAppointment />,
+    element: (
+      <AppointmentGuard>
+        <BookingAppointment />
+      </AppointmentGuard>
+    ),
   },
 
   // Users Router

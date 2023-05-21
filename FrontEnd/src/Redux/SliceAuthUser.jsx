@@ -4,6 +4,7 @@ import { get } from "../Services/LocalStorageService";
 const initialState = {
   isAuthenticated: get("TOKEN_USER") ? true : false,
   userToken: get("TOKEN_USER") || null,
+  showAlertToAuth: false,
   user: null,
 };
 
@@ -15,6 +16,9 @@ const AuthUserSlice = createSlice({
       state.isAuthenticated = true;
       state.user = action.payload.user;
       state.userToken = action.payload.token;
+    },
+    showAlertToAuth: (state, action) => {
+      state.showAlertToAuth = action.payload;
     },
     addUserData: (state, action) => {
       state.user = action.payload;
@@ -32,7 +36,7 @@ const AuthUserSlice = createSlice({
   },
 });
 
-export const { signUpSuccess, loginSuccess, logout, addUserData } =
+export const { signUpSuccess, loginSuccess, logout, addUserData , showAlertToAuth} =
   AuthUserSlice.actions;
 
 export default AuthUserSlice.reducer;

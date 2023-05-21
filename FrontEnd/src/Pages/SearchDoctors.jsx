@@ -7,9 +7,12 @@ import {
 } from "../Components";
 import "../Assets/Css/HomeCss/SearchDoctors.css";
 import axiosClient from "../AxiosClient";
+import { useSelector } from "react-redux";
 
 const SearchDoctors = () => {
   document.title = "Recherche Medecin";
+
+  const AuthUserData = useSelector((state) => state.authUser);
 
   const [DataForm, setDataForm] = useState({
     specialty: "",
@@ -36,7 +39,9 @@ const SearchDoctors = () => {
       .catch((err) => console.log(err));
   };
 
-  const [showAlertToRegistre, setSowAlertToRegistre] = useState(false);
+  const [showAlertToRegistre, setSowAlertToRegistre] = useState(
+    AuthUserData.showAlertToAuth
+  );
   return (
     <>
       <Header />

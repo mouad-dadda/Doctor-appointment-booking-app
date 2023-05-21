@@ -104,4 +104,13 @@ class DoctorManagementController extends Controller
       'doctor' => $doctor
     ], 200);
   }
+
+  public function DoctoroInfo($id)
+  {
+
+    $doctor = Doctor::find($id);
+    return response([
+      $doctor
+    ], 200);
+  }
 }

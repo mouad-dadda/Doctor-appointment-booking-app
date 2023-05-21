@@ -41,6 +41,8 @@ class AppointmentManagementController extends Controller
 
   public function GetApointmentDoctor($id)
   {
+
+
     $appointments = Appointment::with('user')
       ->where('doctor_id', $id)
       ->get();

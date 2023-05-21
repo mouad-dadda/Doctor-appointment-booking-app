@@ -1,16 +1,77 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Footer, Header, TimePicker } from "../Components";
 import ComplitedAppointment from "./ComplitedAppointment";
-import datepicker from "flowbite-datepicker"
+import Datepicker from "flowbite-datepicker/Datepicker";
+import { ClockIcon } from "@heroicons/react/20/solid";
+import { useNavigate, useParams } from "react-router";
+import axiosClient from "../AxiosClient";
+import { useDispatch, useSelector } from "react-redux";
+import { get } from "../Services/LocalStorageService";
+import { addUserData } from "../Redux/SliceAuthUser";
 
 const BookingAppointment = () => {
   const [selectedTime, setSelectedTime] = useState("");
-
+  const [SelectedDate, setSelectedDate] = useState("");
   const [showComplitedAppointment, setShowComplitedAppointment] =
-    useState(true);
+    useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const [DoctorData, setDoctorData] = useState({});
+
+  const UserData = useSelector((state) => state.authUser);
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
+  };
+
+  useEffect(() => {
+    if (
+      UserData.isAuthenticated &&
+      get("TOKEN_USER") &&
+      UserData.user === null
+    ) {
+      axiosClient
+        .get("/user")
+        .then((re) => {
+          dispatch(addUserData(re.data));
+        })
+        .catch((er) => {
+          navigate("/connexion");
+        });
+    }
+
+    axiosClient
+      .get("/doctor/" + id)
+      .then((re) => {
+        setDoctorData(re.data[0]);
+      })
+      .catch((er) => {
+        console.log(er);
+      });
+
+    const datepickerEl = document?.getElementById("datepickerId");
+    // console.log(datepickerEl);
+    new Datepicker(datepickerEl, {
+      autohide: true,
+    });
+  }, [UserData, dispatch, navigate]);
+
+  const HandelSubmit = (e) => {
+    e.preventDefault();
+
+    const formattedDate = new Date(SelectedDate).toISOString().slice(0, 10); // Convert date to MySQL format
+
+    axiosClient
+      .post("/take/appointment", {
+        user_id: UserData.user.id,
+        doctor_id: id,
+        date_appointment: formattedDate,
+        time_appointment: selectedTime,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -23,17 +84,18 @@ const BookingAppointment = () => {
               <div className="w-full">
                 <div className=" flex justify-center w-full ">
                   <div className="w-[25%]">
-                    <img src="./img/Rectangle 3.png" alt="" />
+                    <img src="/img/Rectangle 3.png" alt="" />
                   </div>
                 </div>
                 <div className="flex justify-center">
                   <p className="uppercase font-semibold text-[14px] mt-3 ">
-                    Mouad Dadda
+                    {DoctorData.firstname &&
+                      DoctorData.firstname + " " + DoctorData.lastname}
                   </p>
                 </div>
                 <div className=" flex justify-center mt-5 ">
                   <div>
-                    <form action="">
+                    <form onSubmit={HandelSubmit}>
                       <div className="flex justify-center">
                         {/* DATE PICKER */}
 
@@ -61,10 +123,13 @@ const BookingAppointment = () => {
                               </svg>
                             </div>
                             <input
-                              datepicker
+                              datepicker="true"
+                              datepicker-autohide="true"
                               type="text"
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-9 p-2"
                               placeholder="Select date"
+                              id="datepickerId"
+                              onSelect={(e) => setSelectedDate(e.target.value)}
                             />
                           </div>
                         </div>
@@ -78,12 +143,23 @@ const BookingAppointment = () => {
                           >
                             Select Time
                           </label>
-                          <TimePicker
+                          {/* <TimePicker
                             minTime="08:00"
                             maxTime="20:00"
                             stepInMinutes={15}
                             onChange={handleTimeChange}
-                          />
+                          /> */}
+                          <div className="relative max-w-sm">
+                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                              <ClockIcon className="w-5 h-5 text-gray-500" />
+                            </div>
+                            <TimePicker
+                              minTime="08:00"
+                              maxTime="20:00"
+                              stepInMinutes={15}
+                              onChange={handleTimeChange}
+                            />
+                          </div>
                         </div>
                       </div>
 
@@ -102,7 +178,10 @@ const BookingAppointment = () => {
         </div>
       </div>
 
-      <ComplitedAppointment showComplitedAppointment={showComplitedAppointment} setShowComplitedAppointment={setShowComplitedAppointment} />
+      <ComplitedAppointment
+        showComplitedAppointment={showComplitedAppointment}
+        setShowComplitedAppointment={setShowComplitedAppointment}
+      />
     </>
   );
 };

@@ -27,6 +27,9 @@ Route::middleware('auth:sanctum')->group(
 
     Route::post('/doctor/logout', [DoctorAuthController::class, 'login']);
 
+    Route::get('/doctor/{id}', [DoctorManagementController::class, 'DoctoroInfo']);
+
+
     //USER ROUTE
 
 
@@ -36,6 +39,10 @@ Route::middleware('auth:sanctum')->group(
 
     Route::put('/user/update', [UsersManagementController::class, 'update']);
 
+    //ROUTE APPOINTMENT
+
+
+    Route::post('/take/appointment', [AppointmentManagementController::class, 'TakeAppointment']);
   }
 );
 
@@ -66,8 +73,3 @@ Route::get('/doctor/appointment/{id}', [AppointmentManagementController::class, 
 Route::get('/doctor/home', [DoctorManagementController::class, 'getRandomPremiumDoctors']);
 
 Route::post('/search/doctors', [DoctorManagementController::class, 'SearchDoctors']);
-
-
-//ROUTE APPOINTMENT
-
-Route::post('/take/appointment', [AppointmentManagementController::class, 'TakeAppointment']);

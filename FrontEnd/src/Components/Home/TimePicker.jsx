@@ -35,7 +35,7 @@ function TimePicker({ minTime, maxTime, stepInMinutes, onChange }) {
       <select
         onChange={onChange}
         id="countries"
-        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 "
+        className="bg-gray-50  pl-[44px] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 "
       >
         {formattedTimeOptions.map((timeStr) => {
           if (disabledDate.includes(timeStr)) {

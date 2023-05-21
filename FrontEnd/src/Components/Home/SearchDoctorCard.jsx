@@ -56,7 +56,7 @@ const SearchDoctorCard = ({
           </p> */}
         </div>
         <div className=" mt-3 ">
-          <Link to="/bookingappointment">
+          <Link to={`/bookingappointment/${id}`}>
             <button className=" mr-3 px-[32px] py-[9px] text-white bg-[#0D63F3] rounded-[26px] font-medium text-[13px] ">
               Book Now
             </button>

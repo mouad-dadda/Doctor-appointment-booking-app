@@ -60,6 +60,8 @@ Route::put('/doctor/update/info', [DoctorManagementController::class, 'updateInf
 
 Route::put('/doctor/update/info/time', [DoctorManagementController::class, 'UpdateInfoTimeWork']);
 
+Route::get('/doctor/appointment/{id}' ,[AppointmentManagementController::class , 'GetApointmentDoctor'] ) ;
+
 //ROUTE APPOINTMENT
 
 Route::post('/take/appointment',[ AppointmentManagementController::class ,'TakeAppointment']);

@@ -37,4 +37,14 @@ class AppointmentManagementController extends Controller
       'appointment' => $apointment
     ], 200);
   }
+
+
+  public function GetApointmentDoctor($id)
+  {
+    $appointments = Appointment::with('user')
+      ->where('doctor_id', $id)
+      ->get();
+
+    return response()->json($appointments);
+  }
 }

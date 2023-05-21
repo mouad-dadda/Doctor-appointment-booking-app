@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import '../../Assets/Css/HomeCss/Section.css'
+import "../../Assets/Css/HomeCss/Section.css";
 import Card from "./Card";
+import axiosClient from "../../AxiosClient";
 
 const Section = () => {
+  const [Doctors, setDoctors] = useState([]);
+
+  useEffect(() => {
+    axiosClient
+      .get("/doctor/home")
+      .then((res) => setDoctors(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <div className="Section_bg">
@@ -17,12 +27,17 @@ const Section = () => {
               et suivre tous vos rendez-vous.
             </p>
             <button className="_btn btn_bg_primary _btn_Section mr_top">
-              <Link to={'/recherche'} >Prenez rendez-vous</Link>
+              <Link to={"/recherche"}>Prenez rendez-vous</Link>
             </button>
           </div>
           <div className="Section_img">
             <span className="circle"></span>
-            <img src="./img/doctor-2.png" className="_img" alt=""  style={{display:"initial"}} />
+            <img
+              src="./img/doctor-2.png"
+              className="_img"
+              alt=""
+              style={{ display: "initial" }}
+            />
             <span className="_heart_icon circle_1">
               <span className="circle_2">
                 <i className="fa-solid fa-heart-pulse"></i>
@@ -50,9 +65,21 @@ const Section = () => {
             Le site compte de nombreux medecins dans differentes specialites
           </p>
           <div className="article_img">
-            <img src="./img/Rectangle 4.jpg" alt="" style={{display:"initial"}} />
-            <img src="./img/Rectangle 5.jpg" alt="" style={{display:"initial"}} />
-            <img src="./img/Rectangle 6.jpg" alt=""  style={{display:"initial"}} />
+            <img
+              src="./img/Rectangle 4.jpg"
+              alt=""
+              style={{ display: "initial" }}
+            />
+            <img
+              src="./img/Rectangle 5.jpg"
+              alt=""
+              style={{ display: "initial" }}
+            />
+            <img
+              src="./img/Rectangle 6.jpg"
+              alt=""
+              style={{ display: "initial" }}
+            />
           </div>
         </div>
       </article>
@@ -61,10 +88,17 @@ const Section = () => {
         <div className="cards_info">
           <h1 className="article_title">Réservez notre médecin</h1>
           <div className="cards_">
-            <Card img="./img/Rectangle 3.png" />
-            <Card img="./img/Rectangle 3.png" />
-            <Card img="./img/Rectangle 2.jpg" />
-            <Card img="./img/Rectangle 8.jpg" />
+            {Doctors.map((info, idx) => {
+              return (
+                <Card
+                  key={idx}
+                  id={info.id}
+                  img={info.avatar_doctor}
+                  name={info.firstname + " " + info.lastname}
+                  specialite={info.specialite}
+                />
+              );
+            })}
           </div>
         </div>
       </article>

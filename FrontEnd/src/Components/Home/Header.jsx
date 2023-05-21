@@ -14,7 +14,7 @@ const Header = () => {
           <div className="menu_mobile">
             {Toggle ? (
               <button className="btn_menu" onClick={() => setToggle(!Toggle)}>
-                <i class="fa-regular fa-xmark-large"></i>
+                <i className="fa-regular fa-xmark-large"></i>
               </button>
             ) : (
               <button className="btn_menu" onClick={() => setToggle(!Toggle)}>

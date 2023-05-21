@@ -60,8 +60,10 @@ Route::put('/doctor/update/info', [DoctorManagementController::class, 'updateInf
 
 Route::put('/doctor/update/info/time', [DoctorManagementController::class, 'UpdateInfoTimeWork']);
 
-Route::get('/doctor/appointment/{id}' ,[AppointmentManagementController::class , 'GetApointmentDoctor'] ) ;
+Route::get('/doctor/appointment/{id}', [AppointmentManagementController::class, 'GetApointmentDoctor']);
+
+Route::get('/doctor/home', [DoctorManagementController::class, 'getRandomPremiumDoctors']);
 
 //ROUTE APPOINTMENT
 
-Route::post('/take/appointment',[ AppointmentManagementController::class ,'TakeAppointment']);
+Route::post('/take/appointment', [AppointmentManagementController::class, 'TakeAppointment']);

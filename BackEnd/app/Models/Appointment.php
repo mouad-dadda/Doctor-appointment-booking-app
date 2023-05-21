@@ -17,4 +17,14 @@ class Appointment extends Model
     'time_appointment',
     'cancel_appointment'
   ];
+
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
+
+  public function doctor()
+  {
+    return $this->belongsTo(Doctor::class);
+  }
 }

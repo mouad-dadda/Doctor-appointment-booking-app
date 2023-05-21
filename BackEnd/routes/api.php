@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentManagementController;
 use App\Http\Controllers\Auth\Doctor\DoctorAuthController;
 use App\Http\Controllers\Auth\User\UserAuthController;
 use App\Http\Controllers\DoctorManagementController;
@@ -58,3 +59,7 @@ Route::post('/doctor/register', [DoctorAuthController::class, 'register']);
 Route::put('/doctor/update/info', [DoctorManagementController::class, 'updateInfo']);
 
 Route::put('/doctor/update/info/time', [DoctorManagementController::class, 'UpdateInfoTimeWork']);
+
+//ROUTE APPOINTMENT
+
+Route::post('/take/appointment',[ AppointmentManagementController::class ,'TakeAppointment']);

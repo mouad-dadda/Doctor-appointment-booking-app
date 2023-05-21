@@ -39,7 +39,7 @@ class DoctorManagementController extends Controller
   {
     $doctors = Doctor::inRandomOrder()
       ->where('premium', true)
-      ->limit(5)
+      ->limit(4)
       ->get();
 
 

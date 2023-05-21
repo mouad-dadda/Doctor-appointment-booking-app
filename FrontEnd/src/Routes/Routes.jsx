@@ -105,7 +105,7 @@ const router = createBrowserRouter([
     path: "/doctor/historique",
     element: (
       <AuthDoctorGuard>
-        <AuthDoctorGuard></AuthDoctorGuard>
+        <DoctorHistorique/>
       </AuthDoctorGuard>
     ),
   },

@@ -8,34 +8,34 @@ const initialState = {
 };
 
 const AuthDoctorSlice = createSlice({
-  name: "authUser",
+  name: "authdoctor",
   initialState,
   reducers: {
     signUpSuccess: (state, action) => {
       state.isAuthenticated = true;
-      state.user = action.payload.user;
-      state.userToken = action.payload.token;
+      state.doctor = action.payload.doctor;
+      state.doctorToken = action.payload.token;
     },
     showAlertToAuth: (state, action) => {
       state.showAlertToAuth = action.payload;
     },
-    addUserData: (state, action) => {
-      state.user = action.payload;
+    addDoctorData: (state, action) => {
+      state.doctor = action.payload;
     },
     loginSuccess: (state, action) => {
       state.isAuthenticated = true;
-      state.user = action.payload.user;
-      state.userToken = action.payload.token;
+      state.doctor = action.payload.doctor;
+      state.doctorToken = action.payload.token;
     },
     logout: (state) => {
       state.isAuthenticated = false;
-      state.user = null;
-      state.userToken = null;
+      state.doctor = null;
+      state.doctorToken = null;
     },
   },
 });
 
-export const { signUpSuccess, loginSuccess, logout, addUserData , showAlertToAuth} =
+export const { signUpSuccess, loginSuccess, logout, addDoctorData , showAlertToAuth} =
 AuthDoctorSlice.actions;
 
 export default AuthDoctorSlice.reducer;

@@ -9,24 +9,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { get, storeInLocalStorage } from "../../Services/LocalStorageService";
 import { useNavigate } from "react-router";
 import axiosClient from "../../AxiosClient";
-import { loginSuccess } from "../../Redux/SliceAuthUser";
+import { loginSuccess } from "../../Redux/SliceAuthDoctor";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   document.title = "Doctors Connexion";
 
-  const userData = useSelector((state) => state.authUser);
+  const doctorData = useSelector((state) => state.AuthDoctor);
   const navigate = useNavigate();
-  console.log(userData);
+  console.log(doctorData);
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (userData.isAuthenticated && get("TOKEN_DOCTOR")) {
+    if (doctorData.isAuthenticated && get("TOKEN_DOCTOR")) {
       navigate("/doctor/dashboard");
     }
-  }, [navigate, userData.isAuthenticated]);
+  }, [navigate, doctorData.isAuthenticated]);
 
   const [DataForm, setDataForm] = useState({
     email: "",
@@ -57,6 +57,7 @@ const Login = () => {
         setLoading(false);
         if (err.response && err.response.status === 422) {
           setError(err.response.data.message);
+          console.log(err);
         } else {
           console.log(err);
         }

@@ -90,45 +90,45 @@ const TableDashboard = () => {
                           className="hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           <td className="flex items-center p-4  space-x-6 whitespace-nowrap">
-                            <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                              <div className="text-base font-semibold text-gray-900 dark:text-white">
+                            <div className="text-[14px] font-normal text-gray-500 dark:text-gray-400">
+                              <div className="text-[14px] font-semibold text-gray-900 dark:text-white">
                                 {el.nom}
                               </div>
-                              {/* <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                              {/* <div className="text-[14px] font-normal text-gray-500 dark:text-gray-400">
                                 {el.email}
                               </div> */}
                             </div>
                           </td>
-                          <td className="max-w-sm p-4 overflow-hidden text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
+                          <td className="max-w-[14px] p-4 overflow-hidden text-[14px] font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
                             {el.cin}
                           </td>
-                          <td className="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {el.NumeroTelephone}
                           </td>
-                          <td className="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {el.type}
                           </td>
-                          <td className="p-4 text-base font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                          <td className="p-4 text-[14px] font-normal text-gray-900 whitespace-nowrap dark:text-white">
                             <div className="flex items-center">
                               {/* <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
                               <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div> */}
                               {el.DateRendezvous}
                             </div>
                           </td>
-                          <td className="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {el.heur}
                           </td>
                           <td className="p-4 space-x-2 whitespace-nowrap">
                             <button
                               type="button"
-                              className="inline-flex items-center px-2 py-1.5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                              className="inline-flex items-center px-2 py-1.5 text-[14px] font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                             >
                               <CheckCircleIcon className="w-4 h-4 mr-2 " />
                               Terminer
                             </button>
                             <button
                               type="button"
-                              className="inline-flex items-center px-2 py-1.5 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
+                              className="inline-flex items-center px-2 py-1.5 text-[14px] font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
                               onClick={() => {
                                 setIdAppointment(idx);
                                 setShowAnnuler(!showAnnuler);

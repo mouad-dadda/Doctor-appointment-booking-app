@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AuthButton, Footer, Header } from "../../Components";
 import axiosClient from "../../AxiosClient.js";
 import { useDispatch, useSelector } from "react-redux";
-import { signUpSuccess } from "../../Redux/SliceAuthUser";
+import { signUpSuccess } from "../../Redux/SliceAuthDoctor";
 import { get, storeInLocalStorage } from "../../Services/LocalStorageService";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   document.title = "S'identifier Doctors";
 
-  const userData = useSelector((state) => state.AuthDoctor);
-  console.log(userData);
+  const doctorData = useSelector((state) => state.AuthDoctor);
+  console.log(doctorData);
 
   const dispatch = useDispatch();
 
@@ -20,10 +20,10 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (userData.isAuthenticated && get("TOKEN_DOCTOR")) {
+    if (doctorData.isAuthenticated && get("TOKEN_DOCTOR")) {
       navigate("/doctor/dashboard");
     }
-  }, [navigate, userData.isAuthenticated]);
+  }, [navigate, doctorData.isAuthenticated]);
 
   const [DataForm, setData] = useState({
     firstname: "",
@@ -289,7 +289,7 @@ const Signup = () => {
               <div className="  flex justify-center items-center mb-4 ">
                 <p className="mt-4 text-[14px] text-gray-500 sm:mt-0">
                   Vous avez déjà un compte?
-                  <Link to="/Connexion" className="text-gray-700 underline">
+                  <Link to="/doctor/login" className="text-gray-700 underline">
                     {" "}
                     Connexion
                   </Link>

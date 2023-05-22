@@ -1,11 +1,11 @@
-import React from 'react'
-import TableHistorique from './TableHistorique'
-import { Link } from 'react-router-dom'
+import React from "react";
+import TableHistorique from "./TableHistorique";
+import { Link } from "react-router-dom";
 
 const ListOfHistorique = () => {
   return (
     <>
-          <div className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
+      <div className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
         <div className="w-full mb-1">
           {/* Header of Page  */}
 
@@ -104,9 +104,9 @@ const ListOfHistorique = () => {
           </div>
         </div>
       </div>
-      <TableHistorique/>
+      <TableHistorique />
     </>
-  )
-}
+  );
+};
 
-export default ListOfHistorique
+export default ListOfHistorique;

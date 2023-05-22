@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Footer, Header, TimePicker } from "../Components";
 import ComplitedAppointment from "./ComplitedAppointment";
 import Datepicker from "flowbite-datepicker/Datepicker";
-import { ClockIcon } from "@heroicons/react/20/solid";
-import { useNavigate, useParams } from "react-router";
+import {
+  ClockIcon,
+  ClipboardDocumentCheckIcon,
+} from "@heroicons/react/20/solid";
+import { useParams } from "react-router";
 import axiosClient from "../AxiosClient";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import GetAuthUser from "../hooks/GetAuthUser";
 
 const BookingAppointment = () => {
   const [selectedTime, setSelectedTime] = useState("");
   const [SelectedDate, setSelectedDate] = useState("");
+  const [SelectedType, setSelectedType] = useState("");
   const [showComplitedAppointment, setShowComplitedAppointment] =
     useState(false);
 
@@ -21,6 +25,10 @@ const BookingAppointment = () => {
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
+  };
+
+  const handleTypeChange = (event) => {
+    setSelectedType(event.target.value);
   };
 
   GetAuthUser();
@@ -45,14 +53,21 @@ const BookingAppointment = () => {
   const HandelSubmit = (e) => {
     e.preventDefault();
 
-    const formattedDate = new Date(SelectedDate).toISOString().slice(0, 10); // Convert date to MySQL format
+    const selectedDate = new Date(SelectedDate);
+    selectedDate.setDate(selectedDate.getDate() + 1); // Decrease date by one day
 
+    const formattedDate = selectedDate.toISOString().slice(0, 10); // Convert decreased date to MySQL formatconsole.log(SelectedDate +  formattedDate);
+
+    console.log(SelectedType);
+
+    console.log(formattedDate);
     axiosClient
       .post("/take/appointment", {
         user_id: UserData.user.id,
         doctor_id: id,
         date_appointment: formattedDate,
         time_appointment: selectedTime,
+        type_appointment: SelectedType,
       })
       .then((res) => setShowComplitedAppointment(true))
       .catch((err) => console.log(err));
@@ -66,7 +81,7 @@ const BookingAppointment = () => {
         <div className=" relative bg-black  bg-opacity-75 ">
           <Header />
           <main className="h-[80.65vh] flex justify-center items-center ">
-            <div className=" bg-white w-[30%] h-[56%] rounded-sm p-3 ">
+            <div className=" bg-white w-[33%] h-[69%] rounded-sm p-3 ">
               <div className="w-full">
                 <div className=" flex justify-center w-full ">
                   <div className="w-[25%]">
@@ -88,7 +103,7 @@ const BookingAppointment = () => {
                         <div className=" mr-4 ">
                           <label
                             htmlFor="countries"
-                            className="block mb-2 text-[13px] font-medium text-gray-900 "
+                            className="block mb-1 text-[13px] font-medium text-gray-900 "
                           >
                             Select Date
                           </label>
@@ -125,7 +140,7 @@ const BookingAppointment = () => {
                         <div>
                           <label
                             htmlFor="countries"
-                            className="block mb-2 text-[13px] font-medium text-gray-900 dark:text-white"
+                            className="block mb-1 text-[13px] font-medium text-gray-900 dark:text-white"
                           >
                             Select Time
                           </label>
@@ -139,6 +154,39 @@ const BookingAppointment = () => {
                               stepInMinutes={15}
                               onChange={handleTimeChange}
                             />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-center mt-4  ">
+                        <div>
+                          <label
+                            htmlFor="countries"
+                            className="block mb-1 text-[13px] font-medium text-gray-900 dark:text-white"
+                          >
+                            Type Apointment
+                          </label>
+                          <div className="relative max-w-sm">
+                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                              <ClipboardDocumentCheckIcon className="w-5 h-5 text-gray-500" />
+                            </div>
+                            <select
+                              id="countries"
+                              onChange={handleTypeChange}
+                              value={SelectedType}
+                              className="bg-gray-50  pl-[44px] border border-gray-300 text-gray-900 text-[14px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[7px] "
+                            >
+                              <option>Type Appointment</option>
+                              <option value={"urgent"}>Urgent</option>
+                              <option value={"nouveau patient"}>
+                                Nouveau Patient
+                              </option>
+                              <option value={"suivi"}>Suivi</option>
+                              <option value={"diagnostic"}>Diagnostic</option>
+                              <option value={"consultation"}>
+                                Consultation
+                              </option>
+                            </select>
                           </div>
                         </div>
                       </div>

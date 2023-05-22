@@ -17,6 +17,7 @@ return new class extends Migration
       $table->foreignId('doctor_id')->constrained('doctors', 'id');
       $table->date('date_appointment');
       $table->string('time_appointment');
+      $table->string('type_appointment');
       $table->string('cancel_appointment')->default(false);
       $table->timestamps();
     });

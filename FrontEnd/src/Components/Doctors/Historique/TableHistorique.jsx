@@ -2,7 +2,6 @@ import React from "react";
 import data from "../users.json";
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 
-
 const TableHistorique = () => {
   return (
     <>

@@ -1,12 +1,26 @@
 import { Modal } from "flowbite-react";
 import React from "react";
 
-const AnnulerModel = ({ showAnnuler, setShowAnnuler, AnnulerAppointment, idAppointment }) => {
+const AnnulerModel = ({
+  showAnnuler,
+  setShowAnnuler,
+  AnnulerAppointment,
+  idAppointment,
+}) => {
   return (
     <>
-      <Modal show={showAnnuler} size="md" popup={true} onClose={() => setShowAnnuler(!showAnnuler)}>
+      <Modal
+        show={showAnnuler}
+        size="md"
+        popup={true}
+        onClose={() => setShowAnnuler(!showAnnuler)}
+      >
         {/* <!-- Modal content --> */}
-        <div    data-te-animation-init  data-te-animation="[fade-in_1s_ease-in-out]"  className="relative  bg-white rounded-lg shadow dark:bg-gray-800">
+        <div
+          data-te-animation-init
+          data-te-animation="[fade-in_1s_ease-in-out]"
+          className="relative  bg-white rounded-lg shadow dark:bg-gray-800"
+        >
           {/* <!-- Modal header --> */}
           <div className="flex justify-end p-2">
             <button

@@ -15,7 +15,8 @@ class Appointment extends Model
     'doctor_id',
     'date_appointment',
     'time_appointment',
-    'cancel_appointment'
+    'cancel_appointment',
+    'type_appointment'
   ];
 
   public function user()

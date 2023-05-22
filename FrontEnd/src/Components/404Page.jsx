@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const PageNotfond = () => {
-  document.title='Not fond'
+  document.title = "Not fond";
   return (
     <>
       <div className="  flex justify-center items-center ">

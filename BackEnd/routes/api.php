@@ -41,8 +41,6 @@ Route::middleware('auth:sanctum')->group(
 
     //ROUTE APPOINTMENT
 
-
-    Route::post('/take/appointment', [AppointmentManagementController::class, 'TakeAppointment']);
   }
 );
 
@@ -73,3 +71,7 @@ Route::get('/doctor/appointment/{id}', [AppointmentManagementController::class, 
 Route::post('/doctor/home', [DoctorManagementController::class, 'getRandomPremiumDoctors']);
 
 Route::post('/search/doctors', [DoctorManagementController::class, 'SearchDoctors']);
+
+Route::get('/doctor/appointmenttoday/{doctorId}', [AppointmentManagementController::class, 'GetAppointmentToday']);
+
+Route::post('/take/appointment', [AppointmentManagementController::class, 'TakeAppointment']);

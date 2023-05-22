@@ -5,37 +5,15 @@ import {
   TableDashboard,
 } from "../../Components";
 import { HandThumbUpIcon } from "@heroicons/react/24/solid";
-import { useDispatch, useSelector } from "react-redux";
-import { get } from "../../Services/LocalStorageService";
-import { addDoctorData } from "../../Redux/SliceAuthDoctor";
-import axiosClient from "../../AxiosClient";
-import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
+import GetAuthDoctor from "../../hooks/GetAuthDoctor";
 
 const Dashboard = () => {
   document.title = "Doctor Dashboard";
   const doctorData = useSelector((state) => state.AuthDoctor);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   console.log(doctorData);
 
-  useEffect(() => {
-    if (
-      doctorData.isAuthenticated &&
-      get("TOKEN_DOCTOR") &&
-      !doctorData.doctor 
-    ) {
-      axiosClient
-        .get("/doctor")
-        .then((re) => {
-          dispatch(addDoctorData(re.data));
-          console.log(re);
-        })
-        .catch((er) => {
-          console.log(er);
-          // navigate("/doctor/login");
-        });
-    }
-  }, []);
+  GetAuthDoctor();
 
   return (
     <>

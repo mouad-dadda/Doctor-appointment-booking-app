@@ -18,6 +18,7 @@ class AppointmentFactory extends Factory
       'date_appointment' => Carbon::now()->addDays(rand(1, 30))->toDateString(),
       'time_appointment' => $this->faker->time('H:i'),
       'cancel_appointment' => false,
+      'type_appointment' => $this->faker->randomElement(['urgent', 'nouveau patient', 'suivi', 'diagnostic', 'consultation'])
     ];
   }
 }

@@ -6,8 +6,7 @@ import { ClockIcon } from "@heroicons/react/20/solid";
 import { useNavigate, useParams } from "react-router";
 import axiosClient from "../AxiosClient";
 import { useDispatch, useSelector } from "react-redux";
-import { get } from "../Services/LocalStorageService";
-import { addUserData } from "../Redux/SliceAuthUser";
+import GetAuthUser from "../hooks/GetAuthUser";
 
 const BookingAppointment = () => {
   const [selectedTime, setSelectedTime] = useState("");
@@ -15,8 +14,6 @@ const BookingAppointment = () => {
   const [showComplitedAppointment, setShowComplitedAppointment] =
     useState(false);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { id } = useParams();
   const [DoctorData, setDoctorData] = useState({});
 
@@ -26,22 +23,9 @@ const BookingAppointment = () => {
     setSelectedTime(event.target.value);
   };
 
-  useEffect(() => {
-    if (
-      UserData.isAuthenticated &&
-      get("TOKEN_USER") &&
-      UserData.user === null
-    ) {
-      axiosClient
-        .get("/user")
-        .then((re) => {
-          dispatch(addUserData(re.data));
-        })
-        .catch((er) => {
-          navigate("/connexion");
-        });
-    }
+  GetAuthUser();
 
+  useEffect(() => {
     axiosClient
       .get("/doctor/" + id)
       .then((re) => {
@@ -56,7 +40,7 @@ const BookingAppointment = () => {
     new Datepicker(datepickerEl, {
       autohide: true,
     });
-  }, [UserData, dispatch, navigate]);
+  }, [UserData]);
 
   const HandelSubmit = (e) => {
     e.preventDefault();
@@ -73,6 +57,8 @@ const BookingAppointment = () => {
       .then((res) => setShowComplitedAppointment(true))
       .catch((err) => console.log(err));
   };
+
+  console.log(UserData);
 
   return (
     <>
@@ -143,12 +129,6 @@ const BookingAppointment = () => {
                           >
                             Select Time
                           </label>
-                          {/* <TimePicker
-                            minTime="08:00"
-                            maxTime="20:00"
-                            stepInMinutes={15}
-                            onChange={handleTimeChange}
-                          /> */}
                           <div className="relative max-w-sm">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                               <ClockIcon className="w-5 h-5 text-gray-500" />

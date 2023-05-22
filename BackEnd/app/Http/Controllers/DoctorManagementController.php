@@ -10,29 +10,39 @@ class DoctorManagementController extends Controller
 {
 
 
-  public function SearchDoctors(Request $request)
+  public function searchDoctors(Request $request)
   {
+    $specialite = $request->post('specialite');
+    $addressCabinet = $request->post('address_cabinet');
+    $firstname = $request->post('firstname');
+    $nomCabinet = $request->post('nom_cabinet');
 
-    $key = $request->post('key');
+    $doctors = Doctor::where(function ($query) use ($specialite, $addressCabinet, $firstname, $nomCabinet) {
+      if (!empty($specialite)) {
+        $query->where('specialite', 'LIKE', "%$specialite%");
+      }
+      if (!empty($addressCabinet)) {
+        $query->orWhere('address_cabinet', 'LIKE', "%$addressCabinet%");
+      }
+      if (!empty($firstname)) {
+        $query->orWhere('firstname', 'LIKE', "%$firstname%");
+      }
+      if (!empty($nomCabinet)) {
+        $query->orWhere('nom_cabinet', 'LIKE', "%$nomCabinet%");
+      }
+    })->get();
 
-    // return  $key ;
-
-    $doctors = Doctor::where('specialite', 'LIKE', "%$key%")
-      ->orWhere('address_cabinet', 'LIKE', "%$key%")
-      ->orWhere('firstname', 'LIKE', "%$key%")
-      ->orWhere('nom_cabinet', 'LIKE', "%$key%")
-      ->get();
-
-    if ($doctors !== []) {
-      return response([
+    if ($doctors->isNotEmpty()) {
+      return response()->json([
         'DataSearch' => $doctors
       ], 200);
     } else {
-      return  response([
-        'DataSearch' => 'No Doctor'
+      return response()->json([
+        'message' => 'No doctors found'
       ], 404);
     }
   }
+
 
 
   public function getRandomPremiumDoctors()

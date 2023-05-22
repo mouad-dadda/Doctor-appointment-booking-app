@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Footer, Header, UserNavSettings } from "../../Components";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { addUserData } from "../../Redux/SliceAuthUser";
-import { get } from "../../Services/LocalStorageService";
 import axiosClient from "../../AxiosClient";
+import GetAuthUser from "../../hooks/GetAuthUser";
 
 const Settings = () => {
   const UserData = useSelector((state) => state.authUser);
@@ -23,21 +22,9 @@ const Settings = () => {
     cin: "",
   });
 
+  GetAuthUser();
+
   useEffect(() => {
-    if (
-      UserData.isAuthenticated &&
-      get("TOKEN_USER") &&
-      UserData.user === null
-    ) {
-      axiosClient
-        .get("/user")
-        .then((re) => {
-          dispatch(addUserData(re.data));
-        })
-        .catch((er) => {
-          navigate("/connexion");
-        });
-    }
     if (UserData.user && UserData.user.user_avatar !== null) {
       setGetUserAvatar(UserData.user.user_avatar);
     }
@@ -51,7 +38,7 @@ const Settings = () => {
         cin: UserData.user.cin,
       });
     }
-  }, [UserData, dispatch, navigate]);
+  }, [UserData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

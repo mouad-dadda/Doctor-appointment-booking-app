@@ -15,10 +15,10 @@ const SearchDoctors = () => {
   const AuthUserData = useSelector((state) => state.authUser);
 
   const [DataForm, setDataForm] = useState({
-    specialty: "",
-    ville: "",
-    docteur: "",
-    hopital: "",
+    specialite: "",
+    address_cabinet: "",
+    firstname: "",
+    nom_cabinet: "",
   });
 
   const [DataSearch, setDataSearch] = useState([]);
@@ -32,11 +32,10 @@ const SearchDoctors = () => {
     e.preventDefault();
 
     axiosClient
-      .post("/search/doctors", {
-        key: DataForm.specialty,
-      })
+      .post("/search/doctors", DataForm)
       .then((res) => setDataSearch(res.data.DataSearch))
       .catch((err) => console.log(err));
+    console.log(DataSearch);
   };
 
   const [showAlertToRegistre, setSowAlertToRegistre] = useState(
@@ -57,7 +56,7 @@ const SearchDoctors = () => {
                 <input
                   id="Specialty"
                   type="text"
-                  name="specialty"
+                  name="specialite"
                   className="input_search"
                   placeholder="Choose specialty"
                   onChange={HandleChangeData}
@@ -71,7 +70,7 @@ const SearchDoctors = () => {
                 <input
                   id="Ville"
                   type="text"
-                  name="ville"
+                  name="address_cabinet"
                   className="input_search"
                   placeholder="Choose Ville"
                   onChange={HandleChangeData}
@@ -85,7 +84,7 @@ const SearchDoctors = () => {
                 <input
                   id="Docteur"
                   type="text"
-                  name="docteur"
+                  name="firstname"
                   className="input_search"
                   placeholder="Choose Docteur"
                   onChange={HandleChangeData}
@@ -99,7 +98,7 @@ const SearchDoctors = () => {
                 <input
                   id="Hôpital"
                   type="text"
-                  name="hopital"
+                  name="nom_cabinet"
                   className="input_search"
                   placeholder="Choose Hospital"
                   onChange={HandleChangeData}

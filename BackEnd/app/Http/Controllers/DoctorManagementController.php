@@ -103,11 +103,13 @@ class DoctorManagementController extends Controller
   public function UpdateInfoTimeWork(Request $request)
   {
 
-    $doctor = Doctor::find($request->put('id'));
-    $doctor->day_debut_work = $request->put('day_debut_work');
-    $doctor->day_fin_work = $request->put('day_fin_work');
-    $doctor->time_debut_work = $request->put('time_debut_work');
-    $doctor->time_fin_work = $request->put('time_fin_work');
+    $doctor = Doctor::find($request->post('id'));
+    $doctor->day_debut_work = $request->post('day_debut_work');
+    $doctor->day_fin_work = $request->post('day_fin_work');
+    $doctor->time_debut_work = $request->post('time_debut_work');
+    $doctor->time_fin_work = $request->post('time_fin_work');
+    $doctor->appointment_time = $request->post('appointment_time');
+
     $doctor->save();
 
     return response([

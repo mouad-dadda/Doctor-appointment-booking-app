@@ -30,6 +30,7 @@ class DoctorFactory extends Factory
       'time_debut_work' => $this->faker->time('H:i'),
       'time_fin_work' => $this->faker->time('H:i'),
       'available' => $this->faker->boolean(),
+      'appointment_time'=>'40'
   ];
 
   }

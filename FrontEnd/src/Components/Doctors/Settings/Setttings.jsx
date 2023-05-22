@@ -92,7 +92,7 @@ const Setttings = () => {
             >
               <PersonalInformation />
             </Tabs.Item>
-            <Tabs.Item title="Chronometrage Travail">
+            <Tabs.Item title="Setting Appointment">
               <TamingWork />
             </Tabs.Item>
             <Tabs.Item title="Change Password">

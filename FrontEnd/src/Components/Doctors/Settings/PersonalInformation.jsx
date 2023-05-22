@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import axiosClient from "../../../AxiosClient";
 import AuthButton from "../../AuthButton";
 const PersonalInformation = () => {
-  const doctorData = useSelector((state) => state.AuthDoctor);
+  const doctorData = useSelector((state) => state.AuthDoctor);  
   const [loading, setLoading] = useState(false);
 
   const [DataForm, setDataForm] = useState({

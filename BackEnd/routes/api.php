@@ -65,7 +65,7 @@ Route::post('/doctor/login', [DoctorAuthController::class, 'login']);
 Route::post('/doctor/register', [DoctorAuthController::class, 'register']);
 
 
-Route::put('/doctor/update/info/time', [DoctorManagementController::class, 'UpdateInfoTimeWork']);
+Route::post('/doctor/update/info/time', [DoctorManagementController::class, 'UpdateInfoTimeWork']);
 
 Route::get('/doctor/appointment/{id}', [AppointmentManagementController::class, 'GetApointmentDoctor']);
 

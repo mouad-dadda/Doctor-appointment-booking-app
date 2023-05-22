@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 import AnnulerModel from "../Includes/AnnulerModel";
-import data from "../users.json";
+import axiosClient from "../../../AxiosClient";
+import { useSelector } from "react-redux";
 
 const TableDashboard = () => {
   const [showAnnuler, setShowAnnuler] = useState(false);
-
+  const doctorData = useSelector((state) => state.AuthDoctor);
+  const [AppointmentToday, setAppointmentToday] = useState([]);
   const [idAppointment, setIdAppointment] = useState(null);
 
   const AnnulerAppointment = (idAppointment) => {
@@ -13,6 +15,19 @@ const TableDashboard = () => {
     setShowAnnuler(!showAnnuler);
     setIdAppointment(null);
   };
+
+  useEffect(() => {
+    if (doctorData.doctor) {
+      axiosClient
+        .get("/doctor/appointmenttoday/" + doctorData.doctor.id)
+        .then((res) => {
+          setAppointmentToday(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [doctorData]);
 
   return (
     <>
@@ -78,12 +93,11 @@ const TableDashboard = () => {
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
-                      >
-                      </th>
+                      ></th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                    {data.map((el, idx) => {
+                    {AppointmentToday.map((el, idx) => {
                       return (
                         <tr
                           key={idx}
@@ -92,7 +106,7 @@ const TableDashboard = () => {
                           <td className="flex items-center p-4  space-x-6 whitespace-nowrap">
                             <div className="text-[14px] font-normal text-gray-500 dark:text-gray-400">
                               <div className="text-[14px] font-semibold text-gray-900 dark:text-white">
-                                {el.nom}
+                                {el.user.firstname + " " + el.user.lastname}
                               </div>
                               {/* <div className="text-[14px] font-normal text-gray-500 dark:text-gray-400">
                                 {el.email}
@@ -100,32 +114,32 @@ const TableDashboard = () => {
                             </div>
                           </td>
                           <td className="max-w-[14px] p-4 overflow-hidden text-[14px] font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
-                            {el.cin}
+                            {el.user.cin}
                           </td>
                           <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {el.NumeroTelephone}
+                            {el.user.phoneNumber || ""}
                           </td>
                           <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {el.type}
+                            {el.type_appointment}
                           </td>
                           <td className="p-4 text-[14px] font-normal text-gray-900 whitespace-nowrap dark:text-white">
                             <div className="flex items-center">
                               {/* <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
                               <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div> */}
-                              {el.DateRendezvous}
+                              {el.date_appointment}
                             </div>
                           </td>
                           <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {el.heur}
+                            {el.time_appointment}
                           </td>
                           <td className="p-4 space-x-2 whitespace-nowrap">
-                            <button
+                            {/* <button
                               type="button"
                               className="inline-flex items-center px-2 py-1.5 text-[14px] font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                             >
                               <CheckCircleIcon className="w-4 h-4 mr-2 " />
                               Terminer
-                            </button>
+                            </button> */}
                             <button
                               type="button"
                               className="inline-flex items-center px-2 py-1.5 text-[14px] font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"

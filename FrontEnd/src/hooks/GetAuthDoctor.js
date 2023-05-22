@@ -29,6 +29,7 @@ const GetAuthDoctor = () => {
           navigate("/doctor/login");
         });
     }
+    console.log(doctorData);
   }, [dispatch, navigate]);
 };
 

@@ -16,6 +16,7 @@ export { default as TableDashboard } from "./Doctors/Dashboard/TableData.jsx";
 export { default as ListOfAppointment } from "./Doctors/RendezVous/ListOfAppointment";
 export { default as ListOfHistorique } from "./Doctors/Historique/ListOfHistorique.jsx";
 export { default as Setttings } from "./Doctors/Settings/Setttings.jsx";
+export { default as SectionDoctor } from "./Doctors/Dashboard/Section";
 
 // Alert
 

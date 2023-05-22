@@ -29,6 +29,8 @@ Route::middleware('auth:sanctum')->group(
 
     Route::get('/doctor/{id}', [DoctorManagementController::class, 'DoctoroInfo']);
 
+    Route::post('/doctor/update/info', [DoctorManagementController::class, 'updateInfo']);
+
 
     //USER ROUTE
 
@@ -62,7 +64,6 @@ Route::post('/doctor/login', [DoctorAuthController::class, 'login']);
 
 Route::post('/doctor/register', [DoctorAuthController::class, 'register']);
 
-Route::put('/doctor/update/info', [DoctorManagementController::class, 'updateInfo']);
 
 Route::put('/doctor/update/info/time', [DoctorManagementController::class, 'UpdateInfoTimeWork']);
 

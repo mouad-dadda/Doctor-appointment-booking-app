@@ -48,7 +48,7 @@ const BookingAppointment = () => {
     new Datepicker(datepickerEl, {
       autohide: true,
     });
-  }, [UserData]);
+  }, [UserData,id]);
 
   const HandelSubmit = (e) => {
     e.preventDefault();

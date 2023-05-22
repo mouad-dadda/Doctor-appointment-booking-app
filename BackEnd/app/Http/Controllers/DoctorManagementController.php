@@ -60,7 +60,6 @@ class DoctorManagementController extends Controller
   {
     $validator = Validator::make($request->all(), [
       'id' => 'required',
-      'cin' => 'required|string',
       'phoneNumber' => 'required',
       'email' => 'required|email',
     ]);
@@ -79,16 +78,18 @@ class DoctorManagementController extends Controller
     }
 
     $doctor = Doctor::find($data['id']);
-    $doctor->firstname = $request->put('firstname');
-    $doctor->lastname = $request->put('lastname');
-    $doctor->cin = $request->put('cin');
-    $doctor->phoneNumber = $request->put('phoneNumber');
-    $doctor->email = $request->put('email');
-    $doctor->Matricule = $request->put('Matricule');
-    $doctor->specialite = $request->put('specialite');
-    $doctor->nom_cabinet = $request->put('nom_cabinet');
-    $doctor->address_cabinet = $request->put('address_cabinet');
-    $doctor->available = $request->put('available');
+    $doctor->firstname = $request->post('firstname');
+    $doctor->lastname = $request->post('lastname');
+    $doctor->cin = $request->post('cin');
+    $doctor->phoneNumber = $request->post('phoneNumber');
+    $doctor->email = $request->post('email');
+    $doctor->Matricule = $request->post('Matricule');
+    $doctor->specialite = $request->post('specialite');
+    $doctor->nom_cabinet = $request->post('nom_cabinet');
+    $doctor->address_cabinet = $request->post('address_cabinet');
+    $doctor->available = $request->post('available');
+    $doctor->about = $request->post('about');
+
     $doctor->save();
 
 

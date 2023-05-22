@@ -29,6 +29,7 @@ class Doctor extends Authenticatable
     'time_fin_work',
     'available',
     'premium',
+    'about'
   ];
 
 
@@ -52,9 +53,7 @@ class Doctor extends Authenticatable
   ];
 
   public function appointments()
-    {
-        return $this->hasMany(Appointment::class);
-    }
-
-    
+  {
+    return $this->hasMany(Appointment::class);
+  }
 }

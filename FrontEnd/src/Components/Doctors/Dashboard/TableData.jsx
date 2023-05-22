@@ -70,25 +70,25 @@ const TableDashboard = () => {
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        NumeroTelephone
+                        Numero Telephone
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        type
+                        Type
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        DateRendezvous
+                        Date Rendezvous
                       </th>
                       <th
                         scope="col"
                         className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
                       >
-                        heur
+                        Heur
                       </th>
                       <th
                         scope="col"

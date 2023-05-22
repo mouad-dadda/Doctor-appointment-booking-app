@@ -62,4 +62,15 @@ class AppointmentManagementController extends Controller
 
     return response()->json($appointments);
   }
+
+  public function GetAppointmentOldDate($doctorId)
+  {
+    $appointments = Appointment::with('user')
+      ->where('doctor_id', $doctorId)
+      ->whereDate('date_appointment','<', Carbon::today())
+      ->get();
+
+    return response()->json($appointments);
+  }
+
 }

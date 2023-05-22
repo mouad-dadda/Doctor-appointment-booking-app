@@ -75,4 +75,7 @@ Route::post('/search/doctors', [DoctorManagementController::class, 'SearchDoctor
 
 Route::get('/doctor/appointmenttoday/{doctorId}', [AppointmentManagementController::class, 'GetAppointmentToday']);
 
+Route::get('/doctor/appointmentoldday/{doctorId}', [AppointmentManagementController::class, 'GetAppointmentOldDate']);
+
+
 Route::post('/take/appointment', [AppointmentManagementController::class, 'TakeAppointment']);

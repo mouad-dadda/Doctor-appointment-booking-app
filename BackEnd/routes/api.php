@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppointmentManagementController;
+use App\Http\Controllers\Auth\Admin\AdminAuthController;
 use App\Http\Controllers\Auth\Doctor\DoctorAuthController;
 use App\Http\Controllers\Auth\User\UserAuthController;
 use App\Http\Controllers\DoctorManagementController;
@@ -81,3 +82,8 @@ Route::get('/doctor/appointmentoldday/{doctorId}', [AppointmentManagementControl
 Route::get('/doctor/appointmenttoday/{doctorId}', [AppointmentManagementController::class, 'GetAppointmentToday']);
 
 Route::get('/doctor/newappointment/{doctorId}', [AppointmentManagementController::class, 'GetNewAppointment']);
+
+
+// ROUTE ADMIN
+
+Route::post("/admin/login", [AdminAuthController::class, 'login']);

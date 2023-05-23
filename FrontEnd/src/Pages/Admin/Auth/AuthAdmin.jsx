@@ -1,23 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import axiosClient from "../../../AxiosClient";
 import { AlertErrorMessage, AuthButton, Header ,Footer } from "../../../Components";
+import { loginSuccess } from "../../../Redux/SliceAuthAdmin";
+import { get, storeInLocalStorage } from "../../../Services/LocalStorageService";
 
 const AuthAdmin = () => {
   document.title = "Admin Connexion";
 
+  const adminData = useSelector((state) => state.AuthAdmin);
   const navigate = useNavigate();
-  // console.log(doctorData);
+  console.log(adminData);
+
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   if (doctorData.isAuthenticated && get("TOKEN_DOCTOR")) {
-  //     navigate("/doctor/dashboard");
-  //   }
-  // }, [navigate, doctorData.isAuthenticated]);
+  useEffect(() => {
+    if (adminData.isAuthenticated && get("TOKEN_ADMIN")) {
+      navigate("/admin/dashboard");
+    }
+  }, [navigate, adminData.isAuthenticated]);
 
   const [DataForm, setDataForm] = useState({
     email: "",
@@ -32,8 +36,26 @@ const AuthAdmin = () => {
   };
 
   const HandleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
+    axiosClient
+      .post("/admin/login", DataForm)
+      .then(({ data }) => {
+        console.log({ data });
+        dispatch(loginSuccess(data));
 
+        storeInLocalStorage("TOKEN_ADMIN", data.token);
+        setLoading(false);
+        navigate("/admin/dashboard");
+      })
+      .catch((err) => {
+        setLoading(false);
+        if (err.response && err.response.status === 422) {
+          setError(err.response.data.error);
+        } else {
+          console.log(err);
+        }
+      });
   };
 
   return (

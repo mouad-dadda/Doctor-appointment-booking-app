@@ -16,9 +16,6 @@ const AuthAdminSlice = createSlice({
       state.admin = action.payload.admin;
       state.adminToken = action.payload.token;
     },
-    showAlertToAuth: (state, action) => {
-      state.showAlertToAuth = action.payload;
-    },
     addAdminData: (state, action) => {
       state.admin = action.payload;
     },
@@ -39,7 +36,7 @@ export const {
   signUpSuccess,
   loginSuccess,
   logout,
-  addadminData,
+  addAdminData,
 } = AuthAdminSlice.actions;
 
 export default AuthAdminSlice.reducer;

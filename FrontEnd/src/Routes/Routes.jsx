@@ -22,6 +22,7 @@ import {
   PatientsList,
 } from "../Pages";
 import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
+import GuardAdmin from "../Middleware/GuardAdmin";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -130,16 +131,28 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin/dashboard",
-    element: <DashboardAdmin />,
+    element: (
+      <GuardAdmin>
+        <DashboardAdmin />
+      </GuardAdmin>
+    ),
   },
   {
     path: "/admin/doctors",
-    element: <DoctorsList />,
+    element: (
+      <GuardAdmin>
+        <DoctorsList />
+      </GuardAdmin>
+    ),
   },
 
   {
     path: "/admin/patient",
-    element: <PatientsList />,
+    element: (
+      <GuardAdmin>
+        <PatientsList />
+      </GuardAdmin>
+    ),
   },
 ]);
 

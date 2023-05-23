@@ -1,8 +1,12 @@
 import { NavBarAdmin, SidebarAdmin, TableDashboard } from "../../Components";
+import GetAuthAdmin from "../../hooks/GetAuthAdmin";
 import GetAuthDoctor from "../../hooks/GetAuthDoctor";
 
 const Dashboard = () => {
   document.title = "Doctor Dashboard";
+
+  GetAuthAdmin()
+
   return (
     <>
       <NavBarAdmin />

@@ -23,6 +23,7 @@ return new class extends Migration
       $table->string('Matricule')->unique();
       $table->string('about')->nullable();
       $table->string('specialite')->nullable();
+      $table->boolean('verified')->default(false);
       $table->string('nom_cabinet')->nullable();
       $table->string('premium')->default(true);
       $table->string('address_cabinet')->nullable();

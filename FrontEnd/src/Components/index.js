@@ -27,3 +27,9 @@ export { default as AlertErrorMessage } from "./Alert/AlertErrorMessage.jsx";
 // User
 
 export { default as UserNavSettings } from "./User/NavSettings.jsx";
+
+// ADMINE
+
+export { default as NavBarAdmin } from "./Admin/Includes/NavBar";
+export { default as NotificationAdmin } from "./Admin/Includes/Notification";
+export { default as SidebarAdmin } from "./Admin/Includes/Sidebar";

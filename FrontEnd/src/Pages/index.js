@@ -21,3 +21,10 @@ export { default as DocotrSettings } from "./Doctors/Settings.jsx";
 export { default as UserProfile } from "./Users/Profile.jsx";
 export { default as UserSettings } from "./Users/Settings.jsx";
 export { default as UserChangePassword } from "./Users/ChangePassword";
+
+
+
+// PAGES ADMIN
+
+export {default as AuthAdmin} from "./Admin/Auth/AuthAdmin"
+export {default as DashboardAdmin} from "./Admin/Dashboard"

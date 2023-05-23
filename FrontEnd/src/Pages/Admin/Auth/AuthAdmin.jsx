@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import axiosClient from "../../../AxiosClient";
+import { AlertErrorMessage, AuthButton, Header ,Footer } from "../../../Components";
 
 const AuthAdmin = () => {
   document.title = "Admin Connexion";
 
-  const doctorData = useSelector((state) => state.AuthDoctor);
   const navigate = useNavigate();
-  console.log(doctorData);
+  // console.log(doctorData);
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (doctorData.isAuthenticated && get("TOKEN_DOCTOR")) {
-      navigate("/doctor/dashboard");
-    }
-  }, [navigate, doctorData.isAuthenticated]);
+  // useEffect(() => {
+  //   if (doctorData.isAuthenticated && get("TOKEN_DOCTOR")) {
+  //     navigate("/doctor/dashboard");
+  //   }
+  // }, [navigate, doctorData.isAuthenticated]);
 
   const [DataForm, setDataForm] = useState({
     email: "",
@@ -32,27 +32,8 @@ const AuthAdmin = () => {
   };
 
   const HandleSubmit = (e) => {
-    setLoading(true);
     e.preventDefault();
-    axiosClient
-      .post("/admin/login", DataForm)
-      .then(({ data }) => {
-        console.log({ data });
-        dispatch(loginSuccess(data));
 
-        storeInLocalStorage("TOKEN_DOCTOR", data.token);
-        setLoading(false);
-        navigate("/admin/dashboard");
-      })
-      .catch((err) => {
-        setLoading(false);
-        if (err.response && err.response.status === 422) {
-          setError(err.response.data.message);
-          console.log(err);
-        } else {
-          console.log(err);
-        }
-      });
   };
 
   return (
@@ -70,13 +51,6 @@ const AuthAdmin = () => {
                   <h1 className="mt-4 text-[25px] font-medium text-gray-900 ">
                     Welcome to Doctolib
                   </h1>
-                </div>
-                <div>
-                  <p className=" text-[14px] text-slate-400	">
-                    {" "}
-                    Vous creez votre premier compte doctolib pour obtenir un
-                    rendez-vous avec un medcine !!{" "}
-                  </p>
                 </div>
               </div>
               {error && <AlertErrorMessage message={error} />}
@@ -117,26 +91,16 @@ const AuthAdmin = () => {
                   />
                 </div>
                 <div className=" mb-2">
-                  <a href="/tets" className="  flex  flex-row-reverse ">
+                  {/* <a href="/tets" className="  flex  flex-row-reverse ">
                     <span className="text-medium tracking-wide text-[13px] text-blue-600">
                       Mot de passe oublié ?
                     </span>
-                  </a>
+                  </a> */}
                 </div>
                 <div className="flex justify-center items-center w-full ">
                   <AuthButton Text={"se connecter"} Loading={loading} />
                 </div>
               </form>
-              <div className="  flex justify-center items-center mb-4 ">
-                <p className="mt-4 text-[14px] text-gray-500 sm:mt-0">
-                  Vous n'avez pas de compte ?
-                  <Link to="/doctor/signup" className="text-gray-700 underline">
-                    {" "}
-                    S'identifier
-                  </Link>
-                  .
-                </p>
-              </div>
             </div>
           </div>
           <Footer colorText="white" />

@@ -16,6 +16,8 @@ import {
   BookingAppointment,
   DoctorsLogin,
   DoctorsSignup,
+  AuthAdmin,
+  DashboardAdmin,
 } from "../Pages";
 import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
 
@@ -105,7 +107,7 @@ const router = createBrowserRouter([
     path: "/doctor/historique",
     element: (
       <AuthDoctorGuard>
-        <DoctorHistorique/>
+        <DoctorHistorique />
       </AuthDoctorGuard>
     ),
   },
@@ -116,6 +118,17 @@ const router = createBrowserRouter([
         <DocotrSettings />
       </AuthDoctorGuard>
     ),
+  },
+
+  // ADMIN ROUTE
+
+  {
+    path: "/admin/login",
+    element: <AuthAdmin />,
+  },
+  {
+    path: "/admin/dashboard",
+    element: <DashboardAdmin/>,
   },
 ]);
 

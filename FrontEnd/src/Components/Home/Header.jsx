@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../Assets/Css/HomeCss/header.css";
+import ProfileImg from "./ProfileImg";
 
 const Header = () => {
+
   const [Toggle, setToggle] = useState(false);
   return (
     <header className="header posit_rela">
@@ -46,17 +48,7 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <div className="mr_left">
-            <Link to={"/Connexion"}>
-              <button className="_btn btn_bg_white "> Connexion</button>
-            </Link>
-
-            <Link to={"/identifier"}>
-              <button className="_btn btn_bg_primary btn_mrl">
-                S'identifier
-              </button>
-            </Link>
-          </div>
+          <ProfileImg/>
         </div>
       </div>
     </header>

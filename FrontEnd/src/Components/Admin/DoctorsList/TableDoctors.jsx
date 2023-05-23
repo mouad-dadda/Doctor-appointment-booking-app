@@ -2,6 +2,21 @@ import { XCircleIcon } from "@heroicons/react/20/solid";
 import React from "react";
 
 const TableDoctors = () => {
+
+  const [Doctors, setDoctors] = useState([]);
+
+  useEffect(() => {
+      axiosClient
+        .get("/admin/doctor")
+        .then((res) => {
+          setDoctors(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  }, []);
+
+
   return (
     <>
       <div className="flex flex-col">
@@ -21,19 +36,19 @@ const TableDoctors = () => {
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Cin
+                      Matricule
                     </th>
                     <th
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Numero Telephone
+                      Phone Number
                     </th>
                     <th
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Type
+                      Email
                     </th>
                     <th
                       scope="col"

@@ -1,7 +1,11 @@
 import React from "react";
 import { ListPatione, NavBarAdmin, SidebarAdmin } from "../../Components";
+import GetAuthAdmin from "../../hooks/GetAuthAdmin";
 
 const PationList = () => {
+  GetAuthAdmin();
+
+
   return (
     <>
       <NavBarAdmin />
@@ -12,7 +16,7 @@ const PationList = () => {
           className="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900"
         >
           <main>
-            <ListPatione/>
+            <ListPatione />
           </main>
         </div>
       </div>

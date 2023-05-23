@@ -3,9 +3,32 @@ import "../../../Assets/Css/Doctors/Dashboard.css";
 import Notification from "./Notification";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axiosClient from "../../../AxiosClient";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../Redux/SliceAuthDoctor";
+import { remove } from "../../../Services/LocalStorageService";
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+
+  const Logout = () => {
+    axiosClient
+      .post("/doctor/logout")
+      .then((res) => {
+        if (res.data.success && res.status === 200) {
+          dispatch(logout());
+          remove("TOKEN_DOCTOR");
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <nav className="fixed z-30 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -141,7 +164,9 @@ const NavBar = () => {
                         className="block px-4 py-2 text-sm cursor-pointer text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"
                       >
-                        Sign out
+                        <button
+                        onClick={Logout}
+                        >Sign out</button>
                       </div>
                     </li>
                   </ul>

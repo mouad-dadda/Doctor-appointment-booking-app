@@ -64,14 +64,15 @@ class DoctorAuthController extends Controller
 
   public function logout()
   {
+    $user = Auth::user();
 
-    $user = Auth::guard('doctor')->user();
     $user->currentAccessToken()->delete();
 
     return response([
       'success' => true
     ]);
   }
+
 
   public function doctor(Request $request)
   {

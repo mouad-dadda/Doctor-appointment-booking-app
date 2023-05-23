@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->group(
 
     Route::get('/doctor', [DoctorAuthController::class, 'doctor']);
 
-    Route::post('/doctor/logout', [DoctorAuthController::class, 'login']);
+    Route::post('/doctor/logout', [DoctorAuthController::class, 'logout']);
 
     Route::get('/doctor/{id}', [DoctorManagementController::class, 'DoctoroInfo']);
 

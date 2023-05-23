@@ -1,7 +1,12 @@
 import React from "react";
 import { ListOfDoctors, NavBarAdmin, SidebarAdmin } from "../../Components";
+import GetAuthAdmin from "../../hooks/GetAuthAdmin";
 
 const DoctorsList = () => {
+
+  GetAuthAdmin()
+
+
   return (
     <>
       <NavBarAdmin/>

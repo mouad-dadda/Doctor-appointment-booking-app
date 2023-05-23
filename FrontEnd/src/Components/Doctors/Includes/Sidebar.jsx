@@ -7,9 +7,33 @@ import {
   Cog6ToothIcon,
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axiosClient from "../../../AxiosClient";
+import { logout } from "../../../Redux/SliceAuthDoctor";
+import { useDispatch } from "react-redux";
+import { remove } from "../../../Services/LocalStorageService";
 
 const Sidebar = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+
+  const Logout = () => {
+    axiosClient
+      .post("/doctor/logout")
+      .then((res) => {
+        if (res.data.success && res.status === 200) {
+          dispatch(logout());
+          remove("TOKEN_DOCTOR");
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <aside className="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0  w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width">
@@ -63,7 +87,7 @@ const Sidebar = () => {
               <div className="pt-2 space-y-2 " style={{ marginTop: "14rem" }}>
                 <div className="flex items-center mt-3 p-2 text-base cursor-pointer text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                   <ArrowRightOnRectangleIcon className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                  <span className="ml-3">Lougout</span>
+                  <button onClick={Logout} className="ml-3">Lougout</button>
                 </div>
               </div>
             </div>

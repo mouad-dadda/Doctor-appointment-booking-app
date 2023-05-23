@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "../../Assets/Css/HomeCss/Card.css";
+import { Link } from "react-router-dom";
 
 const Card = ({ id, img, name, specialite }) => {
   return (
@@ -17,7 +18,7 @@ const Card = ({ id, img, name, specialite }) => {
         <p>{specialite}</p>
         <div className="card_btn">
           <button className="btn_card mr_ri btn_bg_primary ">
-            <a href="/reserve">Reserve</a>
+            <Link to={"/bookingappointment/" + id}>Reserve</Link>
           </button>
           <button className="btn_card mr_lf btn_border_primary">
             View Profile

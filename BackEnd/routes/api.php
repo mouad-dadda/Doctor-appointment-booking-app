@@ -64,18 +64,20 @@ Route::post('/doctor/login', [DoctorAuthController::class, 'login']);
 
 Route::post('/doctor/register', [DoctorAuthController::class, 'register']);
 
-
 Route::post('/doctor/update/info/time', [DoctorManagementController::class, 'UpdateInfoTimeWork']);
-
-Route::get('/doctor/appointment/{id}', [AppointmentManagementController::class, 'GetApointmentDoctor']);
 
 Route::post('/doctor/home', [DoctorManagementController::class, 'getRandomPremiumDoctors']);
 
 Route::post('/search/doctors', [DoctorManagementController::class, 'SearchDoctors']);
 
-Route::get('/doctor/appointmenttoday/{doctorId}', [AppointmentManagementController::class, 'GetAppointmentToday']);
 
-Route::get('/doctor/appointmentoldday/{doctorId}', [AppointmentManagementController::class, 'GetAppointmentOldDate']);
+//ROUTE APPOINTMENT
 
 
 Route::post('/take/appointment', [AppointmentManagementController::class, 'TakeAppointment']);
+
+Route::get('/doctor/appointmentoldday/{doctorId}', [AppointmentManagementController::class, 'GetAppointmentOldDate']);
+
+Route::get('/doctor/appointmenttoday/{doctorId}', [AppointmentManagementController::class, 'GetAppointmentToday']);
+
+Route::get('/doctor/newappointment/{doctorId}', [AppointmentManagementController::class, 'GetNewAppointment']);

@@ -6,7 +6,14 @@ const axiosClient = axios.create({
 });
 
 axiosClient.interceptors.request.use((config) => {
-  const token = get("TOKEN_USER") ? get("TOKEN_USER") : get("TOKEN_DOCTOR");
+  let token;
+  if (get("TOKEN_USER")) {
+    token = get("TOKEN_USER");
+  } else if (get("TOKEN_DOCTOR")) {
+    token = get("TOKEN_DOCTOR");
+  } else if (get("TOKEN_ADMIN")) {
+    token = get("TOKEN_ADMIN");
+  }
   config.headers.Authorization = `Bearer ${token}`;
   return config;
 });

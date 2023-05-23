@@ -21,7 +21,7 @@ const Sidebar = () => {
               <ul className="pb-2 space-y-2">
                 <li>
                   <Link
-                    to={"/doctor/dashboard"}
+                    to={"/admin/dashboard"}
                     className="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
                   >
                     {" "}
@@ -33,18 +33,18 @@ const Sidebar = () => {
                 <li>
                   {" "}
                   <Link
-                    to={"/docotr/rendezvous"}
+                    to={"/admin/doctors"}
                     className="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
                   >
                     <UsersIcon className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900" />
-                    <span className="ml-3">Doctors</span>
+                    <span className="ml-3"> Doctors </span>
                   </Link>
                 </li>
 
                 <li>
                   {" "}
                   <Link
-                    to={"/docotr/rendezvous"}
+                    to={"/admin/patient"}
                     className="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
                   >
                     <UserIcon className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 " />
@@ -52,7 +52,7 @@ const Sidebar = () => {
                   </Link>
                 </li>
 
-                <li>
+                {/* <li>
                   {" "}
                   <Link
                     to={"/docotr/rendezvous"}
@@ -61,7 +61,7 @@ const Sidebar = () => {
                     <CalendarDaysIcon className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3">Appointment</span>
                   </Link>
-                </li>
+                </li> */}
               </ul>
               <div className="pt-2 space-y-2 " style={{ marginTop: "14rem" }}>
                 <div className="flex items-center mt-3 p-2 text-base cursor-pointer text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">

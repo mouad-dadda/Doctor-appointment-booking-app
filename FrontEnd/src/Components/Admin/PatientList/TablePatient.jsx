@@ -1,7 +1,7 @@
 import { XCircleIcon } from "@heroicons/react/20/solid";
 import React from "react";
 
-const TableDoctors = () => {
+const TablePatient = () => {
   return (
     <>
       <div className="flex flex-col">
@@ -120,4 +120,5 @@ const TableDoctors = () => {
     </>
   );
 };
-export default TableDoctors;
+
+export default TablePatient;

@@ -29,4 +29,6 @@ export { default as UserChangePassword } from "./Users/ChangePassword";
 export {default as AuthAdmin} from "./Admin/Auth/AuthAdmin"
 export {default as DashboardAdmin} from "./Admin/Dashboard"
 export {default as DoctorsList} from "./Admin/DoctorsList"
+export {default as PatientsList} from "./Admin/PationList"
+
 

@@ -19,6 +19,7 @@ import {
   AuthAdmin,
   DashboardAdmin,
   DoctorsList,
+  PatientsList,
 } from "../Pages";
 import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
 
@@ -134,6 +135,11 @@ const router = createBrowserRouter([
   {
     path: "/admin/doctors",
     element: <DoctorsList />,
+  },
+
+  {
+    path: "/admin/patient",
+    element: <PatientsList />,
   },
 ]);
 

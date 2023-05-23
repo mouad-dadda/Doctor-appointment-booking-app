@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentManagementController;
 use App\Http\Controllers\Auth\Admin\AdminAuthController;
 use App\Http\Controllers\Auth\Doctor\DoctorAuthController;
@@ -44,6 +45,9 @@ Route::middleware('auth:sanctum')->group(
 
     //ROUTE APPOINTMENT
 
+    // ROUTE ADMIN
+
+    Route::get('/admin', [AdminAuthController::class, 'admin']);
   }
 );
 
@@ -87,3 +91,9 @@ Route::get('/doctor/newappointment/{doctorId}', [AppointmentManagementController
 // ROUTE ADMIN
 
 Route::post("/admin/login", [AdminAuthController::class, 'login']);
+
+Route::get('/admin/doctor', [AdminController::class, 'GetAllDocter']);
+
+Route::get('/admin/patient', [AdminController::class, 'GetAllPatient']);
+
+Route::post('/admin/verified', [AdminController::class, 'VerifiedDoctor']);

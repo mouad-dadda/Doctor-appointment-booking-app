@@ -29,4 +29,10 @@ class AdminAuthController extends Controller
 
     return response(['message' => 'Invalid login credentials'], 422);
   }
+
+  public function admin(Request $request)
+  {
+    return response($request->user(), 200);
+  }
+
 }

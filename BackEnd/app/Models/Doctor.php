@@ -29,7 +29,8 @@ class Doctor extends Authenticatable
     'time_fin_work',
     'available',
     'premium',
-    'about'
+    'about',
+    'verified'
   ];
 
 

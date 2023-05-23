@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUserData } from "../Redux/SliceAuthUser";
 import { get } from "../Services/LocalStorageService";
@@ -30,6 +30,8 @@ const GetAuthUser = () => {
   }, [dispatch, navigate]);
 
   console.log(UserData);
+
+
 };
 
 export default GetAuthUser;

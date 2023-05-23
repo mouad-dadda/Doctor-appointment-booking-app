@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import data from "../users.json";
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
+import { useSelector } from "react-redux";
+import axiosClient from "../../../AxiosClient";
 
 const TableAppointment = ({
   showAnnuler,
   setShowAnnuler,
   setIdAppointment,
 }) => {
+  const doctorData = useSelector((state) => state.AuthDoctor);
+  const [NewAppointment, setNewAppointment] = useState([]);
+
+  useEffect(() => {
+    if (doctorData.doctor) {
+      axiosClient
+        .get("/doctor/newappointment/" + doctorData.doctor.id)
+        .then((res) => {
+          setNewAppointment(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [doctorData]);
+
   return (
     <>
       <div className="flex flex-col">
@@ -20,68 +38,77 @@ const TableAppointment = ({
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Name
+                      Nom & Prenom
                     </th>
                     <th
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Biography
+                      Cin
                     </th>
                     <th
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Position
+                      Numero Telephone
                     </th>
                     <th
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Country
+                      Type
                     </th>
                     <th
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Status
+                      Date Rendezvous
                     </th>
                     <th
                       scope="col"
                       className="p-4 text-[14px] font-medium text-left text-gray-500 uppercase "
                     >
-                      Actions
+                      Heur
                     </th>
+                    <th
+                      scope="col"
+                      className="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400"
+                    ></th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200 ">
-                  {data.map((el, idx) => {
+                  {NewAppointment.map((el, idx) => {
                     return (
                       <tr key={idx} className="hover:bg-gray-100 ">
                         <td className="flex items-center p-4   whitespace-nowrap">
                           <div className="text-[14px] font-normal text-gray-500 ">
                             <div className="text-[14px] font-semibold text-gray-900 ">
-                              {el.name}
+                              {el.user.firstname}
                             </div>
                             <div className="text-[14px] font-normal text-gray-500 ">
-                              {el.email}
+                              {el.user.email}
                             </div>
                           </div>
                         </td>
                         <td className="max-w-sm p-4 overflow-hidden text-[14px] font-normal text-gray-500 truncate xl:max-w-xs">
-                          {el.country}
+                          {el.user.cin}
                         </td>
                         <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap ">
-                          {el.position}
+                          {el.user.phoneNumber}
                         </td>
                         <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap ">
-                          {el.status}
+                          {el.type_appointment}
                         </td>
                         <td className="p-4 text-[14px] font-normal text-gray-900 whitespace-nowrap ">
-                          <div className="flex items-center">
+                          {/* <div className="flex items-center">
                             <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
                             <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
-                          </div>
+                          </div> */}
+                          {el.date_appointment}
+
+                        </td>
+                        <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap ">
+                          {el.time_appointment}
                         </td>
                         <td className="p-4 space-x-2 whitespace-nowrap">
                           {/* <button

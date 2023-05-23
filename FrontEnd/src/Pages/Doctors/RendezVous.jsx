@@ -4,9 +4,12 @@ import {
   NavBarDoctors,
   SidebarDoctors,
 } from "../../Components";
+import GetAuthDoctor from "../../hooks/GetAuthDoctor";
 
 const RendezVous = () => {
   document.title = "Rendez vous";
+
+  GetAuthDoctor();
 
   return (
     <>

@@ -7,6 +7,7 @@ export { default as PageNotfond } from "./404Page.jsx";
 export { default as SearchDoctorCard } from "./Home/SearchDoctorCard";
 export { default as TimePicker } from "./Home/TimePicker";
 export { default as AuthButton } from "./AuthButton";
+export { default as DataPicker } from "./Home/DataPicker";
 
 // Doctors Dashboard Export
 

@@ -10,6 +10,8 @@ function TimePicker({ minTime, maxTime, stepInMinutes, onChange }) {
 
   const stepInSeconds = stepInMinutes * 60;
 
+  console.log({ minTime, maxTime, stepInMinutes, onChange });
+
   // Create an array of Date objects representing each time option
 
   const timeOptions = [];

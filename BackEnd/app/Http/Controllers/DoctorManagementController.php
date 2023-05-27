@@ -126,4 +126,6 @@ class DoctorManagementController extends Controller
       $doctor
     ], 200);
   }
+
+  
 }

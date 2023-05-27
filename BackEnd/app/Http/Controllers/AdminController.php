@@ -31,4 +31,10 @@ class AdminController extends Controller
 
     return response()->json($doctor);
   }
+
+  public function DoctorNoVerified()
+  {
+    $doctors = Doctor::where('verified', false)->get();
+    return response()->json($doctors);
+  }
 }

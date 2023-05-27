@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axiosClient from "../../../AxiosClient";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 
-const TableNoVerified = () => {
+const TableNoVerified = ({ setShowAlertSucces }) => {
   const [Doctors, setDoctors] = useState([]);
   const [Loading, setLoading] = useState(false);
   const [LoadingButton, setLoadingButton] = useState({ loading: false, id: 0 });
@@ -27,6 +27,7 @@ const TableNoVerified = () => {
       .post("/admin/verified", { id: idDoctor })
       .then((res) => {
         setLoadingButton({ id: idDoctor, loading: false });
+        setShowAlertSucces(true);
         console.log(res);
         axiosClient
           .post("/doctor/noverified")
@@ -175,6 +176,7 @@ const TableNoVerified = () => {
                               </button>
                             )}
                           </td>
+                          <td></td>
                         </tr>
                       );
                     })}

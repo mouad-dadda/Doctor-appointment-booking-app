@@ -1,7 +1,7 @@
 import React from "react";
 import TableNoVerified from "./TableNoVerified";
 
-const MainDoctorsNoVirified = () => {
+const MainDoctorsNoVirified = ({setShowAlertSucces}) => {
   return (
     <>
       <div className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
@@ -105,7 +105,8 @@ const MainDoctorsNoVirified = () => {
       </div>
 
       {/* Component Table  Appointment */}
-      <TableNoVerified />
+      <TableNoVerified setShowAlertSucces={setShowAlertSucces} />
+
     </>
   );
 };

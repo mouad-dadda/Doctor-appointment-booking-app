@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import AxiosClient from "../../../AxiosClient";
 import axiosClient from "../../../AxiosClient";
 
-const TableDoctors = () => {
+const TableDoctors = ({setShowAlertSucces}) => {
   const [Doctors, setDoctors] = useState([]);
   const [Loading, setLoading] = useState(false);
   const [LoadingButton, setLoadingButton] = useState({ loading: false, id: 0 });
@@ -27,6 +27,7 @@ const TableDoctors = () => {
       .post("/admin/verified", { id: idDoctor })
       .then((res) => {
         setLoadingButton({ id: idDoctor, loading: false });
+        setShowAlertSucces(true)
         console.log(res);
         setDoctors(res.data);
       })

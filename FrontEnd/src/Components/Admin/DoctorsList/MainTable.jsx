@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TableDoctors from "./TableDoctors";
 
-const MainTable = () => {
+const MainTable = ({setShowAlertSucces}) => {
   const [show, setShow] = useState(false);
   const [showAnnuler, setShowAnnuler] = useState(false);
   const [idAppointment, setIdAppointment] = useState(null);
@@ -139,7 +139,7 @@ const MainTable = () => {
       </div>
 
       {/* Component Table  Appointment */}
-      <TableDoctors
+      <TableDoctors  setShowAlertSucces={setShowAlertSucces}
         // showAnnuler={showAnnuler}
         // setShowAnnuler={setShowAnnuler}
         // setIdAppointment={setIdAppointment}

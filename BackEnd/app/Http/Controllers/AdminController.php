@@ -29,9 +29,9 @@ class AdminController extends Controller
     $doctor->verified = true;
     $doctor->save();
 
-    $doctor=Doctor::all() ;
+    $doctor = Doctor::all();
 
-    return response()->json($doctor) ;
+    return response()->json($doctor);
   }
 
   public function DoctorNoVerified()

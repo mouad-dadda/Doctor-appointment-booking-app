@@ -1,29 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-import {
-  Square2StackIcon,
-  CalendarDaysIcon,
-  DocumentDuplicateIcon,
-  Cog6ToothIcon,
-  ArrowRightOnRectangleIcon,
-  UsersIcon,
-  UserIcon,
-} from "@heroicons/react/24/solid";
+import { ArrowRightOnRectangleIcon, UserIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
-import "flowbite";
 
 const Sidebar = () => {
+  const [ShowDropDown, setShowDropDown] = useState(false);
+
   return (
     <>
       <div>
         <div className="relative flex flex-col flex-1 min-h-0 pt-0   ">
-          <aside
-            id="sidebar-multi-level-sidebar"
-            className="fixed top-[11%] left-0 z-40 border-t w-64 h-screen border-r border-gray-200 transition-transform -translate-x-full sm:translate-x-0"
-            aria-label="Sidebar"
-          >
+          <aside className="fixed top-[11%] left-0 z-40 border-t w-64 h-screen border-r border-gray-200 transition-transform -translate-x-full sm:translate-x-0">
             <div className="h-full px-3 py-4 overflow-y-auto bg-white  ">
               <ul className="space-y-2 font-medium text-[18px]">
+                
                 <li>
                   <Link
                     to="/admin/dashboard"
@@ -44,10 +34,9 @@ const Sidebar = () => {
                 </li>
                 <li>
                   <button
+                    onClick={() => setShowDropDown(!ShowDropDown)}
                     type="button"
                     className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 "
-                    aria-controls="dropdown-example"
-                    data-collapse-toggle="dropdown-example"
                   >
                     <svg
                       aria-hidden="true"
@@ -62,10 +51,7 @@ const Sidebar = () => {
                         clipRule="evenodd"
                       ></path>
                     </svg>
-                    <span
-                      className="flex-1 ml-3 text-left whitespace-nowrap"
-                      sidebar-toggle-item="true"
-                    >
+                    <span className="flex-1 ml-3 text-left whitespace-nowrap">
                       Doctors
                     </span>
                     <svg
@@ -82,7 +68,11 @@ const Sidebar = () => {
                       ></path>
                     </svg>
                   </button>
-                  <ul id="dropdown-example" className="hidden py-2 space-y-2">
+                  <ul
+                    className={
+                      ShowDropDown ? "py-2 space-y-2" : "hidden py-2 space-y-2"
+                    }
+                  >
                     <li>
                       <Link
                         to="/admin/doctors"
@@ -111,7 +101,6 @@ const Sidebar = () => {
                     <span className="ml-3">Patient</span>
                   </Link>
                 </li>
-
               </ul>
 
               <div className="pt-2 space-y-2 absolute bottom-[13%]  w-[-webkit-fill-available] pr-[11px] ">
@@ -120,7 +109,6 @@ const Sidebar = () => {
                   <span className="ml-3">Lougout</span>
                 </div>
               </div>
-              
             </div>
           </aside>
         </div>

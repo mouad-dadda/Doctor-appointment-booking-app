@@ -1,4 +1,4 @@
-import { PageNotfond } from "../Components";
+import {  PageNotfond } from "../Components";
 import AuthGuard from "../Middleware/AuthGuard";
 import AppointmentGuard from "../Middleware/AppointmentGuard";
 import {
@@ -20,6 +20,7 @@ import {
   DashboardAdmin,
   DoctorsList,
   PatientsList,
+  NoVerifiedDoctors,
 } from "../Pages";
 import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
 import GuardAdmin from "../Middleware/GuardAdmin";
@@ -142,6 +143,14 @@ const router = createBrowserRouter([
     element: (
       <GuardAdmin>
         <DoctorsList />
+      </GuardAdmin>
+    ),
+  },
+  {
+    path: "/admin/doctors/noverified",
+    element: (
+      <GuardAdmin>
+        <NoVerifiedDoctors />
       </GuardAdmin>
     ),
   },

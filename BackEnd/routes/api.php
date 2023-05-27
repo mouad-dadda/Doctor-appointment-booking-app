@@ -98,4 +98,4 @@ Route::get('/admin/patient', [AdminController::class, 'GetAllPatient']);
 
 Route::post('/admin/verified', [AdminController::class, 'VerifiedDoctor']);
 
-Route::get('/doctor/noverified', [AdminController::class, 'DoctorNoVerified']);
+Route::post('/doctor/noverified', [AdminController::class, 'DoctorNoVerified']);

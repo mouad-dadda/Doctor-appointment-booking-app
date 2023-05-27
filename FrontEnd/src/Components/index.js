@@ -35,3 +35,6 @@ export { default as NotificationAdmin } from "./Admin/Includes/Notification";
 export { default as SidebarAdmin } from "./Admin/Includes/Sidebar";
 export { default as ListOfDoctors } from "./Admin/DoctorsList/MainTable";
 export { default as ListPatione } from "./Admin/PatientList/MainTable";
+export { default as ListOfDoctorsNoVerified } from "./Admin/DoctorsNoVirified/MainDoctorsNoVirified";
+
+

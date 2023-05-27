@@ -1,21 +1,19 @@
 import { XCircleIcon } from "@heroicons/react/20/solid";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import AxiosClient from "../../../AxiosClient";
 
 const TableDoctors = () => {
-
   const [Doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-      axiosClient
-        .get("/admin/doctor")
-        .then((res) => {
-          setDoctors(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    AxiosClient.get("/admin/doctor")
+      .then((res) => {
+        setDoctors(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
-
 
   return (
     <>

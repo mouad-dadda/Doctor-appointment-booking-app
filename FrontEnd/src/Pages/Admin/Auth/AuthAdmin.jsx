@@ -2,9 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import axiosClient from "../../../AxiosClient";
-import { AlertErrorMessage, AuthButton, Header ,Footer } from "../../../Components";
+import {
+  AlertErrorMessage,
+  AuthButton,
+  Header,
+  Footer,
+} from "../../../Components";
 import { loginSuccess } from "../../../Redux/SliceAuthAdmin";
-import { get, storeInLocalStorage } from "../../../Services/LocalStorageService";
+import {
+  get,
+  storeInLocalStorage,
+} from "../../../Services/LocalStorageService";
 
 const AuthAdmin = () => {
   document.title = "Admin Connexion";
@@ -24,8 +32,8 @@ const AuthAdmin = () => {
   }, [navigate, adminData.isAuthenticated]);
 
   const [DataForm, setDataForm] = useState({
-    email: "",
-    password: "",
+    email: "admin@example.com",
+    password: "admin_password",
   });
 
   const [error, setError] = useState("");
@@ -91,6 +99,7 @@ const AuthAdmin = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="exemple@gmail.com"
                     required
+                    value={DataForm.email}
                     onChange={HandleChangeData}
                   />
                 </div>
@@ -105,6 +114,7 @@ const AuthAdmin = () => {
                   <input
                     type="password"
                     id="Password"
+                    value={DataForm.password}
                     name="password"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="•••••••••"

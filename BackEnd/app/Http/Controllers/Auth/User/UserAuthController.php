@@ -27,6 +27,16 @@ class UserAuthController extends Controller
 
     $token = $user->createToken('mainUser')->plainTextToken;
 
+    if ($user->sendEmailVerificationNotification()) {
+      return  response(
+        [
+          'user' => $user,
+          'token' => $token
+        ],
+        200
+      );
+    }
+
     return  response(
       [
         'user' => $user,
@@ -70,5 +80,30 @@ class UserAuthController extends Controller
   public function user(Request $request)
   {
     return response($request->user(), 200);
+  }
+
+  public  function  verify($id, Request $request)
+  {
+    if (!$request->hasValidSignature()) {
+      return response()->json(["msg" => "Invalid/Expired url provided."], 401);
+    }
+    $user = User::find($id);
+    if (!$user->hasVerifiedEmail()) {
+      $user->markEmailAsVerified();
+    }
+    $URL = env("REDIRECT_URL_VIRIFIED_EMAIL");
+    return redirect($URL);
+  }
+
+  public function resend($id)
+  {
+    $user = User::find($id);
+    if ($user->hasVerifiedEmail()) {
+      return response()->json(["msg" => "Email already verified."], 400);
+    }
+
+    $user->sendEmailVerificationNotification();
+
+    return response()->json(["msg" => "Email verification link sent on your email id"]);
   }
 }

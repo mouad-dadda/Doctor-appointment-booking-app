@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\testmail;
 use App\Models\Doctor;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -38,5 +40,12 @@ class AdminController extends Controller
   {
     $doctors = Doctor::where('verified', false)->get();
     return response()->json($doctors);
+  }
+
+  public function test()
+  {
+
+    Mail::to('manlolo339@gmail.com')->send(new testmail()) ;
+
   }
 }

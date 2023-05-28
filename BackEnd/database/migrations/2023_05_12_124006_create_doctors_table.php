@@ -33,6 +33,7 @@ return new class extends Migration
       $table->string('time_fin_work')->nullable();
       $table->string('appointment_time')->nullable();
       $table->string('available')->default(true);
+      $table->timestamp('email_verified_at')->nullable();
       $table->timestamps();
     });
   }

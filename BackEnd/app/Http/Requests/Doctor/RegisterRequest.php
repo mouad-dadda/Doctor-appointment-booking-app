@@ -29,7 +29,7 @@ class RegisterRequest extends FormRequest
       'email' => 'required|email|string|unique:doctors,email',
       'password' => [
         'required',
-        'confirmed'
+        // 'confirmed'
       ],
       'Matricule' => 'required|string|unique:doctors,Matricule'
     ];

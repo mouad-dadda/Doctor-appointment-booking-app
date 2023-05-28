@@ -48,6 +48,8 @@ Route::middleware('auth:sanctum')->group(
     // ROUTE ADMIN
 
     Route::get('/admin', [AdminAuthController::class, 'admin']);
+
+
   }
 );
 
@@ -99,3 +101,14 @@ Route::get('/admin/patient', [AdminController::class, 'GetAllPatient']);
 Route::post('/admin/verified', [AdminController::class, 'VerifiedDoctor']);
 
 Route::post('/doctor/noverified', [AdminController::class, 'DoctorNoVerified']);
+
+Route::get('/send', [AdminController::class, 'test']);
+
+Route::get('email/verify/{id}', [UserAuthController::class, 'verify'])->name('verification.verify');
+
+Route::get('email/resend/{id}',  [UserAuthController::class, 'resend'])->name('verification.resend');
+
+
+Route::get('doctors/email/verify/{id}', [DoctorAuthController::class, 'verify'])->name('doctor.verification.verify');
+
+Route::get('doctors/email/resend/{id}',  [DoctorAuthController::class, 'resend'])->name('doctor.verification.resend');

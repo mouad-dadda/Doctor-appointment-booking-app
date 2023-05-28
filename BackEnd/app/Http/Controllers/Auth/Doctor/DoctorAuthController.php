@@ -27,6 +27,8 @@ class DoctorAuthController extends Controller
       ]
     );
 
+    $doctor->sendEmailVerificationNotification();
+
     $token = $doctor->createToken('mainDoctor')->plainTextToken;
 
     return  response(
@@ -77,5 +79,30 @@ class DoctorAuthController extends Controller
   public function doctor(Request $request)
   {
     return response($request->user(), 200);
+  }
+
+  public  function  verify($id, Request $request)
+  {
+    if (!$request->hasValidSignature()) {
+      return response()->json(["msg" => "Invalid/Expired url provided."], 401);
+    }
+    $doctor = Doctor::find($id);
+    if (!$doctor->hasVerifiedEmail()) {
+      $doctor->markEmailAsVerified();
+    }
+    $URL = env("REDIRECT_URL_VIRIFIED_EMAIL");
+    return redirect($URL);
+  }
+
+  public function resend($id)
+  {
+    $doctor = Doctor::find($id);
+    if ($doctor->hasVerifiedEmail()) {
+      return response()->json(["msg" => "Email already verified."], 400);
+    }
+
+    $doctor->sendEmailVerificationNotification();
+
+    return response()->json(["msg" => "Email verification link sent on your email id"]);
   }
 }

@@ -27,7 +27,7 @@ class DoctorAuthController extends Controller
       ]
     );
 
-    $doctor->sendEmailVerificationNotification();
+    // $doctor->sendEmailVerificationNotification();
 
     $token = $doctor->createToken('mainDoctor')->plainTextToken;
 

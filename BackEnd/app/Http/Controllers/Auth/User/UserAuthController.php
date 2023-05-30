@@ -26,16 +26,7 @@ class UserAuthController extends Controller
     ]);
 
     $token = $user->createToken('mainUser')->plainTextToken;
-
-    if ($user->sendEmailVerificationNotification()) {
-      return  response(
-        [
-          'user' => $user,
-          'token' => $token
-        ],
-        200
-      );
-    }
+    // $user->sendEmailVerificationNotification()
 
     return  response(
       [

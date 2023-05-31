@@ -44,12 +44,12 @@ const Setttings = () => {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to="/doctor/settings"
                     className="ml-1 text-gray-700 hover:text-primary-600 md:ml-2 dark:text-gray-300 dark:hover:text-white"
                   >
-                    Users
-                  </a>
+                    Settings
+                  </Link> 
                 </div>
               </li>
               <li>
@@ -84,7 +84,7 @@ const Setttings = () => {
         <ProfileUploadImg />
 
         <div className="col-span-2">
-          <Tabs.Group aria-label="Default tabs" style="default">
+          <Tabs.Group aria-label="Default tabs" >
             <Tabs.Item
               active={true}
               className="border-none"

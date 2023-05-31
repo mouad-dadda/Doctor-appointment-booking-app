@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { addAdminData } from "../Redux/SliceAuthAdmin";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,7 +26,7 @@ const GetAuthAdmin = () => {
         });
     }
     console.log(adminData);
-  }, [dispatch, navigate]);
+  }, [dispatch, navigate , adminData]);
 };
 
 export default GetAuthAdmin;

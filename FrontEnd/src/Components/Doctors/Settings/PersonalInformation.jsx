@@ -40,9 +40,8 @@ const PersonalInformation = () => {
         available: doctorData.doctor.available==="1" ? true :false ,
         about: doctorData.doctor.about || "",
       });
-      console.log(DataForm);
     }
-  }, [doctorData]);
+  }, [doctorData ]);
 
   const HandelChangeCheckbox = (e) => {
     setDataForm({ ...DataForm, available: e.target.checked });

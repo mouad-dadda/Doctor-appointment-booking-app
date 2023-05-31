@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import "../../Assets/Css/HomeCss/Card.css";
 import { Link } from "react-router-dom";
 

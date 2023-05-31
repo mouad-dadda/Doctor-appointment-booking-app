@@ -10,7 +10,7 @@ const ProfileUploadImg = () => {
             <img
               className="mb-4 rounded-lg w-28 h-28 sm:mb-0 xl:mb-4 2xl:mb-0"
               src="/img/Rectangle 4.jpg"
-              alt="Jese picture"
+              alt="Jese"
             />
             <div>
               <h3 className="mb-1 text-xl lg:text-lg font-bold text-gray-900 dark:text-white">

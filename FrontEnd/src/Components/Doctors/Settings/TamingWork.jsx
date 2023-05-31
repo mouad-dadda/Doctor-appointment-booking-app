@@ -9,7 +9,7 @@ const TamingWork = () => {
   const [DataForm, setDataForm] = useState({
     id: "",
     day_debut_work: "",
-    day_debut_work: "",
+    day_fin_work: "",
     time_debut_work: "",
     time_fin_work: "",
     appointment_time: "",

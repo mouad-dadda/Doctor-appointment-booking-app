@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPinIcon, ClockIcon } from "@heroicons/react/20/solid";
+import {  ClockIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 
 const SearchDoctorCard = ({

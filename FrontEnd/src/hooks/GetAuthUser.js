@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUserData } from "../Redux/SliceAuthUser";
 import { get } from "../Services/LocalStorageService";
@@ -27,11 +27,9 @@ const GetAuthUser = () => {
           navigate("/connexion");
         });
     }
-  }, [dispatch, navigate]);
+  }, [dispatch, navigate, UserData.isAuthenticated, UserData.user]);
 
   console.log(UserData);
-
-
 };
 
 export default GetAuthUser;

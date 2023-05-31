@@ -64,7 +64,7 @@ const BookingAppointment = () => {
         setLoading(false);
         console.log(er);
       });
-  }, []);
+  }, [ dispatch ,id ,navigate ,UserData.user,UserData.isAuthenticated , ]);
 
   const HandelSubmit = (e) => {
     e.preventDefault();

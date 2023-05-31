@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Footer, Header, UserNavSettings } from "../../Components";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
+import {  useSelector } from "react-redux";
 import axiosClient from "../../AxiosClient";
 import GetAuthUser from "../../hooks/GetAuthUser";
 
 const Settings = () => {
   const UserData = useSelector((state) => state.authUser);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
 
   const [UserAvatar, setUserAvatar] = useState(null);
 

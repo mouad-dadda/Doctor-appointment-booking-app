@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import data from "../users.json";
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
+import { XCircleIcon } from "@heroicons/react/24/solid";
 import { useSelector } from "react-redux";
 import axiosClient from "../../../AxiosClient";
 
@@ -105,7 +104,6 @@ const TableAppointment = ({
                             <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
                           </div> */}
                           {el.date_appointment}
-
                         </td>
                         <td className="p-4 text-[14px] font-medium text-gray-900 whitespace-nowrap ">
                           {el.time_appointment}

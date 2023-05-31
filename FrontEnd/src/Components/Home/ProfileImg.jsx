@@ -9,7 +9,7 @@ const ProfileImg = () => {
 
   const UserData = useSelector((state) => state.authUser);
 
-  if (adminData.isAuthenticated && adminData.adminToken || adminData.admin) {
+  if ((adminData.isAuthenticated && adminData.adminToken) || adminData.admin) {
     return (
       <div className="mr_left">
         <Link to={"/admin/dashboard"}>
@@ -22,8 +22,8 @@ const ProfileImg = () => {
       </div>
     );
   } else if (
-    doctorData.isAuthenticated &&
-    doctorData.doctorToken ||
+    (doctorData.isAuthenticated &&
+    doctorData.doctorToken) ||
     doctorData.doctor
   ) {
     return (
@@ -37,7 +37,7 @@ const ProfileImg = () => {
         </Link>
       </div>
     );
-  } else if (UserData.isAuthenticated && UserData.userToken || UserData.user) {
+  } else if ((UserData.isAuthenticated && UserData.userToken) || UserData.user) {
     return (
       <div className="mr_left">
         <Link to={"/user/profile"}>

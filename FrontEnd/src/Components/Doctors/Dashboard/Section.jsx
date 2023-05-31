@@ -1,7 +1,6 @@
 import React from "react";
 
 import { HandThumbUpIcon } from "@heroicons/react/24/solid";
-import GetAuthDoctor from "../../../hooks/GetAuthDoctor";
 import { useSelector } from "react-redux";
 
 

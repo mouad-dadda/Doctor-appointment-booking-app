@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import data from "../users.json";
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 import axiosClient from "../../../AxiosClient";
 import { useSelector } from "react-redux";
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { addDoctorData } from "../Redux/SliceAuthDoctor";
@@ -30,7 +30,7 @@ const GetAuthDoctor = () => {
         });
     }
     console.log(doctorData);
-  }, [dispatch, navigate]);
+  }, [dispatch, navigate , doctorData]);
 };
 
 export default GetAuthDoctor;

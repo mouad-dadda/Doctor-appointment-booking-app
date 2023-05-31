@@ -1,0 +1,23 @@
+{
+  "Header": {
+    "Home": "Home",
+    "Find_Doctor": "Find Doctor",
+    "About": "About",
+    "Contact": "Contact",
+    "Login": "Login",
+    "Sign In": "Sign In"
+  },
+  "Footer":{
+    "Copyright": "Copyright © 2023 Doctolib. All rights reserved."
+  },
+  "Home": {
+    "title": "Doctolib",
+    "TitleSection_1": "Doctolib Offers You the Best Way to Find a Doctor",
+    "TitleSection_2": "Through the website, you can easily search for doctors and manage all your appointments.",
+    "ButtonSection": "Make an Appointment",
+    "TitleMain1": "High-Quality Service for You",
+    "TitleMain2": "The website has many doctors in different specialties.",
+    "TitleMain3": "Book Our Doctor",
+    "TitleMain4": "Don't Delay Taking Care of Yourself and Your Health"
+  }
+}

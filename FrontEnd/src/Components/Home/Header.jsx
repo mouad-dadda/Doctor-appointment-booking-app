@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../Assets/Css/HomeCss/header.css";
 import ProfileImg from "./ProfileImg";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation();
 
   const [Toggle, setToggle] = useState(false);
   return (
@@ -29,26 +31,26 @@ const Header = () => {
           <ul className="nav_items">
             <li className="nav_item">
               <Link to={"/"} className="nav_link">
-                Accueil
+                {t("Header.Home")}
               </Link>
             </li>
             <li className="nav_item">
               <Link to={"/recherche"} className={"nav_link"}>
-                Recherche Medecin
+                {t("Header.Find_Doctor")}
               </Link>
             </li>
             <li className="nav_item">
               <Link to={"/about"} className="nav_link">
-                About
+                {t("Header.About")}
               </Link>
             </li>
             <li className="nav_item">
               <Link to={"/contact"} className={"nav_link"}>
-                Contact
+                {t("Header.Contact")}
               </Link>
             </li>
           </ul>
-          <ProfileImg/>
+          <ProfileImg />
         </div>
       </div>
     </header>

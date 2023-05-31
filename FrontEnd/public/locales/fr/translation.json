@@ -1,0 +1,23 @@
+{
+  "Header": {
+    "Home": "Accueil",
+    "Find_Doctor": "Recherche Medecin",
+    "About": "À propos",
+    "Contact": "Contact",
+    "Login": "Connexion",
+    "Sign In": "S'identifier"
+  },
+  "Footer": {
+    "Copyright": "Copyright © 2023 Doctolib. Tous droits réservés."
+  },
+  "Home": {
+    "title": "Doctolib",
+    "TitleSection_1": "Doctolib Vous Offre Le Meilleur Moyen De Trouver Un Medecin",
+    "TitleSection_2": "Grâce au site web, vous pouvez facilement rechercher des médecins et suivre tous vos rendez-vous.",
+    "ButtonSection": "Prenez rendez-vous",
+    "TitleMain1": "Service De Haute Qualité Pour Vous",
+    "TitleMain2": "Le site compte de nombreux médecins dans différentes spécialités.",
+    "TitleMain3": "Réservez Notre Médecin",
+    "TitleMain4": "Ne Tardez Pas À Prendre Soin De Vous Et De Votre Santé"
+  }
+}

@@ -1,23 +1,44 @@
 {
+  "section_title": "Doctolib offers you the best way to find a doctor",
+  "section_description": "With the website, you can easily search for doctors and manage all your appointments.",
+  "schedule_appointment": "Schedule an appointment",
+  "service_quality_title": "High-quality service for you",
+  "service_quality_description": "The website has numerous doctors in different specialties.",
+  "book_our_doctors": "Book our doctors",
+  "take_care_of_yourself": "Don't hesitate to take care of yourself and your health",
   "Header": {
     "Home": "Home",
-    "Find_Doctor": "Find Doctor",
+    "Find_Doctor": "Find a Doctor",
     "About": "About",
-    "Contact": "Contact",
+    "Contact": "Contact"
+  },
+  "Card": {
+    "Reserve": "Reserve",
+    "View_Profile": "View Profile"
+  },
+  "DatePicker": {
+    "Select_Date": "Sélectionner une date"
+  },
+  "ProfileRegister": {
     "Login": "Login",
-    "Sign In": "Sign In"
+    "Register": "Register"
   },
-  "Footer":{
-    "Copyright": "Copyright © 2023 Doctolib. All rights reserved."
+  "SearchDoctorCard": {
+    "Available": "Available",
+    "Not_Available": "Not available",
+    "Book_Now": "Book Now",
+    "View_Profile": "View Profile"
   },
-  "Home": {
-    "title": "Doctolib",
-    "TitleSection_1": "Doctolib Offers You the Best Way to Find a Doctor",
-    "TitleSection_2": "Through the website, you can easily search for doctors and manage all your appointments.",
-    "ButtonSection": "Make an Appointment",
-    "TitleMain1": "High-Quality Service for You",
-    "TitleMain2": "The website has many doctors in different specialties.",
-    "TitleMain3": "Book Our Doctor",
-    "TitleMain4": "Don't Delay Taking Care of Yourself and Your Health"
+  "TimePicker": {
+    "Select_Time": "Select Time"
+  },
+  "Section_Doctor": {
+    "Welcome_Doctor": "Welcome",
+    "in_Doctolib": "in Doctolib",
+    "Appointments_Today": "You have 5 appointments today!"
+  },
+  "TableDashboard": {
+    "User_Signup": "User Sign up",
+    "List_of_latest_users": "This is a list of latest users"
   }
 }

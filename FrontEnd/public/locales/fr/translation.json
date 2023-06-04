@@ -1,23 +1,44 @@
 {
+  "section_title": "Doctolib vous offre le meilleur moyen de trouver un médecin",
+  "section_description": "Grâce au site web, vous pouvez facilement rechercher des médecins et gérer tous vos rendez-vous.",
+  "schedule_appointment": "Prenez rendez-vous",
+  "service_quality_title": "Service de haute qualité pour vous",
+  "service_quality_description": "Le site compte de nombreux médecins dans différentes spécialités.",
+  "book_our_doctors": "Réservez nos médecins",
+  "take_care_of_yourself": "Ne tardez pas à prendre soin de vous et de votre santé",
   "Header": {
-    "Home": "Accueil",
-    "Find_Doctor": "Recherche Medecin",
-    "About": "À propos",
-    "Contact": "Contact",
-    "Login": "Connexion",
-    "Sign In": "S'identifier"
-  },
-  "Footer": {
-    "Copyright": "Copyright © 2023 Doctolib. Tous droits réservés."
-  },
-  "Home": {
-    "title": "Doctolib",
-    "TitleSection_1": "Doctolib Vous Offre Le Meilleur Moyen De Trouver Un Medecin",
-    "TitleSection_2": "Grâce au site web, vous pouvez facilement rechercher des médecins et suivre tous vos rendez-vous.",
-    "ButtonSection": "Prenez rendez-vous",
-    "TitleMain1": "Service De Haute Qualité Pour Vous",
-    "TitleMain2": "Le site compte de nombreux médecins dans différentes spécialités.",
-    "TitleMain3": "Réservez Notre Médecin",
-    "TitleMain4": "Ne Tardez Pas À Prendre Soin De Vous Et De Votre Santé"
-  }
+      "Home": "Accueil",
+      "Find_Doctor": "Trouver un Médecin",
+      "About": "À Propos",
+      "Contact": "Contact"
+    },
+    "Card": {
+      "Reserve": "Réserver",
+      "View_Profile": "Voir le profil"
+    },
+    "DatePicker": {
+      "Select_Date": "Sélectionner une date"
+    },
+    "ProfileRegister": {
+      "Login": "Connexion",
+      "Register": "S'identifier"
+    },
+    "SearchDoctorCard": {
+      "Available": "Disponible",
+      "Not_Available": "Non disponible",
+      "Book_Now": "Réserver maintenant",
+      "View_Profile": "Voir le profil"
+    },
+    "TimePicker": {
+      "Select_Time": "Sélectionner l'heure"
+    },
+    "Section_Doctor": {
+      "Welcome_Doctor": "Bienvenue",
+      "in_Doctolib": "dans Doctolib",
+      "Appointments_Today": "Vous avez 5 rendez-vous aujourd'hui !"
+    },
+    "TableDashboard": {
+      "User_Signup": "Inscription utilisateur",
+      "List_of_latest_users": "Ceci est la liste des derniers utilisateurs"
+    }
 }

@@ -1,0 +1,45 @@
+{
+    "section_title": "Doctolib vous offre le meilleur moyen de trouver un médecin",
+    "section_description": "Grâce au site web, vous pouvez facilement rechercher des médecins et gérer tous vos rendez-vous.",
+    "schedule_appointment": "Prenez rendez-vous",
+    "service_quality_title": "Service de haute qualité pour vous",
+    "service_quality_description": "Le site compte de nombreux médecins dans différentes spécialités.",
+    "book_our_doctors": "Réservez nos médecins",
+    "take_care_of_yourself": "Ne tardez pas à prendre soin de vous et de votre santé",
+    "Header": {
+        "Home": "Accueil",
+        "Find_Doctor": "Trouver un Médecin",
+        "About": "À Propos",
+        "Contact": "Contact"
+      },
+      "Card": {
+        "Reserve": "Réserver",
+        "View_Profile": "Voir le profil"
+      },
+      "DatePicker": {
+        "Select_Date": "Sélectionner une date"
+      },
+      "ProfileRegister": {
+        "Login": "Connexion",
+        "Register": "S'identifier"
+      },
+      "SearchDoctorCard": {
+        "Available": "Disponible",
+        "Not_Available": "Non disponible",
+        "Book_Now": "Réserver maintenant",
+        "View_Profile": "Voir le profil"
+      },
+      "TimePicker": {
+        "Select_Time": "Sélectionner l'heure"
+      },
+      "Section_Doctor": {
+        "Welcome_Doctor": "Bienvenue",
+        "in_Doctolib": "dans Doctolib",
+        "Appointments_Today": "Vous avez 5 rendez-vous aujourd'hui !"
+      },
+      "TableDashboard": {
+        "User_Signup": "Inscription utilisateur",
+        "List_of_latest_users": "Ceci est la liste des derniers utilisateurs"
+      }
+  }
+  

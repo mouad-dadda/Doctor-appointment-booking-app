@@ -1,13 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ProfileImg = () => {
   const adminData = useSelector((state) => state.AuthAdmin);
-
   const doctorData = useSelector((state) => state.AuthDoctor);
-
-  const UserData = useSelector((state) => state.authUser);
+  const userData = useSelector((state) => state.authUser);
+  const { t } = useTranslation();
 
   if ((adminData.isAuthenticated && adminData.adminToken) || adminData.admin) {
     return (
@@ -22,8 +22,7 @@ const ProfileImg = () => {
       </div>
     );
   } else if (
-    (doctorData.isAuthenticated &&
-    doctorData.doctorToken) ||
+    (doctorData.isAuthenticated && doctorData.doctorToken) ||
     doctorData.doctor
   ) {
     return (
@@ -37,7 +36,7 @@ const ProfileImg = () => {
         </Link>
       </div>
     );
-  } else if ((UserData.isAuthenticated && UserData.userToken) || UserData.user) {
+  } else if ((userData.isAuthenticated && userData.userToken) || userData.user) {
     return (
       <div className="mr_left">
         <Link to={"/user/profile"}>
@@ -53,11 +52,12 @@ const ProfileImg = () => {
     return (
       <div className="mr_left">
         <Link to={"/Connexion"}>
-          <button className="_btn btn_bg_white "> Connexion</button>
+          <button className="_btn btn_bg_white ">{t("ProfileRegister.Login")}</button>
         </Link>
-
         <Link to={"/identifier"}>
-          <button className="_btn btn_bg_primary btn_mrl">S'identifier</button>
+          <button className="_btn btn_bg_primary btn_mrl">
+            {t("ProfileRegister.Register")}
+          </button>
         </Link>
       </div>
     );

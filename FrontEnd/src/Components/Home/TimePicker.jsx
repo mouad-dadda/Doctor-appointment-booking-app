@@ -1,19 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 function TimePicker({ minTime, maxTime, stepInMinutes, onChange }) {
-  // Parse the input minTime and maxTime values to Date objects
+  const { t } = useTranslation();
 
+  // Parse the input minTime and maxTime values to Date objects
   const minTimeDate = new Date(`1970-01-01T${minTime}`);
   const maxTimeDate = new Date(`1970-01-01T${maxTime}`);
 
   // Convert the stepInMinutes value to seconds
-
   const stepInSeconds = stepInMinutes * 60;
 
-  console.log({ minTime, maxTime, stepInMinutes, onChange });
-
   // Create an array of Date objects representing each time option
-
   const timeOptions = [];
   let currTime = minTimeDate;
   while (currTime <= maxTimeDate) {
@@ -22,7 +20,6 @@ function TimePicker({ minTime, maxTime, stepInMinutes, onChange }) {
   }
 
   // Format each Date object into a string for display in the option element
-
   const formattedTimeOptions = timeOptions.map((time) => {
     const hours = time.getHours().toString().padStart(2, "0");
     const minutes = time.getMinutes().toString().padStart(2, "0");
@@ -39,7 +36,7 @@ function TimePicker({ minTime, maxTime, stepInMinutes, onChange }) {
         id="countries"
         className="bg-gray-50  pl-[44px] border border-gray-300 text-gray-900 text-[14px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[7px] "
       >
-        <option>Select Time</option>
+        <option>{t("TimePicker.Select_Time")}</option>
         {formattedTimeOptions.map((timeStr) => {
           if (disabledDate.includes(timeStr)) {
             return null;
@@ -55,4 +52,5 @@ function TimePicker({ minTime, maxTime, stepInMinutes, onChange }) {
     </>
   );
 }
+
 export default TimePicker;

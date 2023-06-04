@@ -1,6 +1,7 @@
 import React from "react";
-import {  ClockIcon } from "@heroicons/react/20/solid";
+import { ClockIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const SearchDoctorCard = ({
   name,
@@ -13,6 +14,8 @@ const SearchDoctorCard = ({
   time_fin_work,
   time_debut_work,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="border_card mx-auto p-4 w-[372px]  relative text-center  capitalize">
@@ -20,12 +23,12 @@ const SearchDoctorCard = ({
           {available === "1" ? (
             <div className="bg-green-100 flex items-center text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
               <span className="flex w-3 h-3 bg-green-500 items-center mr-1 rounded-full"></span>
-              available
+              {t("SearchDoctorCard.Available")}
             </div>
           ) : (
             <div className="bg-red-100 flex items-center text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
               <span className="flex w-3 h-3 bg-red-500 items-center mr-1 rounded-full"></span>
-              Not available
+              {t("SearchDoctorCard.Not_Available")}
             </div>
           )}
         </div>
@@ -50,20 +53,16 @@ const SearchDoctorCard = ({
               "-" +
               time_fin_work}
           </p>
-          {/* <p className=" flex items-center text-sm justify-center ">
-            <MapPinIcon className="h-6 w-4 text-[#0c58dc]" />
-            Casablanca
-          </p> */}
         </div>
         <div className=" mt-3 ">
           <Link to={`/bookingappointment/${id}`}>
-            <button className=" mr-3 px-[32px] py-[9px] text-white bg-[#0D63F3] rounded-[26px] font-medium text-[13px] ">
-              Book Now
+            <button className="mr-3 px-[32px] py-[9px] text-white bg-[#0D63F3] rounded-[26px] font-medium text-[13px]">
+              {t("SearchDoctorCard.Book_Now")}
             </button>
           </Link>
           <Link to={"/doctor/profile"}>
-            <button className=" ml-3 px-[32px] py-[7px] border-[2px] border-[#0D63F3] text-[#0D63F3] rounded-[26px] font-medium text-[13px] ">
-              View Profile
+            <button className="ml-3 px-[32px] py-[7px] border-[2px] border-[#0D63F3] text-[#0D63F3] rounded-[26px] font-medium text-[13px]">
+              {t("SearchDoctorCard.View_Profile")}
             </button>
           </Link>
         </div>

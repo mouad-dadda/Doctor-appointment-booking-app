@@ -1,0 +1,49 @@
+{
+    "section_title": "Doctolib offers you the best way to find a doctor",
+    "section_description": "With the website, you can easily search for doctors and manage all your appointments.",
+    "schedule_appointment": "Schedule an appointment",
+    "service_quality_title": "High-quality service for you",
+    "service_quality_description": "The website has numerous doctors in different specialties.",
+    "book_our_doctors": "Book our doctors",
+    "take_care_of_yourself": "Don't hesitate to take care of yourself and your health",
+    "Header": {
+        "Home": "Home",
+        "Find_Doctor": "Find a Doctor",
+        "About": "About",
+        "Contact": "Contact"
+      },
+      "Card": {
+        "Reserve": "Reserve",
+        "View_Profile": "View Profile"
+      },
+      "DatePicker": {
+        "Select_Date": "Sélectionner une date"
+      },
+      "ProfileRegister": {
+        "Login": "Login",
+        "Register": "Register"
+      },
+      "SearchDoctorCard": {
+        "Available": "Available",
+        "Not_Available": "Not available",
+        "Book_Now": "Book Now",
+        "View_Profile": "View Profile"
+      },
+      "TimePicker": {
+        "Select_Time": "Select Time"
+      },
+      
+        "Section_Doctor": {
+          "Welcome_Doctor": "Welcome",
+         
+          "in_Doctolib": "in Doctolib",
+          "Appointments_Today": "You have 5 appointments today!"
+        },  "TableDashboard": {
+            "User_Signup": "User Sign up",
+            "List_of_latest_users": "This is a list of latest users"
+          }
+      
+      
+    
+  }
+  

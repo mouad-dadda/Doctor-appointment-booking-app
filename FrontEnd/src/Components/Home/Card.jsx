@@ -1,8 +1,11 @@
 import React from "react";
 import "../../Assets/Css/HomeCss/Card.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Card = ({ id, img, name, specialite }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="card_body" key={id}>
@@ -17,10 +20,10 @@ const Card = ({ id, img, name, specialite }) => {
         <p>{specialite}</p>
         <div className="card_btn">
           <button className="btn_card mr_ri btn_bg_primary ">
-            <Link to={"/bookingappointment/" + id}>Reserve</Link>
+            <Link to={"/bookingappointment/" + id}>{t("Card.Reserve")}</Link>
           </button>
           <button className="btn_card mr_lf btn_border_primary">
-            View Profile
+          {t("Card.View_Profile")}
           </button>
         </div>
       </div>

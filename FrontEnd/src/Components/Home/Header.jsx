@@ -5,9 +5,14 @@ import ProfileImg from "./ProfileImg";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [Toggle, setToggle] = useState(false);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <header className="header posit_rela">
       <div className="Header_container _container">
@@ -53,6 +58,15 @@ const Header = () => {
           <ProfileImg />
         </div>
       </div>
+      <div>
+  <select onChange={(e) => changeLanguage(e.target.value)}>
+    <option value="fr"><img src="img/fr.png" alt="" /></option>
+    <option value="en"><img src="img/en.jpeg" alt="" /></option>
+    <option value="cn"><img src="img/cn.webp" alt="" /></option>
+
+  </select>
+</div>
+
     </header>
   );
 };

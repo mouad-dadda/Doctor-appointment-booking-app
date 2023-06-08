@@ -23,11 +23,13 @@ import {
   NoVerifiedDoctors,
   UserVerifeyEmail,
   DoctorsVerificationEmail,
+  DoctorsConfirmation,
 } from "../Pages";
 import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
 import GuardAdmin from "../Middleware/GuardAdmin";
 import VerificationEmailGuard from "../Middleware/VerificationEmailGuard";
 import DoctorEmailVerification from "../Middleware/DoctorEmailVerification";
+import DoctorsConfirmationGuard from "../Middleware/DoctorsConfirmationGuard";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -138,13 +140,20 @@ const router = createBrowserRouter([
       </AuthDoctorGuard>
     ),
   },
-  ,
   {
     path: "/doctor/verifyemail",
     element: (
       <DoctorEmailVerification>
         <DoctorsVerificationEmail />
       </DoctorEmailVerification>
+    ),
+  },
+  {
+    path: "/doctor/confirmation",
+    element: (
+      <DoctorsConfirmationGuard>
+        <DoctorsConfirmation />
+      </DoctorsConfirmationGuard>
     ),
   },
 

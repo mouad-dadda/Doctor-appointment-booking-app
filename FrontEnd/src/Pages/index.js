@@ -16,6 +16,8 @@ export { default as DocotrSettings } from "./Doctors/Settings.jsx";
 export { default as DoctorsSignup } from "./AuthDoctors/Signup";
 export { default as DoctorsLogin } from "./AuthDoctors/Login";
 export { default as DoctorsVerificationEmail } from "./AuthDoctors/VerificationEmail";
+export { default as DoctorsConfirmation } from "./Doctors/WhaitingConfirmation";
+
 
 
 // PAGE USER

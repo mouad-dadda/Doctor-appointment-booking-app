@@ -18,12 +18,12 @@ const AuthDoctorGuard = ({ children }) => {
       get("TOKEN_DOCTOR") &&
       !AuthDoctorData.doctor
     ) {
-      setLoading(true)
+      setLoading(true);
       axiosClient
         .get("/doctor")
         .then((re) => {
           dispatch(addDoctorData(re.data));
-          setLoading(false)
+          setLoading(false);
           console.log(re);
         })
         .catch((er) => {
@@ -45,6 +45,12 @@ const AuthDoctorGuard = ({ children }) => {
       AuthDoctorData.doctor.email_verified_at === null
     ) {
       return <Navigate to={"/doctor/verifyemail"} replace />;
+    } else if (
+      AuthDoctorData.isAuthenticated &&
+      get("TOKEN_DOCTOR") &&
+      AuthDoctorData.doctor.verified === 0
+    ) {
+      return <Navigate to={"/doctor/confirmation"} replace />;
     } else {
       return children;
     }

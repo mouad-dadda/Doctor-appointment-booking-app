@@ -1,16 +1,14 @@
-import { useEffect } from "react";
+import  { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUserData } from "../Redux/SliceAuthUser";
-import { get } from "../Services/LocalStorageService";
 import { useNavigate } from "react-router";
 import axiosClient from "../AxiosClient";
+import { addUserData } from "../Redux/SliceAuthUser";
+import { get } from "../Services/LocalStorageService";
 
-const GetAuthUser = () => {
-  const dispatch = useDispatch();
-
+const VerificationEmailGuard = ({ children }) => {
   const UserData = useSelector((state) => state.authUser);
-
   const navigate = useNavigate();
+  const dispatch=useDispatch()
 
   useEffect(() => {
     if (
@@ -29,8 +27,13 @@ const GetAuthUser = () => {
     }
   }, [dispatch, navigate, UserData.isAuthenticated, UserData.user]);
 
-  console.log(UserData);
-  console.log( "get authu ud" );
+  if (UserData.user) {
+    if (UserData.user.email_verified_at) {
+      return navigate("/user/profile");
+    } else {
+      return children;
+    }
+  }
 };
 
-export default GetAuthUser;
+export default VerificationEmailGuard;

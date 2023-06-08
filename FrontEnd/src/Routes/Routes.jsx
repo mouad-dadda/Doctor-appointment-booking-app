@@ -1,4 +1,4 @@
-import {  PageNotfond } from "../Components";
+import { PageNotfond } from "../Components";
 import AuthGuard from "../Middleware/AuthGuard";
 import AppointmentGuard from "../Middleware/AppointmentGuard";
 import {
@@ -25,6 +25,7 @@ import {
 } from "../Pages";
 import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
 import GuardAdmin from "../Middleware/GuardAdmin";
+import VerificationEmailGuard from "../Middleware/VerificationEmailGuard";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -61,11 +62,12 @@ const router = createBrowserRouter([
     path: "/user/verifeyemail",
     element: (
       // <AuthGuard>
+      <VerificationEmailGuard>
         <UserVerifeyEmail />
+      </VerificationEmailGuard>
       // </AuthGuard>
     ),
   },
-
 
   {
     path: "/user/profile",

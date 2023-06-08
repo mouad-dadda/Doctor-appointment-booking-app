@@ -53,6 +53,7 @@ const Login = () => {
         setLoading(false);
         if (err.response && err.response.status === 422) {
           setError(err.response.data.error);
+          console.log(err);
         } else {
           console.log(err);
         }

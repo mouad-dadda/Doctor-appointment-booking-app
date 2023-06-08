@@ -1,23 +1,23 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Footer, Header } from "../../Components";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axiosClient from "../../AxiosClient";
 import AlertSucces from "../../Components/Alert/AlertSucces";
 import { remove } from "../../Services/LocalStorageService";
-import { logout } from "../../Redux/SliceAuthUser";
+import { logout } from "../../Redux/SliceAuthDoctor";
 
-const VerifeyEmail = () => {
+const VerificationEmail = () => {
   document.title = "Verifey Email";
 
-  const UserData = useSelector((state) => state.authUser);
+  const doctorData = useSelector((state) => state.AuthDoctor);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [ShowAlertSucce, setShowAlertSucce] = useState(false);
 
   const ResendVerificationEmail = () => {
     axiosClient
-      .get(`/email/resend/${UserData.user.id}`)
+      .get(`/doctors/email/verify/${doctorData.doctor.id}`)
       .then(() => {
         setShowAlertSucce(!ShowAlertSucce);
       })
@@ -28,11 +28,11 @@ const VerifeyEmail = () => {
 
   const HandleLogout = () => {
     axiosClient
-      .post("/user/logout")
+      .post("/doctor/logout")
       .then((res) => {
         if (res.data.success && res.status === 200) {
           dispatch(logout());
-          remove("TOKEN_USER");
+          remove("TOKEN_DOCTOR");
           navigate("/Connexion");
         }
       })
@@ -56,7 +56,7 @@ const VerifeyEmail = () => {
                   We are glad, that you’re with us ? We’ve sent you a
                   verification link to the email address{" "}
                   <span className="font-medium text-indigo-500">
-                    {UserData.user && UserData.user.email}
+                    {doctorData.doctor && doctorData.doctor.email}
                   </span>
                   .
                 </p>
@@ -67,9 +67,10 @@ const VerifeyEmail = () => {
                   >
                     Resend Verification →
                   </button>
-                  <button 
-                  onClick={HandleLogout}
-                  className=" mt-3 ml-7 px-4 mr-2  text-[14px] font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 ">
+                  <button
+                    onClick={HandleLogout}
+                    className=" mt-3 ml-7 px-4 mr-2  text-[14px] font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 "
+                  >
                     Lougaut
                   </button>
                 </div>
@@ -86,4 +87,4 @@ const VerifeyEmail = () => {
   );
 };
 
-export default VerifeyEmail;
+export default VerificationEmail;

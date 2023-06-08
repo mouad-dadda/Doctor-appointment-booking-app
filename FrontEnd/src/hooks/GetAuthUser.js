@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUserData } from "../Redux/SliceAuthUser";
-import { get } from "../Services/LocalStorageService";
+import { get, remove } from "../Services/LocalStorageService";
 import { useNavigate } from "react-router";
 import axiosClient from "../AxiosClient";
 
@@ -24,6 +24,7 @@ const GetAuthUser = () => {
           dispatch(addUserData(re.data));
         })
         .catch((er) => {
+          remove("TOKEN_USER")
           navigate("/connexion");
         });
     }

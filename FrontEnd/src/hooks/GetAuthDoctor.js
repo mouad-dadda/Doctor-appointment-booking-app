@@ -2,7 +2,7 @@ import  { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { addDoctorData } from "../Redux/SliceAuthDoctor";
-import { get } from "../Services/LocalStorageService";
+import { get, remove } from "../Services/LocalStorageService";
 import axiosClient from "../AxiosClient";
 
 const GetAuthDoctor = () => {
@@ -26,6 +26,7 @@ const GetAuthDoctor = () => {
         })
         .catch((er) => {
           console.log(er);
+          remove("TOKEN_DOCTOR")
           navigate("/doctor/login");
         });
     }

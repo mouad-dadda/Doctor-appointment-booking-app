@@ -269,7 +269,7 @@ const Signup = () => {
               </div>
               <div className="  flex justify-center items-center ">
                 <p className="mt-4 text-[14px] text-blue-600 sm:mt-0">
-                  <a href="/doctor/signup">Etes-vous un docteur ??</a>
+                  <Link to="/doctor/signup">Etes-vous un docteur ??</Link>
                 </p>
               </div>
             </div>

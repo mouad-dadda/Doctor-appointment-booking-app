@@ -2,7 +2,7 @@ import  { useEffect } from "react";
 import { addAdminData } from "../Redux/SliceAuthAdmin";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { get } from "../Services/LocalStorageService";
+import { get, remove } from "../Services/LocalStorageService";
 import axiosClient from "../AxiosClient";
 
 const GetAuthAdmin = () => {
@@ -22,6 +22,7 @@ const GetAuthAdmin = () => {
         })
         .catch((er) => {
           console.log(er);
+          remove("TOKEN_ADMIN")
           navigate("/admin/login");
         });
     }

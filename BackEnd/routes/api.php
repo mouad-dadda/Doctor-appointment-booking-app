@@ -74,6 +74,7 @@ Route::post('/doctor/update/info/time', [DoctorManagementController::class, 'Upd
 Route::post('/doctor/home', [DoctorManagementController::class, 'getRandomPremiumDoctors']);
 
 Route::post('/search/doctors', [DoctorManagementController::class, 'SearchDoctors']);
+Route::get('/doctor_view/{id}', [DoctorManagementController::class, 'show']);
 
 
 //ROUTE APPOINTMENT

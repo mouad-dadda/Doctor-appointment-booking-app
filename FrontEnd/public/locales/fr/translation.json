@@ -40,5 +40,30 @@
     "TableDashboard": {
       "User_Signup": "Inscription utilisateur",
       "List_of_latest_users": "Ceci est la liste des derniers utilisateurs"
+    },
+  "About" : {
+      "aboutUsTitle": "À propos de nous",
+      "welcomeMessage": "Bienvenue sur Doctolib, la plateforme en ligne qui facilite la prise de rendez-vous avec des médecins qualifiés et compétents. Notre mission est de rendre l'accès aux soins médicaux plus simple, rapide et efficace pour tous.",
+      "dataPrivacyMessage": "Nous nous engageons à protéger la confidentialité de vos données médicales et à garantir la sécurité de vos informations personnelles. Votre santé et votre bien-être sont notre priorité absolue, et nous mettons tout en œuvre pour vous offrir une expérience utilisateur optimale et sécurisée. N'hésitez pas à parcourir notre site et à découvrir les nombreux professionnels de santé disponibles. Prenez le contrôle de votre santé et réservez dès maintenant votre prochain rendez-vous avec Doctolib !",
+      "bookingSystemMessage": "Grâce à notre système de réservation en ligne, vous pouvez consulter les disponibilités des médecins, choisir le créneau qui vous convient le mieux et réserver votre rendez-vous en quelques clics seulement. Fini les longues attentes au téléphone ou les déplacements inutiles, avec Doctolib, la gestion de vos rendez-vous médicaux est simplifiée et rapide."
+    },"contact":{
+      "contactUsTitle": "Contactez-nous",
+      "nameLabel": "Nom :",
+      "namePlaceholder": "Nom",
+      "emailLabel": "Email :",
+      "emailPlaceholder": "votreadresse@example.com",
+      "messageLabel": "Votre message :",
+      "messagePlaceholder": "Votre message",
+      "sendButton": "Envoyer",
+      "phoneNumber": "+1 234-567-89",
+      "officePhoneNumber": "+1 234-567-89",
+      "emailAddress": "example@gmail.com",
+      "address": "Rue, Palestine, Maroc, 4006"
+    },
+    "view":{
+      "Title":"Derniers articles"
+    
+    },"footer":{
+      "copyright":"Copyright © 2023 Doctolib, tous droits réservés"
     }
 }

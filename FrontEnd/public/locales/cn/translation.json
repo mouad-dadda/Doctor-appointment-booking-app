@@ -40,5 +40,31 @@
   "TableDashboard": {
     "User_Signup": "用户注册",
     "List_of_latest_users": "这是最新用户列表"
+  },"About":{
+    "aboutUsTitle": "关于我们",
+    "welcomeMessage": "欢迎来到Doctolib，在线预约合格和有经验的医生变得更加简单和便捷。我们的使命是为所有人提供更简单、快速和高效的医疗服务。",
+    "dataPrivacyMessage": "我们承诺保护您的医疗数据隐私和个人信息安全。您的健康和福祉是我们的首要任务，我们努力为您提供优质和安全的用户体验。请随时浏览我们的网站，了解众多可用的医疗专业人员。掌握您的健康，立即预约您的下一个Doctolib门诊！",
+    "bookingSystemMessage": "通过我们的在线预约系统，您可以查看医生的可用时间，选择最适合您的时间段，并通过几次点击即可预约您的门诊。不再需要长时间等待电话或不必要的移动，Doctolib简化和加快了您的医疗预约管理。"
+  
+  },"contact":{
+    "contactUsTitle": "联系我们",
+    "nameLabel": "姓名：",
+    "namePlaceholder": "姓名",
+    "emailLabel": "邮箱：",
+    "emailPlaceholder": "you@example.com",
+    "messageLabel": "您的留言：",
+    "messagePlaceholder": "您的留言",
+    "sendButton": "发送",
+    "phoneNumber": "+1 234-567-89",
+    "officePhoneNumber": "+1 234-567-89",
+    "emailAddress": "example@gmail.com",
+    "address": "某某街道，某某城市，某某国家，4006"
+  },  "view":{
+    "Title":"最新文章 "
+  
+  },"footer":{
+    "copyright":"版权所有 © 2023 Doctolib，保留所有权利。"
   }
+  
+  
 }

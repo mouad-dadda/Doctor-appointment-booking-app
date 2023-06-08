@@ -139,5 +139,13 @@ class DoctorManagementController extends Controller
 
       return response()->json($reservedTime);
   }
+  public function show($id)
+  {
+
+    $doctor = Doctor::find($id);
+    return response(
+      $doctor
+    );
+  }
 
 }

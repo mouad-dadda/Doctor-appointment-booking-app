@@ -3,7 +3,9 @@
 *::after {
   box-sizing: border-box;
 }
-
+.zoom:hover img {
+  transform: scale(1.1);
+}
 body {
   margin: 0;
 }

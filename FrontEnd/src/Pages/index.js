@@ -6,6 +6,9 @@ export { default as Login } from "./Login.jsx";
 export { default as Signup } from "./Signup.jsx";
 export { default as BookingAppointment } from "./BookingAppointment";
 export { default as DoctorProfile } from "./DoctorProfile";
+export { default as Aboutus } from "./Aboutus";
+export { default as ContactUs } from "./ContactUs";
+export { default as DoctorPage } from "./DoctorPage";
 
 // PAGE DASHBOARD DOCTORS
 

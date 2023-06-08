@@ -40,5 +40,33 @@
   "TableDashboard": {
     "User_Signup": "User Sign up",
     "List_of_latest_users": "This is a list of latest users"
+  },
+  "About":{
+    "aboutUsTitle": "About Us",
+    "welcomeMessage": "Welcome to Doctolib, the online platform that makes it easy and convenient to book appointments with qualified and competent doctors. Our mission is to make access to medical care simpler, faster, and more efficient for everyone.",
+    "dataPrivacyMessage": "We are committed to protecting the privacy of your medical data and ensuring the security of your personal information. Your health and well-being are our top priority, and we strive to provide you with an optimal and secure user experience. Feel free to browse our site and discover the many available healthcare professionals. Take control of your health and book your next appointment with Doctolib now!",
+    "bookingSystemMessage": "With our online booking system, you can check the availability of doctors, choose the time slot that suits you best, and book your appointment in just a few clicks. No more long waits on the phone or unnecessary travel - with Doctolib, managing your medical appointments is simplified and quick."
+  
+  },"contact":{
+    "contactUsTitle": "Contact Us",
+    "nameLabel": "Name:",
+    "namePlaceholder": "Name",
+    "emailLabel": "Email:",
+    "emailPlaceholder": "you@example.com",
+    "messageLabel": "Your Message:",
+    "messagePlaceholder": "Your message",
+    "sendButton": "Send",
+    "phoneNumber": "+1 234-567-89",
+    "officePhoneNumber": "+1 234-567-89",
+    "emailAddress": "example@gmail.com",
+    "address": "Street, City, Country, 4006"
+  },
+  "view":{
+    "Title":"Latest articles"
+  
+  },"footer":{
+    "copyright":"Copyright © 2023 Doctolib, all rights reserved."
   }
+  
+  
 }

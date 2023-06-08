@@ -60,7 +60,7 @@ const SearchDoctorCard = ({
               {t("SearchDoctorCard.Book_Now")}
             </button>
           </Link>
-          <Link to={"/doctor/profile"}>
+          <Link to={`/doctor/View_Profile/${id}`}>
             <button className="ml-3 px-[32px] py-[7px] border-[2px] border-[#0D63F3] text-[#0D63F3] rounded-[26px] font-medium text-[13px]">
               {t("SearchDoctorCard.View_Profile")}
             </button>

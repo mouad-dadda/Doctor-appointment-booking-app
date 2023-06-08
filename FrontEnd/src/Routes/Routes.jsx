@@ -24,6 +24,9 @@ import {
   UserVerifeyEmail,
   DoctorsVerificationEmail,
   DoctorsConfirmation,
+  Aboutus,
+  ContactUs,
+  DoctorPage,
 } from "../Pages";
 import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
 import GuardAdmin from "../Middleware/GuardAdmin";
@@ -38,6 +41,18 @@ const router = createBrowserRouter([
     path: "/",
     errorElement: <PageNotfond />,
     element: <Home />,
+  }, {
+    path: "/About",
+
+    element: <Aboutus />,
+  }, {
+    path: "/Contact",
+   
+    element: <ContactUs />,
+  }, {
+    path: "/doctor/View_Profile/:id",
+
+    element: <DoctorPage />,
   },
   {
     path: "/recherche",

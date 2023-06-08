@@ -23,9 +23,9 @@ const Card = ({ id, img, name, specialite }) => {
             <Link to={"/bookingappointment/" + id}>{t("Card.Reserve")}</Link>
           </button>
           <button className="btn_card mr_lf btn_border_primary">
-          <Link to={"/View_Profile/" + id}>{t("Card.Reserve")}</Link>
+          <Link to={"/View_Profile/" + id}>{t("Card.View_Profile")}</Link>
 
-          {t("Card.View_Profile")}
+          
           </button>
         </div>
       </div>

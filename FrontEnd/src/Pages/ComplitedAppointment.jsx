@@ -6,7 +6,10 @@ import { CheckCircleIcon } from "@heroicons/react/20/solid";
 const ComplitedAppointment = ({
   setShowComplitedAppointment,
   showComplitedAppointment,
+  FilePath,
 }) => {
+  console.log(FilePath);
+
   return (
     <>
       <Modal
@@ -23,8 +26,10 @@ const ComplitedAppointment = ({
         >
           {/* <!-- Modal header --> */}
           <div className="flex justify-end p-2">
-            {/* <button
-              onClick={() => setShowComplitedAppointment(!showComplitedAppointment)}
+            <button
+              onClick={() =>
+                setShowComplitedAppointment(!showComplitedAppointment)
+              }
               type="button"
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-700 dark:hover:text-white"
             >
@@ -40,7 +45,7 @@ const ComplitedAppointment = ({
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </button> */}
+            </button>
           </div>
           {/* <!-- Modal body --> */}
           <div className="p-6 pt-0 text-center">
@@ -54,11 +59,14 @@ const ComplitedAppointment = ({
               </Link>
               !
             </h3>
-            <button
+            <a
+              href={"http://localhost:8000/storage/storage/pdf/" + FilePath}
+              download={"FilePath"}
+              target="_blank"
               className="text-white  bg-primary-600 hover:bg-primary-700  focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-800"
             >
-              Imprimer 
-            </button>
+              Imprimer
+            </a>
           </div>
         </div>
       </Modal>

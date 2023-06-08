@@ -3,15 +3,7 @@ import TableDoctors from "./TableDoctors";
 import { Link } from "react-router-dom";
 
 const MainTable = ({ setShowAlertSucces }) => {
-  const [show, setShow] = useState(false);
-  // const [showAnnuler, setShowAnnuler] = useState(false);
-  // const [idAppointment, setIdAppointment] = useState(null);
-
-  // const AnnulerAppointment = (idAppointment) => {
-  //   console.log(idAppointment);
-  //   setShowAnnuler(!showAnnuler);
-  //   setIdAppointment(null);
-  // };
+  // const [show, setShow] = useState(false);
 
   return (
     <>
@@ -113,7 +105,7 @@ const MainTable = ({ setShowAlertSucces }) => {
             {/* END Search Input */}
 
             {/* Start Button Add Apointment  */}
-            <div className="flex items-center ml-auto space-x-2 sm:space-x-3">
+            {/* <div className="flex items-center ml-auto space-x-2 sm:space-x-3">
               <button
                 type="button"
                 className="inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -133,7 +125,7 @@ const MainTable = ({ setShowAlertSucces }) => {
                 </svg>
                 Ajouter RendezVous
               </button>
-            </div>
+            </div> */}
             {/* ENd Button Add Apointment */}
           </div>
         </div>
@@ -142,10 +134,6 @@ const MainTable = ({ setShowAlertSucces }) => {
       {/* Component Table  Appointment */}
       <TableDoctors
         setShowAlertSucces={setShowAlertSucces}
-        // showAnnuler={showAnnuler}
-        // setShowAnnuler={setShowAnnuler}
-        // setIdAppointment={setIdAppointment}
-        // AnnulerAppointment={AnnulerAppointment}
       />
     </>
   );

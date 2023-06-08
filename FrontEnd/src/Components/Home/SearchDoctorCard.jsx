@@ -35,7 +35,7 @@ const SearchDoctorCard = ({
 
         <div>
           <img
-            src={avatar_doctor !== null ? avatar_doctor : "img/Rectangle 5.jpg"}
+            src={avatar_doctor !== null ? avatar_doctor : "/img/Rectangle 5.jpg"}
             className="h-[236px] w-[334px] rounded-[10px]"
             alt=""
           />

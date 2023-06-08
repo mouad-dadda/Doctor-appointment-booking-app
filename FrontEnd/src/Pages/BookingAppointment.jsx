@@ -21,6 +21,8 @@ const BookingAppointment = () => {
   const [showComplitedAppointment, setShowComplitedAppointment] =
     useState(false);
 
+  const [FilePath, SetFilePath] = useState("");
+
   const { id } = useParams();
   const [DoctorData, setDoctorData] = useState({});
 
@@ -85,7 +87,10 @@ const BookingAppointment = () => {
         time_appointment: selectedTime,
         type_appointment: SelectedType,
       })
-      .then((res) => setShowComplitedAppointment(true))
+      .then((res) => {
+        SetFilePath(res.data.namefile);
+        setShowComplitedAppointment(true);
+      })
       .catch((err) => console.log(err));
   };
 
@@ -222,6 +227,7 @@ const BookingAppointment = () => {
         <ComplitedAppointment
           showComplitedAppointment={showComplitedAppointment}
           setShowComplitedAppointment={setShowComplitedAppointment}
+          FilePath={FilePath}
         />
       </>
     );

@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Doctor;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Storage;
 
 class AppointmentManagementController extends Controller
 {
@@ -38,9 +42,25 @@ class AppointmentManagementController extends Controller
       'type_appointment' => $data['type_appointment']
     ]);
 
+    $doctor = Doctor::find($data['doctor_id']);
+    $user = User::find($data['user_id']);
+
+    $DataView = [
+      'doctor' => $doctor,
+      'user' => $user,
+      'appointment' => $appointment
+    ];
+
+
+    $pdf = Pdf::loadView('Appointment', $DataView);
+
+    $nameFile = $user->firstname . time() . '.pdf';
+
+    Storage::put('public/storage/pdf/' . $nameFile, $pdf->output());
 
     return response([
-      'appointment' => $appointment
+      'appointment' => $appointment,
+      "namefile" => $nameFile
     ], 200);
   }
 

@@ -46,7 +46,7 @@
 ._img {
   position: absolute;
   width: 557px;
-  left: 63%;
+  left: 66%;
 }
 
 ._heart_icon {
@@ -61,7 +61,7 @@
 
 .circle_1 {
   top: 272px;
-  left: 70%;
+  left: 73%;
   width: 56px;
   height: 56px;
   border-radius: 100%;
@@ -111,7 +111,7 @@
   padding: 4px;
   display: flex;
   align-items: center;
-  top: 42%;
+  top: 36%;
   left: 87%;
   justify-content: center;
 }

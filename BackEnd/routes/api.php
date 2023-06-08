@@ -112,3 +112,6 @@ Route::get('email/resend/{id}',  [UserAuthController::class, 'resend'])->name('v
 Route::get('doctors/email/verify/{id}', [DoctorAuthController::class, 'verify'])->name('doctor.verification.verify');
 
 Route::get('doctors/email/resend/{id}',  [DoctorAuthController::class, 'resend'])->name('doctor.verification.resend');
+
+
+

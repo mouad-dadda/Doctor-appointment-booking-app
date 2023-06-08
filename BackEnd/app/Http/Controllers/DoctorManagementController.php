@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -127,5 +128,16 @@ class DoctorManagementController extends Controller
     ], 200);
   }
 
-  
+  public function GetTimeSpiceficDate(Request $request)
+  {
+
+    $idDoctor = $request->post("id");
+    $DateApointment = $request->post("dateApointment");
+
+    $reservedTime = Appointment::where('doctor_id', $idDoctor)
+      ->where('appointment_date', $DateApointment)
+      ->get();
+
+    return response()->json($reservedTime);
+  }
 }

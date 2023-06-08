@@ -48,8 +48,6 @@ Route::middleware('auth:sanctum')->group(
     // ROUTE ADMIN
 
     Route::get('/admin', [AdminAuthController::class, 'admin']);
-
-
   }
 );
 
@@ -89,6 +87,7 @@ Route::get('/doctor/appointmenttoday/{doctorId}', [AppointmentManagementControll
 
 Route::get('/doctor/newappointment/{doctorId}', [AppointmentManagementController::class, 'GetNewAppointment']);
 
+Route::post("/appointment/reserved", [DoctorManagementController::class, 'GetTimeSpiceficDate']);
 
 // ROUTE ADMIN
 

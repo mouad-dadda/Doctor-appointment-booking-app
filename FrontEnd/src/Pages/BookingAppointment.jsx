@@ -64,7 +64,7 @@ const BookingAppointment = () => {
         setLoading(false);
         console.log(er);
       });
-  }, [ dispatch ,id ,navigate ,UserData.user,UserData.isAuthenticated , ]);
+  }, [dispatch, id, navigate, UserData.user, UserData.isAuthenticated]);
 
   const HandelSubmit = (e) => {
     e.preventDefault();
@@ -160,9 +160,11 @@ const BookingAppointment = () => {
                               </div>
                               {DoctorData && (
                                 <TimePicker
+                                  DateAp={SelectedDate}
                                   minTime={DoctorData.time_debut_work}
                                   maxTime={DoctorData.time_fin_work}
                                   stepInMinutes={DoctorData.appointment_time}
+                                  idDoctor={id}
                                   onChange={handleTimeChange}
                                 />
                               )}

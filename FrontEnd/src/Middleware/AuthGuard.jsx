@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router";
-import { get } from "../Services/LocalStorageService";
+import { get, remove } from "../Services/LocalStorageService";
 import { addUserData } from "../Redux/SliceAuthUser";
 import axiosClient from "../AxiosClient";
 
@@ -26,6 +26,7 @@ const AuthGuard = ({ children }) => {
           setLoading(false);
         })
         .catch((er) => {
+          remove("TOKEN_USER")
           navigate("/connexion");
         });
     }

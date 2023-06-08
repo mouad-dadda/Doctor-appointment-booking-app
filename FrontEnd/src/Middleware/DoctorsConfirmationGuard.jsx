@@ -1,7 +1,7 @@
 import  { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { get } from "../Services/LocalStorageService";
+import { get, remove } from "../Services/LocalStorageService";
 import axiosClient from "../AxiosClient";
 import { addDoctorData } from "../Redux/SliceAuthDoctor";
 
@@ -25,6 +25,7 @@ const DoctorsConfirmationGuard = ({children}) => {
         })
         .catch((er) => {
           console.log(er);
+          remove("TOKEN_DOCTOR")
           navigate("/doctor/login");
         });
     }

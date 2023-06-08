@@ -16,8 +16,9 @@ const VerificationEmail = () => {
   const [ShowAlertSucce, setShowAlertSucce] = useState(false);
 
   const ResendVerificationEmail = () => {
+    console.log(doctorData.doctor.id);
     axiosClient
-      .get(`/doctors/email/verify/${doctorData.doctor.id}`)
+      .get(`/doctors/email/resend/${doctorData.doctor.id}`)
       .then(() => {
         setShowAlertSucce(!ShowAlertSucce);
       })

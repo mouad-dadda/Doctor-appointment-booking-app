@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { get } from "../Services/LocalStorageService";
+import { get, remove } from "../Services/LocalStorageService";
 import { addDoctorData } from "../Redux/SliceAuthDoctor";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
@@ -24,6 +24,7 @@ const DoctorEmailVerification = ({ children }) => {
           console.log(re);
         })
         .catch((er) => {
+          remove("TOKEN_DOCTOR")
           console.log(er);
           navigate("/doctor/login");
         });

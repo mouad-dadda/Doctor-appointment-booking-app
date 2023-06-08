@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import axiosClient from "../AxiosClient";
 import { addUserData } from "../Redux/SliceAuthUser";
-import { get } from "../Services/LocalStorageService";
+import { get, remove } from "../Services/LocalStorageService";
 
 const VerificationEmailGuard = ({ children }) => {
   const UserData = useSelector((state) => state.authUser);
@@ -22,6 +22,7 @@ const VerificationEmailGuard = ({ children }) => {
           dispatch(addUserData(re.data));
         })
         .catch((er) => {
+          remove("TOKEN_USER")
           navigate("/connexion");
         });
     }

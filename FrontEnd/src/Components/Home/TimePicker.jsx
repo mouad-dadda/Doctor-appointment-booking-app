@@ -57,7 +57,7 @@ function TimePicker({
           console.log("Error fetching reserved time:", error);
         });
     }
-  }, [DateAp , idDoctor]);
+  }, [DateAp, idDoctor]);
   console.log(DateAp);
 
   console.log(reservedTime);

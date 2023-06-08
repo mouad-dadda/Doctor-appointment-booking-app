@@ -217,7 +217,7 @@ const Signup = () => {
                       Mot de passe
                     </label>
                     <input
-                      type="text"
+                      type="password"
                       id="Password"
                       name="password"
                       className={
@@ -243,7 +243,7 @@ const Signup = () => {
                       Confirmation mot de passe
                     </label>
                     <input
-                      type="text"
+                      type="password"
                       id="PasswordConfirmation"
                       name="password_confirmation"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full    py-[4px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

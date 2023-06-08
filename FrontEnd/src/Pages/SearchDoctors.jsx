@@ -4,6 +4,7 @@ import {
   Header,
   AlertToRegistre,
   SearchDoctorCard,
+  Spinner,
 } from "../Components";
 import "../Assets/Css/HomeCss/SearchDoctors.css";
 import axiosClient from "../AxiosClient";
@@ -13,6 +14,8 @@ const SearchDoctors = () => {
   document.title = "Recherche Medecin";
 
   const AuthUserData = useSelector((state) => state.authUser);
+
+  const [Loading, setLoading] = useState(false);
 
   const [DataForm, setDataForm] = useState({
     specialite: "",
@@ -30,10 +33,13 @@ const SearchDoctors = () => {
 
   const HandleSubmitData = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     axiosClient
       .post("/search/doctors", DataForm)
-      .then((res) => setDataSearch(res.data.DataSearch))
+      .then((res) => {
+        setDataSearch(res.data.DataSearch);
+        setLoading(false);
+      })
       .catch((err) => console.log(err));
     console.log(DataSearch);
   };
@@ -110,6 +116,11 @@ const SearchDoctors = () => {
         </div>
       </section>
       <main className=" _container mt-4 mb-4 ">
+        {Loading && (
+          <div className=" w-full flex items-center justify-center mb-10 ">
+            <Spinner />
+          </div>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 ">
           {/* Card  For  Resulta  Doctor */}
 

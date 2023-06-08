@@ -89,7 +89,7 @@ const Signup = () => {
                 </div>
                 <div className="mb-[14px]">
                   <h1 className="mt-4 text-[25px] font-medium text-gray-900 ">
-                    Bienvenue sur Doctolib
+                    Bienvenue Doctor
                   </h1>
                 </div>
                 <div>

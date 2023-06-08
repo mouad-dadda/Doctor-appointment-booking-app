@@ -8,6 +8,7 @@ export { default as SearchDoctorCard } from "./Home/SearchDoctorCard";
 export { default as TimePicker } from "./Home/TimePicker";
 export { default as AuthButton } from "./AuthButton";
 export { default as DataPicker } from "./Home/DataPicker";
+export { default as Spinner } from "./Spinner";
 
 // Doctors Dashboard Export
 
@@ -36,5 +37,3 @@ export { default as SidebarAdmin } from "./Admin/Includes/Sidebar";
 export { default as ListOfDoctors } from "./Admin/DoctorsList/MainTable";
 export { default as ListPatione } from "./Admin/PatientList/MainTable";
 export { default as ListOfDoctorsNoVerified } from "./Admin/DoctorsNoVirified/MainDoctorsNoVirified";
-
-

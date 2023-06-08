@@ -50,7 +50,7 @@ const ProfileImg = () => {
     );
   } else {
     return (
-      <div className="mr_left">
+      <div className="mr_left mt-[8px] w-[48%] ">
         <Link to={"/Connexion"}>
           <button className="_btn btn_bg_white ">{t("ProfileRegister.Login")}</button>
         </Link>

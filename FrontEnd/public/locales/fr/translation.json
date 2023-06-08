@@ -26,7 +26,7 @@
     "SearchDoctorCard": {
       "Available": "Disponible",
       "Not_Available": "Non disponible",
-      "Book_Now": "Réserver maintenant",
+      "Book_Now": "Réserver",
       "View_Profile": "Voir le profil"
     },
     "TimePicker": {

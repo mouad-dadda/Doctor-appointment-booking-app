@@ -1,10 +1,8 @@
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 
 body {
   margin: 0;
@@ -13,7 +11,6 @@ body {
 p {
   margin-top: 0;
 }
-
 
 /* START HEADER */
 
@@ -50,6 +47,8 @@ p {
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 90%;
+  margin-top: 10px;
 }
 
 a.nav_link {
@@ -88,7 +87,7 @@ a.nav_link {
 }
 
 .mr_left {
-  margin-left: 297px;
+  margin-left: 2%;
 }
 
 .btn_mrl {
@@ -111,7 +110,7 @@ a.nav_link {
   color: #00214a;
 }
 
-.btn_menu{
+.btn_menu {
   display: none;
 }
 
@@ -167,7 +166,7 @@ a.nav_link {
   .shaw {
     left: 0;
   }
-  .menu_mobile{
+  .menu_mobile {
     width: 69%;
     display: flex;
     justify-content: flex-end;

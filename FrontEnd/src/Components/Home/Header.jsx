@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 import "../../Assets/Css/HomeCss/header.css";
 import ProfileImg from "./ProfileImg";
 import { useTranslation } from "react-i18next";
+import SelelctLang from "./SelelctLang";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
 
   const [Toggle, setToggle] = useState(false);
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
+
 
   return (
     <header className="header posit_rela">
@@ -32,7 +31,7 @@ const Header = () => {
             )}
           </div>
         </div>
-        <div className={Toggle ? "shaw menu" : "menu"}>
+        <div className={Toggle ? "shaw menu w-full " : "menu w-full"}>
           <ul className="nav_items">
             <li className="nav_item">
               <Link to={"/"} className="nav_link">
@@ -56,17 +55,9 @@ const Header = () => {
             </li>
           </ul>
           <ProfileImg />
+          <SelelctLang />
         </div>
       </div>
-      <div>
-  <select onChange={(e) => changeLanguage(e.target.value)}>
-    <option value="fr"><img src="img/fr.png" alt="" /></option>
-    <option value="en"><img src="img/en.jpeg" alt="" /></option>
-    <option value="cn"><img src="img/cn.webp" alt="" /></option>
-
-  </select>
-</div>
-
     </header>
   );
 };

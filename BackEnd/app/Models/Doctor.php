@@ -32,7 +32,8 @@ class Doctor extends Authenticatable implements MustVerifyEmail
     'available',
     'premium',
     'about',
-    'verified'
+    'verified',
+    'email_verified_at'
   ];
 
 

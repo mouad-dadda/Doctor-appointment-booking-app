@@ -12,13 +12,15 @@ const ProfileImg = () => {
   if ((adminData.isAuthenticated && adminData.adminToken) || adminData.admin) {
     return (
       <div className="mr_left">
-        <Link to={"/admin/dashboard"}>
-          <img
-            className="w-[46px] h-[45px] ml-[114px] p-1 rounded-full ring-2 ring-gray-300 "
-            src="/img/Rectangle 9.png"
-            alt="Bordered avatar"
-          />
-        </Link>
+        <div>
+          <Link to={"/admin/dashboard"} className="mr-[12rem] flex w-[40%] ">
+            <img
+              className="w-[46px] h-[45px] ml-[114px] p-1 rounded-full ring-2 ring-gray-300 "
+              src="/img/Rectangle 9.png"
+              alt="Bordered avatar"
+            />
+          </Link>
+        </div>
       </div>
     );
   } else if (
@@ -27,32 +29,41 @@ const ProfileImg = () => {
   ) {
     return (
       <div className="mr_left">
-        <Link to={"/doctor/dashboard"}>
-          <img
-            className="w-[46px] h-[45px] ml-[114px] p-1 rounded-full ring-2 ring-gray-300 "
-            src="/img/Rectangle 9.png"
-            alt="Bordered avatar"
-          />
-        </Link>
+        <div>
+          <Link to={"/doctor/dashboard"} className="mr-[12rem] flex w-[40%] ">
+            <img
+              className="w-[46px] h-[45px] ml-[114px] p-1 rounded-full ring-2 ring-gray-300 "
+              src="/img/Rectangle 9.png"
+              alt="Bordered avatar"
+            />
+          </Link>
+        </div>
       </div>
     );
-  } else if ((userData.isAuthenticated && userData.userToken) || userData.user) {
+  } else if (
+    (userData.isAuthenticated && userData.userToken) ||
+    userData.user
+  ) {
     return (
-      <div className="mr_left">
-        <Link to={"/user/profile"}>
-          <img
-            className="w-[46px] h-[45px] ml-[114px] p-1 rounded-full ring-2 ring-gray-300 "
-            src="/img/Rectangle 9.png"
-            alt="Bordered avatar"
-          />
-        </Link>
+      <div className="mr_left  ">
+        <div>
+          <Link to={"/user/profile"} className="mr-[12rem] flex w-[40%] ">
+            <img
+              className="w-[46px] h-[45px] ml-[114px] p-1 rounded-full ring-2 ring-gray-300 "
+              src="/img/Rectangle 9.png"
+              alt="Bordered avatar"
+            />
+          </Link>
+        </div>
       </div>
     );
   } else {
     return (
-      <div className="mr_left mt-[8px] w-[48%] ">
-        <Link to={"/Connexion"}>
-          <button className="_btn btn_bg_white ">{t("ProfileRegister.Login")}</button>
+      <div className="mr_left mt-[5px] w-[48%] flex ">
+        <Link to={"/Connexion"} className="">
+          <button className="_btn btn_bg_white ">
+            {t("ProfileRegister.Login")}
+          </button>
         </Link>
         <Link to={"/identifier"}>
           <button className="_btn btn_bg_primary btn_mrl">

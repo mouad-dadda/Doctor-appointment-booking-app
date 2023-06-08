@@ -21,6 +21,7 @@ import {
   DoctorsList,
   PatientsList,
   NoVerifiedDoctors,
+  UserVerifeyEmail,
 } from "../Pages";
 import AuthDoctorGuard from "../Middleware/AuthDoctorGuard";
 import GuardAdmin from "../Middleware/GuardAdmin";
@@ -55,6 +56,16 @@ const router = createBrowserRouter([
   },
 
   // Users Router
+
+  {
+    path: "/user/verifeyemail",
+    element: (
+      // <AuthGuard>
+        <UserVerifeyEmail />
+      // </AuthGuard>
+    ),
+  },
+
 
   {
     path: "/user/profile",

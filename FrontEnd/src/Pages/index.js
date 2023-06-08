@@ -9,6 +9,7 @@ export { default as DoctorProfile } from "./DoctorProfile";
 export { default as DoctorsSignup } from "./AuthDoctors/Signup";
 export { default as DoctorsLogin } from "./AuthDoctors/Login";
 
+
 // PAGE DASHBOARD DOCTORS
 
 export { default as DocotrDashboard } from "./Doctors/Dashboard.jsx";
@@ -21,6 +22,8 @@ export { default as DocotrSettings } from "./Doctors/Settings.jsx";
 export { default as UserProfile } from "./Users/Profile.jsx";
 export { default as UserSettings } from "./Users/Settings.jsx";
 export { default as UserChangePassword } from "./Users/ChangePassword";
+export { default as UserVerifeyEmail } from "./Users/VerifeyEmail";
+
 
 
 

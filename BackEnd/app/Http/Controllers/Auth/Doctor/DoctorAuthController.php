@@ -30,10 +30,11 @@ class DoctorAuthController extends Controller
     // $doctor->sendEmailVerificationNotification();
 
     $token = $doctor->createToken('mainDoctor')->plainTextToken;
+    $doctorData=Doctor::find($doctor->id) ;
 
     return  response(
       [
-        'doctor' => $doctor,
+        'doctor' => $doctorData,
         'token' => $token
       ],
       200

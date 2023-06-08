@@ -32,7 +32,7 @@ const Header = () => {
           </div>
         </div>
         <div className={Toggle ? "shaw menu w-full " : "menu w-full"}>
-          <ul className="nav_items">
+          <ul className="nav_items h-fit  ">
             <li className="nav_item">
               <Link to={"/"} className="nav_link">
                 {t("Header.Home")}

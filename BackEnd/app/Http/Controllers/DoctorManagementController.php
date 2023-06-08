@@ -130,14 +130,14 @@ class DoctorManagementController extends Controller
 
   public function GetTimeSpiceficDate(Request $request)
   {
+      $idDoctor = $request->post("id");
+      $dateAppointment = $request->post("dateApointment");
 
-    $idDoctor = $request->post("id");
-    $DateApointment = $request->post("dateApointment");
+      $reservedTime = Appointment::where('doctor_id', $idDoctor)
+        ->where('date_appointment', $dateAppointment)
+        ->pluck('time_appointment');
 
-    $reservedTime = Appointment::where('doctor_id', $idDoctor)
-      ->where('appointment_date', $DateApointment)
-      ->get();
-
-    return response()->json($reservedTime);
+      return response()->json($reservedTime);
   }
+
 }

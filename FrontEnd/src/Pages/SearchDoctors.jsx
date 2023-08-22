@@ -40,7 +40,10 @@ const SearchDoctors = () => {
         setDataSearch(res.data.DataSearch);
         setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setLoading(false);
+        
+        console.log(err)});
     console.log(DataSearch);
   };
 

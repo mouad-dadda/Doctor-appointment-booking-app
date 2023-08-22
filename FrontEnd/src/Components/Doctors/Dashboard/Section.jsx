@@ -15,8 +15,10 @@ const Section = () => {
             <p className="whitespace-nowrap font-medium block text-xl capitalize text-gray-900">
               {t("Section_Doctor.Welcome_Doctor")}{" "}
               <span className="px-2 text-white bg-[#0D63F3] font-semibold rounded dark:bg-blue-500">
-              Dr. {doctorData.doctor!=null?doctorData.doctor.firstname:'' }              </span>{" "}
-              {t("Section_Doctor.in_Doctolib")}
+                Dr.{" "}
+                {doctorData.doctor != null ? doctorData.doctor.firstname : ""}{" "}
+              </span>{" "}
+              {t("Section_Doctor.in_DocAppoint")}
             </p>
             <HandThumbUpIcon className="h-6 w-6 text-gray-500" />
           </div>
@@ -24,7 +26,11 @@ const Section = () => {
             {t("Section_Doctor.Appointments_Today")}
           </p>
         </div>
-        <img src="/img/sammy-doctors-consultation.png" className="ml-[22rem]" alt="" />
+        <img
+          src="/img/sammy-doctors-consultation.png"
+          className="ml-[22rem]"
+          alt=""
+        />
       </div>
     </>
   );

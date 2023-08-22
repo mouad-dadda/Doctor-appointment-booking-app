@@ -1,5 +1,5 @@
 {
-  "section_title": "Doctolib vous offre le meilleur moyen de trouver un médecin",
+  "section_title": "DocAppoint vous offre le meilleur moyen de trouver un médecin",
   "section_description": "Grâce au site web, vous pouvez facilement rechercher des médecins et gérer tous vos rendez-vous.",
   "schedule_appointment": "Prenez rendez-vous",
   "service_quality_title": "Service de haute qualité pour vous",
@@ -34,7 +34,7 @@
     },
     "Section_Doctor": {
       "Welcome_Doctor": "Bienvenue",
-      "in_Doctolib": "dans Doctolib",
+      "in_DocAppoint": "dans DocAppoint",
       "Appointments_Today": "Vous avez 5 rendez-vous aujourd'hui !"
     },
     "TableDashboard": {
@@ -43,9 +43,9 @@
     },
   "About" : {
       "aboutUsTitle": "À propos de nous",
-      "welcomeMessage": "Bienvenue sur Doctolib, la plateforme en ligne qui facilite la prise de rendez-vous avec des médecins qualifiés et compétents. Notre mission est de rendre l'accès aux soins médicaux plus simple, rapide et efficace pour tous.",
-      "dataPrivacyMessage": "Nous nous engageons à protéger la confidentialité de vos données médicales et à garantir la sécurité de vos informations personnelles. Votre santé et votre bien-être sont notre priorité absolue, et nous mettons tout en œuvre pour vous offrir une expérience utilisateur optimale et sécurisée. N'hésitez pas à parcourir notre site et à découvrir les nombreux professionnels de santé disponibles. Prenez le contrôle de votre santé et réservez dès maintenant votre prochain rendez-vous avec Doctolib !",
-      "bookingSystemMessage": "Grâce à notre système de réservation en ligne, vous pouvez consulter les disponibilités des médecins, choisir le créneau qui vous convient le mieux et réserver votre rendez-vous en quelques clics seulement. Fini les longues attentes au téléphone ou les déplacements inutiles, avec Doctolib, la gestion de vos rendez-vous médicaux est simplifiée et rapide."
+      "welcomeMessage": "Bienvenue sur DocAppoint, la plateforme en ligne qui facilite la prise de rendez-vous avec des médecins qualifiés et compétents. Notre mission est de rendre l'accès aux soins médicaux plus simple, rapide et efficace pour tous.",
+      "dataPrivacyMessage": "Nous nous engageons à protéger la confidentialité de vos données médicales et à garantir la sécurité de vos informations personnelles. Votre santé et votre bien-être sont notre priorité absolue, et nous mettons tout en œuvre pour vous offrir une expérience utilisateur optimale et sécurisée. N'hésitez pas à parcourir notre site et à découvrir les nombreux professionnels de santé disponibles. Prenez le contrôle de votre santé et réservez dès maintenant votre prochain rendez-vous avec DocAppoint !",
+      "bookingSystemMessage": "Grâce à notre système de réservation en ligne, vous pouvez consulter les disponibilités des médecins, choisir le créneau qui vous convient le mieux et réserver votre rendez-vous en quelques clics seulement. Fini les longues attentes au téléphone ou les déplacements inutiles, avec DocAppoint, la gestion de vos rendez-vous médicaux est simplifiée et rapide."
     },"contact":{
       "contactUsTitle": "Contactez-nous",
       "nameLabel": "Nom :",
@@ -64,6 +64,6 @@
       "Title":"Derniers articles"
     
     },"footer":{
-      "copyright":"Copyright © 2023 Doctolib, tous droits réservés"
+      "copyright":"Copyright © 2023 DocAppoint, tous droits réservés"
     }
 }

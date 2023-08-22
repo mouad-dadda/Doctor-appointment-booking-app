@@ -11,7 +11,6 @@ const Signup = () => {
   document.title = "S'identifier";
 
   const userData = useSelector((state) => state.authUser);
-  console.log(userData);
 
   const dispatch = useDispatch();
 
@@ -43,7 +42,6 @@ const Signup = () => {
   });
 
   const HandleChangeData = (e) => {
-    
     const { name, value } = e.target;
     setData({ ...DataForm, [name]: value });
   };
@@ -51,7 +49,6 @@ const Signup = () => {
   const HandleSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
-    console.log(DataForm);
 
     axiosClient
       .post("/user/register", DataForm)
@@ -65,7 +62,7 @@ const Signup = () => {
       })
 
       .catch((er) => {
-        setLoading(false)
+        setLoading(false);
         if (er.response && er.response.status === 422) {
           setError({ ...error, ...er.response.data.errors });
         } else {
@@ -87,13 +84,13 @@ const Signup = () => {
                 </div>
                 <div className="mb-[14px]">
                   <h1 className="mt-4 text-[25px] font-medium text-gray-900 ">
-                    Bienvenue sur Doctolib
+                    Bienvenue sur DocAppoint
                   </h1>
                 </div>
                 <div>
                   <p className=" text-[14px] text-slate-400	">
                     {" "}
-                    Vous creez votre premier compte doctolib pour obtenir un
+                    Vous creez votre premier compte DocAppoint pour obtenir un
                     rendez-vous avec un medcine !!{" "}
                   </p>
                 </div>

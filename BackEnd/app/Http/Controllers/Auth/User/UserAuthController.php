@@ -26,7 +26,7 @@ class UserAuthController extends Controller
     ]);
 
     $token = $user->createToken('mainUser')->plainTextToken;
-    // $user->sendEmailVerificationNotification();
+    $user->sendEmailVerificationNotification();
 
     $userData = User::find($user->id);
 
@@ -54,7 +54,7 @@ class UserAuthController extends Controller
 
     $token = $user->createToken('mainUser')->plainTextToken;
 
-    $userData=User::find($user->id) ;
+    $userData = User::find($user->id);
 
     return response([
       'user' => $userData,

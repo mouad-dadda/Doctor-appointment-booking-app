@@ -41,17 +41,17 @@ const router = createBrowserRouter([
     path: "/",
     errorElement: <PageNotfond />,
     element: <Home />,
-  }, {
+  },
+  {
     path: "/About",
-
     element: <Aboutus />,
-  }, {
+  },
+  {
     path: "/Contact",
-   
     element: <ContactUs />,
-  }, {
+  },
+  {
     path: "/doctor/View_Profile/:id",
-
     element: <DoctorPage />,
   },
   {
@@ -80,11 +80,9 @@ const router = createBrowserRouter([
   {
     path: "/user/verifeyemail",
     element: (
-      // <AuthGuard>
       <VerificationEmailGuard>
         <UserVerifeyEmail />
       </VerificationEmailGuard>
-      // </AuthGuard>
     ),
   },
 

@@ -14,7 +14,7 @@ const NavBar = () => {
             <div className="flex items-center justify-start">
               <Link to={"/"} className=" flex ml-2 md:mr-24">
                 <span className="self-center  text-[#0D63F3]  text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                  Doctolib
+                  DocAppoint
                 </span>
               </Link>
             </div>

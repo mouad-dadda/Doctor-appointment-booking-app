@@ -95,7 +95,7 @@ const Signup = () => {
                 <div>
                   <p className=" text-[14px] text-slate-400	">
                     {" "}
-                    Vous creez votre premier compte doctolib pour obtenir un
+                    Vous creez votre premier compte DocAppoint pour obtenir un
                     rendez-vous avec un medcine !!{" "}
                   </p>
                 </div>

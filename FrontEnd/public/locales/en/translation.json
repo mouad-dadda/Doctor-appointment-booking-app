@@ -1,5 +1,5 @@
 {
-  "section_title": "Doctolib offers you the best way to find a doctor",
+  "section_title": "DocAppoint offers you the best way to find a doctor",
   "section_description": "With the website, you can easily search for doctors and manage all your appointments.",
   "schedule_appointment": "Schedule an appointment",
   "service_quality_title": "High-quality service for you",
@@ -34,7 +34,7 @@
   },
   "Section_Doctor": {
     "Welcome_Doctor": "Welcome",
-    "in_Doctolib": "in Doctolib",
+    "in_DocAppoint": "in DocAppoint",
     "Appointments_Today": "You have 5 appointments today!"
   },
   "TableDashboard": {
@@ -43,9 +43,9 @@
   },
   "About":{
     "aboutUsTitle": "About Us",
-    "welcomeMessage": "Welcome to Doctolib, the online platform that makes it easy and convenient to book appointments with qualified and competent doctors. Our mission is to make access to medical care simpler, faster, and more efficient for everyone.",
-    "dataPrivacyMessage": "We are committed to protecting the privacy of your medical data and ensuring the security of your personal information. Your health and well-being are our top priority, and we strive to provide you with an optimal and secure user experience. Feel free to browse our site and discover the many available healthcare professionals. Take control of your health and book your next appointment with Doctolib now!",
-    "bookingSystemMessage": "With our online booking system, you can check the availability of doctors, choose the time slot that suits you best, and book your appointment in just a few clicks. No more long waits on the phone or unnecessary travel - with Doctolib, managing your medical appointments is simplified and quick."
+    "welcomeMessage": "Welcome to DocAppoint, the online platform that makes it easy and convenient to book appointments with qualified and competent doctors. Our mission is to make access to medical care simpler, faster, and more efficient for everyone.",
+    "dataPrivacyMessage": "We are committed to protecting the privacy of your medical data and ensuring the security of your personal information. Your health and well-being are our top priority, and we strive to provide you with an optimal and secure user experience. Feel free to browse our site and discover the many available healthcare professionals. Take control of your health and book your next appointment with DocAppoint now!",
+    "bookingSystemMessage": "With our online booking system, you can check the availability of doctors, choose the time slot that suits you best, and book your appointment in just a few clicks. No more long waits on the phone or unnecessary travel - with DocAppoint, managing your medical appointments is simplified and quick."
   
   },"contact":{
     "contactUsTitle": "Contact Us",
@@ -65,7 +65,7 @@
     "Title":"Latest articles"
   
   },"footer":{
-    "copyright":"Copyright © 2023 Doctolib, all rights reserved."
+    "copyright":"Copyright © 2023 DocAppoint, all rights reserved."
   }
   
   

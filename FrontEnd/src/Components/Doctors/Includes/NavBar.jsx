@@ -13,7 +13,6 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
   const Logout = () => {
     axiosClient
       .post("/doctor/logout")
@@ -37,7 +36,7 @@ const NavBar = () => {
             <div className="flex items-center justify-start">
               <Link to={"/"} className=" flex ml-2 md:mr-24">
                 <span className="self-center  text-[#0D63F3]  text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                  Doctolib
+                  DocAppoint
                 </span>
               </Link>
             </div>
@@ -164,9 +163,7 @@ const NavBar = () => {
                         className="block px-4 py-2 text-sm cursor-pointer text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"
                       >
-                        <button
-                        onClick={Logout}
-                        >Sign out</button>
+                        <button onClick={Logout}>Sign out</button>
                       </div>
                     </li>
                   </ul>

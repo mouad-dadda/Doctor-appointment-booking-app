@@ -7,23 +7,23 @@
 <p align="center">
 
 <a href="./LICENSE" >  
-  <img alt="GitHub Language Count" src="https://img.shields.io/github/license/mouad-dadda/Doctors-Appointment-Management/markdown-badges?style=for-the-badge&color=0085CA" />
+  <img alt="GitHub Language Count" src="https://img.shields.io/github/license/mouad-dadda/Doctors-Appointment-Management?style=for-the-badge&color=0085CA" />
 </a>
 
-  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/mouad-dadda/Doctors-Appointment-Management/github-badges?style=for-the-badge&color=0033FF" />
+  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/mouad-dadda/Doctors-Appointment-Management?style=for-the-badge&color=0033FF" />
 
-  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/mouad-dadda/Doctors-Appointment-Management/github-badges?style=for-the-badge&color=00ACC1" />
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/mouad-dadda/Doctors-Appointment-Management?style=for-the-badge&color=00ACC1" />
 
-  <img alt="" src="https://img.shields.io/github/repo-size/mouad-dadda/Doctors-Appointment-Management/github-badges?style=for-the-badge&color=1877F2" />
+  <img alt="" src="https://img.shields.io/github/repo-size/mouad-dadda/Doctors-Appointment-Management?style=for-the-badge&color=1877F2" />
 
-  <img alt="GitHub Package.json Version" src="https://img.shields.io/github/package-json/v/mouad-dadda/Doctors-Appointment-Management/github-badges?style=for-the-badge&color=E8E8E8" />
 
 </p>
 
 <p align="center"><em> Welcome to DocAppoint, a comprehensive platform designed to simplify management patient appointment . This project facilitates doctors in registering , enabling doctors to efficiently engage with patients through appointment requests.</em> </p>
 
 <hr>
-### 🃏Running Locally
+
+###  🃏Running Locally
 
 **⚡Prerequisites**
 
